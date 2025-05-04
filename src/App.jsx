@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import Navbar from './component/Navbar'
+import Header from './component/Header'
 import { Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import Japan from './pages/Japan'
@@ -14,7 +14,7 @@ function App() {
   return (
       <div className="wrap">
         {/* 載入導覽列 */}
-        <Navbar>
+        <Header>
           {/* 呼叫頁面 */}
           <Routes>
             <Routes path="/" element={<Home/>} />
@@ -23,7 +23,7 @@ function App() {
             <Routes path="/timesale" element={<Timesale/>} />
             <Routes path="/user" element={<User/>} />
           </Routes>
-        </Navbar>
+        </Header>
 
       </div>
 
