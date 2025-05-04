@@ -1,18 +1,90 @@
 // src/scss/main.scss
-@use "variable" as *;
-@use "function" as *;
 @use "reset";
+@use "variable" as *;
+// @use "function" as *;
 
-$primary-color: #3498db;
-$secondary-color: #2ecc71;
+// @use "icon";
+// @use "keyframe";
+
+// 串google font：只允許編碼在它上面
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Expanded+One&display=swap');
+
+/* 串已下載字體 */
+
+
+$bg-color1: #e8e8e8;
+$text-color1: #2a2929;
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: $primary-color;
-  color: white;
+  background-color: $bg-color1;
+  color: $text-color1;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+* {
+  color: $text-color1;
 }
 
 h1 {
   font-size: 2rem;
   color: $secondary-color;
+}
+
+/* 導覽列 */
+.siteHeader {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  /* 控制子層 a, nav */
+  display: flex;
+  justify-content: space-between;
+  padding: $space-m;
+
+  .logo {
+    width: 65px;
+  }
+
+  .navbar {
+    ul {
+      /* 控制子層 li */
+      display: flex;
+    }
+
+    .icon {
+      a {
+        width: 35px;
+        height: 35px;
+        margin: $space-x-s;
+        // 屬性需父子(偽類別)
+        // 轉場：滑入滑出都要有效果：
+        // 1. 要寫在父元素身上，
+        // 2. 設定時間受滑鼠停留時間影響，滑鼠停滿才會有效果
+        // 轉場：只有滑入有效果：
+        // 1. 寫在hover上
+        // 2. 滑鼠停留的時間需少於持續時間
+        transition: all $speed-high;
+      }
+    }
+
+    .menu {
+      @include glassmorphosm;
+
+      a.active {
+        color: $color-black;
+      }
+
+      a {
+        margin: $space-s;
+        padding: $space-y-s;
+        border-bottom: $border-m $alpha;
+        transition: all $speed-high;
+
+        &:hover {
+          border-bottom: $border-m $color-black;
+        }
+      }
+    }
+  }
+
 }
