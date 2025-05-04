@@ -1,4 +1,7 @@
 // src/scss/main.scss
+@use "variable" as *;
+@use "function" as *;
+@use "reset";
 
 $primary-color: #3498db;
 $secondary-color: #2ecc71;
