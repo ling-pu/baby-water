@@ -29,6 +29,7 @@ h1 {
   color: $text-color1;
 }
 
+/* 跑馬燈 */
 .announcement {
   width: 100%;
   display: flex;
@@ -46,7 +47,7 @@ h1 {
 /* 導覽列 */
 .siteHeader {
   position: fixed;
-  top: 0;
+  top: 30px;
   width: 100%;
   display: flex;
   padding: $space-m;
