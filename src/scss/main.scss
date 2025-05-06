@@ -28,7 +28,7 @@ body {
 
 h1 {
   font-size: 2rem;
-  color: $secondary-color;
+  color: $text-color1;
 }
 
 .announcement {
@@ -55,48 +55,6 @@ h1 {
 
   .logo {
     width: 65px;
-  }
-
-  .navbar {
-    ul {
-      /* 控制子層 li */
-      display: flex;
-    }
-
-    .icon {
-      a {
-        width: 35px;
-        height: 35px;
-        margin: $space-x-s;
-        // 屬性需父子(偽類別)
-        // 轉場：滑入滑出都要有效果：
-        // 1. 要寫在父元素身上，
-        // 2. 設定時間受滑鼠停留時間影響，滑鼠停滿才會有效果
-        // 轉場：只有滑入有效果：
-        // 1. 寫在hover上
-        // 2. 滑鼠停留的時間需少於持續時間
-        transition: all $speed-high;
-      }
-    }
-
-    .menu {
-      @include glassmorphosm;
-
-      a.active {
-        color: $color-black;
-      }
-
-      a {
-        margin: $space-s;
-        padding: $space-y-s;
-        border-bottom: $border-m $alpha;
-        transition: all $speed-high;
-
-        &:hover {
-          border-bottom: $border-m $color-black;
-        }
-      }
-    }
   }
 
 }
