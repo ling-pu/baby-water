@@ -5,7 +5,7 @@ export default function Announcement() {
         <div className="announcement">
             <div className="announcement__text">
                 <p className="announcement__title">
-                    <span>Baby Water官網會員招募中 ♡ 註冊即享$100購物金！</span>
+                    <span>Baby Water官網會員招募中 ♡ 單件即免運 ♡ 多件再折扣</span>
                 </p>
             </div>
         </div>

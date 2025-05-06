@@ -1,0 +1,89 @@
+// font-family
+$font-en: "Special Gothic Expanded One", sans-serif;
+$font-tc: "Noto Sans TC", sans-serif;
+$font-title: "Noto Sans TC", sans-serif;
+
+.lato-thin {
+    font-family: "Lato", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  .lato-light {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .lato-regular {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .lato-bold {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .lato-black {
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  .lato-thin-italic {
+    font-family: "Lato", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+  }
+  
+  .lato-light-italic {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  .lato-regular-italic {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .lato-bold-italic {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .lato-black-italic {
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+  }
+  
+// font-size
+$font-size:( //map-get($font-size, )
+    xs: .8rem,
+    s: 1rem,
+    m: 1.2rem,
+    l: 1.5rem,
+    xl: 1.8rem,
+    xxl: 2rem,
+    xxxl: 2.4rem,
+    xxxxl: 3rem
+);
+
+// 行高
+$line-h-s: 1;
+$line-h-m: 1.2;
+$line-h-l: 1.5;
+
+// 字重
+$regular: 400;
+$bold: 600;
+$bolder: 700;
+$lighter: 100;
+
+// 字距
