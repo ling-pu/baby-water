@@ -1,0 +1,68 @@
+
+/* 導覽列 */
+.siteHeader {
+    position: fixed;
+    top: 30px;
+    width: 100%;
+    display: flex;
+    padding: $space-m;
+  
+    .logo {
+      top: 8px;
+      left: 24px;
+      display: flex;
+      width: 64px;
+      height: 64px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .nav-container {
+      width: 100%;
+      ul {
+        display: flex;
+      }
+  
+      .icon-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+  
+        .icon-btn {
+          width: 24px;
+          height: 24px;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          border: none;
+          cursor: pointer;
+          margin: $space-x-s;
+        }
+  
+        /* icon背景 */
+        .icon-search {
+          background-image: url('../assets/icons/Search.svg');
+        }
+  
+        .icon-user {
+          background-image: url('../assets/icons/User.svg');
+        }
+  
+        .icon-cart {
+          background-image: url('../assets/icons/Shopping\ cart.svg');
+        }
+  
+      }
+      .main-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        li {
+          margin: $space-x-m;
+        }
+      }
+    }
+  
+  
+  }

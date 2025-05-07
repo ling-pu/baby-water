@@ -28,6 +28,7 @@ function App() {
           <Routes path="/user" element={<User />} />
         </Routes>
       </Header>
+      <Home/>
 
     </div>
 
