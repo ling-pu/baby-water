@@ -1,6 +1,11 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Expanded+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Expanded+One&family=Homemade+Apple&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+.homemade-apple-regular {
+  font-family: "Homemade Apple", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .lato-thin {
   font-family: "Lato", sans-serif;
   font-weight: 100;
@@ -195,7 +200,6 @@ a {
   text-decoration: none;
 }
 
-/* 串已下載字體 */
 /* 跑馬燈 */
 .announcement {
   position: sticky;
@@ -304,10 +308,24 @@ a {
 
 .home {
   display: flex;
-  width: 1440px;
-  padding: 0px 100px 48px 100px;
+  max-width: 1280px;
+  margin: auto;
   flex-direction: column;
-  align-items: flex-start;
+}
+.home h1 {
+  font-family: "Homemade Apple", cursive;
+}
+
+.banner-container {
+  display: flex;
+  align-self: center;
+  align-items: center;
+  width: 100%;
+  height: 80vh;
+  background-size: cover;
+}
+.banner-container img {
+  width: 100%;
 }
 
 .home-select {
@@ -338,14 +356,4 @@ body {
 h1 {
   font-size: 2rem;
   color: #2a2929;
-}
-
-.banner-container {
-  position: fixed;
-  top: 160px;
-  display: block;
-  width: 100%;
-  height: 648px;
-  background: url(../assets/bw.gif) no-repeat center center;
-  background-size: cover;
 }/*# sourceMappingURL=main.css.map */

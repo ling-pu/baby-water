@@ -7,14 +7,11 @@
 // @use "keyframe";
 
 // 串google font：只允許編碼在它上面
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Expanded+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-/* 串已下載字體 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Expanded+One&family=Homemade+Apple&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 @import './component/Announcement';
 @import './component/Header';
 @import './Home';
-
 
 
 body {
@@ -34,12 +31,4 @@ h1 {
   color: $text-color1;
 }
 
-.banner-container {
-  position: fixed;
-  top:160px;
-  display: block;
-  width: 100%;
-  height: 648px;
-  background: url(../assets/bw.gif) no-repeat center center;
-  background-size: cover; 
-}
+

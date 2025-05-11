@@ -1,7 +1,13 @@
 // font-family
-$font-en: "Special Gothic Expanded One", sans-serif;
+$font-en-handwrite: "Homemade Apple", cursive;
 $font-tc: "Noto Sans TC", sans-serif;
 $font-title: "Noto Sans TC", sans-serif;
+
+.homemade-apple-regular {
+  font-family: "Homemade Apple", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
 
 .lato-thin {
     font-family: "Lato", sans-serif;
