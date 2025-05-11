@@ -198,7 +198,7 @@ a {
 /* 串已下載字體 */
 /* 跑馬燈 */
 .announcement {
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
   display: flex;
@@ -238,13 +238,20 @@ a {
 
 /* 導覽列 */
 .siteHeader {
-  position: fixed;
-  top: 30px;
+  position: sticky;
+  top: 24px;
   width: 100%;
   display: flex;
-  padding: 2rem;
+  padding: 16px 48px;
 }
-.siteHeader .logo {
+.siteHeader ul {
+  display: flex;
+}
+.siteHeader .logo-container {
+  flex: 1;
+}
+.siteHeader .logo-container .logo {
+  flex: 1;
   top: 8px;
   left: 24px;
   display: flex;
@@ -254,21 +261,17 @@ a {
   justify-content: center;
   align-items: center;
 }
-.siteHeader .nav-container {
-  width: 100%;
-}
-.siteHeader .nav-container ul {
+.siteHeader .icon-nav {
   display: flex;
-}
-.siteHeader .nav-container .icon-nav {
-  display: flex;
+  flex: 1;
   flex-direction: column;
   align-items: end;
+  align-self: center;
   /* icon背景 */
 }
-.siteHeader .nav-container .icon-nav .icon-btn {
-  width: 24px;
-  height: 24px;
+.siteHeader .icon-nav .icon-btn {
+  width: 48px;
+  height: 48px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -276,22 +279,27 @@ a {
   cursor: pointer;
   margin: 0 1rem;
 }
-.siteHeader .nav-container .icon-nav .icon-search {
+.siteHeader .icon-nav .icon-search {
   background-image: url("../assets/icons/Search.svg");
 }
-.siteHeader .nav-container .icon-nav .icon-user {
+.siteHeader .icon-nav .icon-user {
   background-image: url("../assets/icons/User.svg");
 }
-.siteHeader .nav-container .icon-nav .icon-cart {
+.siteHeader .icon-nav .icon-cart {
   background-image: url("../assets/icons/Shopping cart.svg");
 }
-.siteHeader .nav-container .main-nav {
+.siteHeader .main-nav {
+  flex: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-self: center;
 }
-.siteHeader .nav-container .main-nav li {
-  margin: 0 2rem;
+.siteHeader .main-nav ul {
+  gap: 12px;
+}
+.siteHeader .main-nav li {
+  margin: 8px 24px;
 }
 
 .home {
@@ -300,6 +308,19 @@ a {
   padding: 0px 100px 48px 100px;
   flex-direction: column;
   align-items: flex-start;
+}
+
+.home-select {
+  display: flex;
+  padding: 48px 32px 0px 32px;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  align-self: stretch;
+  border-radius: 0px 0px 12px 12px;
+  border: 2px solid var(--Neutral-dark-gray, #2E2F30);
+  background: linear-gradient(0deg, #E8E8E8 0%, #E8E8E8 100%), url(<path-to-image>) lightgray 0% 0%/100px 100px repeat;
+  background-blend-mode: normal, difference;
 }
 
 body {

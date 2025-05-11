@@ -1,13 +1,19 @@
-
 /* 導覽列 */
 .siteHeader {
-    position: fixed;
-    top: 30px;
-    width: 100%;
+  position: sticky;
+  top: 24px;
+  width: 100%;
+  display: flex;
+  padding: 16px 48px;
+  ul {
     display: flex;
-    padding: $space-m;
-  
+  }
+
+  .logo-container {
+    flex: 1;
+
     .logo {
+      flex: 1;
       top: 8px;
       left: 24px;
       display: flex;
@@ -17,52 +23,60 @@
       justify-content: center;
       align-items: center;
     }
-  
-    .nav-container {
-      width: 100%;
-      ul {
-        display: flex;
-      }
-  
-      .icon-nav {
-        display: flex;
-        flex-direction: column;
-        align-items: end;
-  
-        .icon-btn {
-          width: 24px;
-          height: 24px;
-          background-size: contain;
-          background-repeat: no-repeat;
-          background-position: center;
-          border: none;
-          cursor: pointer;
-          margin: $space-x-s;
-        }
-  
-        /* icon背景 */
-        .icon-search {
-          background-image: url('../assets/icons/Search.svg');
-        }
-  
-        .icon-user {
-          background-image: url('../assets/icons/User.svg');
-        }
-  
-        .icon-cart {
-          background-image: url('../assets/icons/Shopping\ cart.svg');
-        }
-  
-      }
-      .main-nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        li {
-          margin: $space-x-m;
-        }
-      }
-    }
-  
-  
+
   }
+
+
+
+  .icon-nav {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: end;
+    align-self: center;
+
+
+    .icon-btn {
+      width: 48px;
+      height: 48px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      border: none;
+      cursor: pointer;
+      margin: $space-x-s;
+    }
+
+    /* icon背景 */
+    .icon-search {
+      background-image: url('../assets/icons/Search.svg');
+    }
+
+    .icon-user {
+      background-image: url('../assets/icons/User.svg');
+    }
+
+    .icon-cart {
+      background-image: url('../assets/icons/Shopping\ cart.svg');
+    }
+
+  }
+
+  .main-nav {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+
+    ul {
+      gap: 12px;
+    }
+
+    li {
+      margin: 8px 24px;
+    }
+  }
+
+
+}
