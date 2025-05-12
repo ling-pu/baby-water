@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Expanded+One&family=Homemade+Apple&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Homemade+Apple&family=Special+Elite&family=Homemade+Apple&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 .homemade-apple-regular {
   font-family: "Homemade Apple", cursive;
   font-weight: 400;
@@ -313,7 +313,10 @@ a {
   flex-direction: column;
 }
 .home h1 {
-  font-family: "Homemade Apple", cursive;
+  font-family: "Special Elite", system-ui;
+}
+.home a {
+  font-family: "Special Elite", system-ui;
 }
 
 .banner-container {
@@ -339,6 +342,23 @@ a {
   border: 2px solid var(--Neutral-dark-gray, #2E2F30);
   background: linear-gradient(0deg, #E8E8E8 0%, #E8E8E8 100%), url(<path-to-image>) lightgray 0% 0%/100px 100px repeat;
   background-blend-mode: normal, difference;
+}
+
+.display-container {
+  display: grid;
+  width: 1440px;
+  height: 1878px;
+  padding: 80px;
+  row-gap: 24px;
+  column-gap: 16px;
+  grid-template-rows: repeat(15, minmax(0, 1fr));
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+.display-container img {
+  flex: 1 0 0;
+  align-self: stretch;
+  grid-row: 1/span 5;
+  grid-column: 5/span 8;
 }
 
 body {
