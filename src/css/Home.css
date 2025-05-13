@@ -1,0 +1,19 @@
+.home {
+  display: flex;
+  width: 1440px;
+  padding: 0px 100px 48px 100px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.home-select {
+  display: flex;
+  padding: 48px 32px 0px 32px;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  align-self: stretch;
+  border-radius: 0px 0px 12px 12px;
+  border: 2px solid var(--Neutral-dark-gray, #2E2F30);
+  background: linear-gradient(0deg, #E8E8E8 0%, #E8E8E8 100%), url(<path-to-image>) lightgray 0% 0%/100px 100px repeat;
+  background-blend-mode: normal, difference;
+}/*# sourceMappingURL=Home.css.map */
