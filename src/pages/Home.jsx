@@ -10,7 +10,7 @@ export default function Home() {
         </section>
         
         <section className="pick">
-          <div>
+          <div className="pick-head">
           <h1 className="title">Baby Water’s  Pick</h1>
           <h1 className="timesale">Time Sale ~ 05/30</h1>
           </div>
@@ -26,7 +26,7 @@ export default function Home() {
          </section>
 
          <section className="world">
-          <div>
+          <div className="world-head">
           <h1 className="title">World Special</h1>
           <h1 className="timesale">Time Sale ~ 06/10</h1>
           </div>

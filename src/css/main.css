@@ -314,9 +314,13 @@ a {
 }
 .home h1 {
   font-family: "Special Elite", system-ui;
+  font-size: 64px;
 }
 .home a {
   font-family: "Special Elite", system-ui;
+}
+.home .btn-seemore {
+  font-size: 64px;
 }
 
 .banner-container {
@@ -344,21 +348,30 @@ a {
   background-blend-mode: normal, difference;
 }
 
-.display-container {
-  display: grid;
-  width: 1440px;
-  height: 1878px;
-  padding: 80px;
-  row-gap: 24px;
-  column-gap: 16px;
-  grid-template-rows: repeat(15, minmax(0, 1fr));
-  grid-template-columns: repeat(12, minmax(0, 1fr));
+.pick div,
+.world div {
+  display: flex;
 }
-.display-container img {
-  flex: 1 0 0;
-  align-self: stretch;
-  grid-row: 1/span 5;
-  grid-column: 5/span 8;
+.pick div .title,
+.world div .title {
+  flex: 1;
+}
+.pick div .timesale,
+.world div .timesale {
+  flex: 1;
+  color: #933043;
+}
+
+.btn-container {
+  display: flex;
+  padding: 12px 0px;
+}
+.btn-container .btn-seemore {
+  display: flex;
+  padding: 16px 80px;
+  border-radius: 99px;
+  border: 2px solid var(--Neutral-dark-gray, #2E2F30);
+  background: var(--bg, #E8E8E8);
 }
 
 body {
@@ -376,4 +389,4 @@ body {
 h1 {
   font-size: 2rem;
   color: #2a2929;
-}/*# sourceMappingURL=main.css.map */
+}

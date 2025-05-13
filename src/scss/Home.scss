@@ -6,9 +6,15 @@
 
     h1 {
         font-family: $font-en-handwrite;
+        font-size: 64px;
     }
+
     a {
         font-family: $font-en-handwrite;
+    }
+
+    .btn-seemore {
+        font-size: 64px;
     }
 }
 
@@ -41,3 +47,34 @@
     background-blend-mode: normal, difference;
 }
 
+.pick,
+.world {
+    div {
+        display: flex;
+
+        .title {
+            flex: 1;
+        }
+
+        .timesale {
+            flex: 1;
+            color: #933043;
+        }
+    }
+}
+
+
+
+.btn-container {
+    display: flex;
+    padding: 12px 0px;
+
+    .btn-seemore {
+        display: flex;
+        padding: 16px 80px;
+
+        border-radius: 99px;
+        border: 2px solid var(--Neutral-dark-gray, #2E2F30);
+        background: var(--bg, #E8E8E8);
+    }
+}
