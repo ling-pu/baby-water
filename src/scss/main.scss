@@ -7,7 +7,7 @@
 // @use "keyframe";
 
 // 串google font：只允許編碼在它上面
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Homemade+Apple&family=Special+Elite&family=Homemade+Apple&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Allerta&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Homemade+Apple&family=Special+Elite&family=Homemade+Apple&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 @import './component/Announcement';
 @import './component/Header';
@@ -18,10 +18,15 @@
   color: $text-color1;
 
   font-family: "Lato", sans-serif;
-  background-color: $bg-color1;
   color: $text-color1;
   font-size: 1.2rem;
   line-height: 1.5;
+}
+
+.wrap {
+  max-width: 1280px;
+  background: $bg-color1;
+  margin: auto;
 }
 
 h1 {

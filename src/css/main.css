@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Homemade+Apple&family=Special+Elite&family=Homemade+Apple&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Allerta&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Homemade+Apple&family=Special+Elite&family=Homemade+Apple&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 .homemade-apple-regular {
   font-family: "Homemade Apple", cursive;
   font-weight: 400;
@@ -311,16 +311,26 @@ a {
   max-width: 1280px;
   margin: auto;
   flex-direction: column;
+  gap: 48px;
 }
 .home h1 {
   font-family: "Special Elite", system-ui;
   font-size: 64px;
 }
+.home .pick-head {
+  border-radius: 8px 8px 0px 0px;
+  border: 2px solid var(--Neutral-medium-gray-2, #6F7275);
+  background: var(--pink-bg, #ECD0DF);
+}
+.home .world-head {
+  border-radius: 8px 8px 0px 0px;
+  background: #92B9C5;
+}
 .home a {
   font-family: "Special Elite", system-ui;
 }
 .home .btn-seemore {
-  font-size: 64px;
+  font-size: 32px;
 }
 
 .banner-container {
@@ -364,10 +374,13 @@ a {
   background-blend-mode: normal, difference;
 }
 .content .cardlist {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+  display: grid;
+  height: 452px;
+  row-gap: 20px;
+  column-gap: 20px;
   align-self: stretch;
+  grid-template-rows: repeat(1, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .btn-container {
@@ -384,6 +397,7 @@ a {
 
 .item-card {
   display: flex;
+  width: 100%;
   padding: 12px 8px;
   flex-direction: column;
   align-items: center;
@@ -391,10 +405,22 @@ a {
   border-radius: 8px;
 }
 .item-card figure {
+  width: 100%;
   height: 300px;
   border-radius: 6px;
+  border-radius: 8px;
+  background: url(<path-to-image>) lightgray 50%/cover no-repeat;
 }
-.item-card .title {
+.item-card .content-container {
+  display: flex;
+  padding: 0px 8px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+}
+.item-card .content-container .title {
+  width: 100%;
   font-family: "Noto Sans";
   font-size: 16px;
   font-style: normal;
@@ -403,23 +429,40 @@ a {
   /* 24px */
   letter-spacing: 1.6px;
 }
-.item-card .item-price {
-  font-family: "Lato", sans-serif;
-  font-weight: 800;
+.item-card .content-container .item-price {
+  font-family: "Allerta", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  /* 36px */
 }
-.item-card .pic-sm-container {
+.item-card .content-container .pic-sm-container {
+  width: 100%;
   display: flex;
   align-items: flex-start;
   gap: 4px;
+}
+.item-card .content-container .pic-sm-container img {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  border: 1px solid var(--Neutral-light-gray, #F3F7FB);
+  background: url(<path-to-image>) lightgray 50%/cover no-repeat;
 }
 
 * {
   color: #2a2929;
   font-family: "Lato", sans-serif;
-  background-color: #e8e8e8;
   color: #2a2929;
   font-size: 1.2rem;
   line-height: 1.5;
+}
+
+.wrap {
+  max-width: 1280px;
+  background: #e8e8e8;
+  margin: auto;
 }
 
 h1 {

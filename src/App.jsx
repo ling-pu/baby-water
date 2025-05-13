@@ -13,9 +13,9 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className="wrap">
-      {/* 文字跑馬燈 */}
-      <Announcement/>
+    <>
+    {/* 文字跑馬燈 */}
+    <Announcement/>
       
       {/* 載入導覽列 */}
       <Header>
@@ -28,9 +28,14 @@ function App() {
           <Routes path="/user" element={<User />} />
         </Routes>
       </Header>
+      
+    <div className="wrap">
+      
       <Home/>
 
     </div>
+    </>
+    
 
   )
 }

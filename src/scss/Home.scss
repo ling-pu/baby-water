@@ -3,10 +3,22 @@
     max-width: 1280px;
     margin: auto;
     flex-direction: column;
+    gap: 48px;
 
     h1 {
         font-family: $font-en-handwrite;
         font-size: 64px;
+    }
+
+    .pick-head {
+        border-radius: 8px 8px 0px 0px;
+        border: 2px solid var(--Neutral-medium-gray-2, #6F7275);
+        background: var(--pink-bg, #ECD0DF);
+    }
+
+    .world-head {
+        border-radius: 8px 8px 0px 0px;
+        background: #92B9C5;
     }
 
     a {
@@ -14,7 +26,7 @@
     }
 
     .btn-seemore {
-        font-size: 64px;
+        font-size: 32px;
     }
 }
 
@@ -65,10 +77,13 @@
     background-blend-mode: normal, difference;
 
     .cardlist {
-        display: flex;
-        align-items: center;
-        gap: 20px;
+        display: grid;
+        height: 452px;
+        row-gap: 20px;
+        column-gap: 20px;
         align-self: stretch;
+        grid-template-rows: repeat(1, minmax(0, 1fr));
+        grid-template-columns: repeat(4, minmax(0, 1fr));
 
     }
 }
