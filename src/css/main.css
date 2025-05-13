@@ -236,7 +236,7 @@ a {
   font-size: 1rem;
   color: #ffffff;
   display: inline-block;
-  padding-right: 2rem; /* 控制每句之間的間距 */
+  padding-right: 5rem; /* 控制每句之間的間距 */
   white-space: nowrap;
 }
 
@@ -335,19 +335,6 @@ a {
   width: 100%;
 }
 
-.home-select {
-  display: flex;
-  padding: 48px 32px 0px 32px;
-  flex-direction: column;
-  align-items: center;
-  gap: 48px;
-  align-self: stretch;
-  border-radius: 0px 0px 12px 12px;
-  border: 2px solid var(--Neutral-dark-gray, #2E2F30);
-  background: linear-gradient(0deg, #E8E8E8 0%, #E8E8E8 100%), url(<path-to-image>) lightgray 0% 0%/100px 100px repeat;
-  background-blend-mode: normal, difference;
-}
-
 .pick div,
 .world div {
   display: flex;
@@ -362,6 +349,27 @@ a {
   color: #933043;
 }
 
+.content {
+  display: flex;
+  padding: 24px 48px;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  align-self: stretch;
+  border-radius: 0px 0px 12px 12px;
+  border-right: 2px solid var(--Neutral-medium-gray-2, #6F7275);
+  border-bottom: 2px solid var(--Neutral-medium-gray-2, #6F7275);
+  border-left: 2px solid var(--Neutral-medium-gray-2, #6F7275);
+  background: linear-gradient(0deg, #E8E8E8 0%, #E8E8E8 100%), url(<path-to-image>) lightgray 0% 0%/100px 100px repeat;
+  background-blend-mode: normal, difference;
+}
+.content .cardlist {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  align-self: stretch;
+}
+
 .btn-container {
   display: flex;
   padding: 12px 0px;
@@ -374,7 +382,39 @@ a {
   background: var(--bg, #E8E8E8);
 }
 
-body {
+.item-card {
+  display: flex;
+  padding: 12px 8px;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  border-radius: 8px;
+}
+.item-card figure {
+  height: 300px;
+  border-radius: 6px;
+}
+.item-card .title {
+  font-family: "Noto Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  /* 24px */
+  letter-spacing: 1.6px;
+}
+.item-card .item-price {
+  font-family: "Lato", sans-serif;
+  font-weight: 800;
+}
+.item-card .pic-sm-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+* {
+  color: #2a2929;
   font-family: "Lato", sans-serif;
   background-color: #e8e8e8;
   color: #2a2929;
@@ -382,11 +422,7 @@ body {
   line-height: 1.5;
 }
 
-* {
-  color: #2a2929;
-}
-
 h1 {
   font-size: 2rem;
   color: #2a2929;
-}
+}/*# sourceMappingURL=main.css.map */
