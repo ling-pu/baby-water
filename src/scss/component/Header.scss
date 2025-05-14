@@ -1,10 +1,15 @@
+@use "../variable/" as *;
 /* 導覽列 */
 .siteHeader {
   position: sticky;
-  top: 24px;
+  top: 0px;
   width: 100%;
   display: flex;
   padding: 16px 48px;
+
+  background-color: $bg-color1;
+  border-bottom: 1px solid $color-black;
+  
   ul {
     display: flex;
   }

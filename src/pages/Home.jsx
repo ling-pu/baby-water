@@ -1,7 +1,7 @@
 import banner from "../assets/banner.gif"
 import bg from "../assets/bg.svg"
 import Card from "../component/Card"
-import {picks} from "../data/Picks"
+import { picks, world } from "../data/Data"
 
 export default function Home() {
   return (
@@ -20,22 +20,22 @@ export default function Home() {
             {/* 1列4欄 */}
             <div className="cardlist">
               {/* Picks卡片區 */}
-              {picks.map((picks, index)=>(
+              {picks.map((picks, index) => (
                 <Card
-                key={index}
-                imgSrc={picks.imgSrc}
-                title={picks.title}
-                price={picks.price}
-                link={picks.link}
-                pic1={picks.pic1}
-                pic2={picks.pic2}
-                pic3={picks.pic3}
-              />
+                  key={index}
+                  imgSrc={picks.imgSrc}
+                  title={picks.title}
+                  price={picks.price}
+                  link={picks.link}
+                  pic1={picks.pic1}
+                  pic2={picks.pic2}
+                  pic3={picks.pic3}
+                />
               ))}
             </div>
             {/* btn */}
             <div className="btn-container">
-              <a href="#" className="btn-seemore">see more</a>
+              <a href="./Timesale" className="btn-seemore">see more</a>
             </div>
           </div>
         </section>
@@ -48,17 +48,27 @@ export default function Home() {
           <div className="content">
             {/* 1列4欄 */}
             <div className="cardlist">
-              
-              
+              {/* World卡片區 */}
+              {world.map((world, index) => (
+                <Card
+                  key={index}
+                  imgSrc={world.imgSrc}
+                  title={world.title}
+                  price={world.price}
+                  link={world.link}
+                  pic1={world.pic1}
+                  pic2={world.pic2}
+                  pic3={world.pic3}
+                />
+              ))}
 
             </div>
             {/* btn */}
             <div className="btn-container">
-              <a href="#" className="btn-seemore">see more</a>
+              <a href="./World" className="btn-seemore">see more</a>
             </div>
           </div>
         </section>
-
 
       </div>
 

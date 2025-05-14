@@ -1,3 +1,8 @@
 export default function Japan() {
-    return <h1>Japan Page</h1>
+    return (
+      <>
+      <h1>Japan Page</h1>
+      </>
+
+    )
   }
