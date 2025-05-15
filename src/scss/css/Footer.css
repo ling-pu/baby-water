@@ -63,3 +63,16 @@
   font-weight: 900;
   font-style: italic;
 }
+
+/* Footer */
+#footer {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  background-color: #23222A;
+  bottom: 0px;
+  width: 100%;
+  display: flex;
+  padding: 16px 48px;
+}

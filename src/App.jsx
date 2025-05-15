@@ -3,6 +3,7 @@ import Header from './component/Header'
 import { BrowserRouter, Routes } from 'react-router-dom'
 import Announcement from './component/Announcement'
 import Pages from './pages/Pages'
+import Footer from './component/Footer'
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
         <Announcement />
         <Header />
         <Pages/>
+        <Footer/>
       </BrowserRouter>
     </>
   )

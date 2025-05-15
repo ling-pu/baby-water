@@ -109,6 +109,7 @@
   border: none;
   cursor: pointer;
   margin: 0 1rem;
+  background-color: transparent;
 }
 .siteHeader .icon-nav .icon-search {
   background-image: url("../assets/icons/Search.svg");
@@ -131,4 +132,4 @@
 }
 .siteHeader .main-nav li {
   margin: 8px 24px;
-}/*# sourceMappingURL=Header.css.map */
+}
