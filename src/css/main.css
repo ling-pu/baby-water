@@ -458,7 +458,7 @@ a {
 #footer div,
 #footer span {
   color: var(--bg, #E8E8E8);
-  font-family: "Noto Serif TC", "Lato", sans-serif;
+  font-family: "Noto Serif TC";
   font-weight: 400;
   line-height: 160%;
 }
@@ -468,7 +468,7 @@ a {
   justify-content: space-between;
   align-items: center;
   align-self: stretch;
-  margin: 24px 0;
+  margin: 16px 0;
   border-bottom: 1px solid var(--bg, #E8E8E8);
 }
 #footer .footer-row1 .follow-us {
@@ -501,16 +501,82 @@ a {
 }
 #footer .terms {
   display: flex;
-  gap: 8px;
+  gap: 16px;
   font-size: 16px;
   font-weight: 400;
   line-height: 160%;
 }
 
+.homemade-apple-regular {
+  font-family: "Homemade Apple", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.lato-thin {
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.lato-light {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.lato-regular {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.lato-bold {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.lato-black {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.lato-thin-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.lato-light-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.lato-regular-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.lato-bold-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.lato-black-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
 .home {
   display: flex;
   max-width: 1280px;
-  margin: auto;
+  margin: 48px auto;
   flex-direction: column;
   gap: 48px;
 }
@@ -526,26 +592,28 @@ a {
 }
 .home .world-head {
   padding: 16px 16px 0px;
-  border-radius: 8px 8px 0px 0px;
+  border-radius: 8px;
   background: #92B9C5;
 }
 .home a {
   font-family: "Special Elite", system-ui;
 }
 .home .btn-seemore {
-  font-size: 32px;
+  font-size: 24px;
 }
 
 .banner-container {
   display: flex;
-  align-self: center;
+  justify-content: center;
   align-items: center;
   width: 100%;
   height: 60vh;
   background-size: cover;
 }
 .banner-container img {
+  object-fit: contain;
   width: 80%;
+  max-width: 100%;
 }
 
 .pick div,
@@ -590,16 +658,19 @@ a {
   object-fit: cover;
 }
 
+.world .content {
+  border: none;
+}
+
 .btn-container {
   display: flex;
   padding: 12px 0px;
 }
 .btn-container .btn-seemore {
   display: flex;
-  padding: 16px 80px;
+  padding: 8px 48px;
   border-radius: 99px;
   border: 2px solid var(--Neutral-dark-gray, #2E2F30);
-  background: var(--bg, #E8E8E8);
 }
 
 .item-card {
@@ -664,12 +735,6 @@ a {
   color: #2a2929;
   font-size: 1.2rem;
   line-height: 1.5;
-}
-
-.wrap {
-  max-width: 1280px;
-  background: #e8e8e8;
-  margin: auto;
 }
 
 h1 {

@@ -65,7 +65,7 @@ export default function Home() {
             </div>
             {/* btn */}
             <div className="btn-container">
-              <a href="./World" className="btn-seemore">see more</a>
+              <a href="./World" className="btn-seemore">shop now</a>
             </div>
           </div>
         </section>
