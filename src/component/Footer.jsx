@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <>
-      <div id="footer">
+      <footer>
         <div className="footer-row1">
           <div className="follow-us">
             <h2>Follow us</h2>
@@ -26,7 +26,7 @@ export default function Footer() {
             <span>隱私政策</span> | 
             <span>退款政策</span>
           </div>
-      </div>
+      </footer>
     </>
 
   )

@@ -1,8 +1,9 @@
 @use "../variable/" as *;
 
 /* Footer */
-#footer {
+footer {
     // width: 1440px;
+    position: relative;
     padding: 48px 80px;
     flex-direction: column;
     justify-content: center;
