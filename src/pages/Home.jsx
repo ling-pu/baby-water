@@ -9,6 +9,7 @@ export default function Home() {
       <div className="home">
         <section className="banner-container">
           <img src={banner} alt="" />
+          <p>Baby Water選物，想帶大家認識「值得收藏」的衣櫃成員——質感、經典、耐穿，好搭又能陪你很多年的那種，是會讓人越穿越愛、每年都想再拿出來穿的存在 ♡ 選得少一點，選得更剛好。</p>
         </section>
 
         <section className="pick">

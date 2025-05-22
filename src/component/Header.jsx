@@ -1,26 +1,33 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "/logo/logo.svg";
-import Announcement from "./Announcement";
+import { useState } from "react";
+import CartDrawer from './CartDrawer';
 
 export default function Header() {
-    const IconNav = () => {
-        const handleClick = (type) => {
-            switch (type) {
-                case 'search':
-                    const keyword = prompt('輸入關鍵字');
-                    if (keyword) {
-                        window.location.href = `/search?q=${encodeURIComponent(keyword)}`;
-                    }
-                    break;
-                case 'user':
-                    window.location.href = '/user';
-                    break;
-                case 'cart':
-                    window.location.href = '/cart';
-                    break;
-            }
+
+    const navigate = useNavigate();
+
+    const [isCartOpen, setIsCartOpen] = useState(false);
+
+    const handleClick = (type) => {
+        switch (type) {
+            case 'search':
+                const keyword = prompt('輸入關鍵字');
+                if (keyword) {
+                    navigate(`/search?q=${encodeURIComponent(keyword)}`);
+                }
+                break;
+            case 'user':
+                navigate('/user');
+                break;
+            case 'cart':
+                setIsCartOpen(true);
+                break;
+            default:
+                break;
         }
     }
+
     return (
         <>
             <header className="siteHeader isPC">
@@ -41,26 +48,38 @@ export default function Header() {
                 <nav className="icon-nav">
                     <ul className="icon">
                         <li>
-                            <button className="icon-btn icon-search"
+                            <button
+                                className="icon-btn icon-search"
                                 onClick={() => handleClick('search')}
-                                title="搜尋"></button>
+                                title="搜尋"
+                                aria-label="搜尋商品"
+                            ></button>
                         </li>
                         <li>
                             <button
                                 className="icon-btn icon-user"
                                 onClick={() => handleClick('user')}
-                                title="會員中心"></button>
+                                title="會員中心"
+                                aria-label="前往會員中心"
+                            ></button>
                         </li>
                         <li>
-                            <button className="icon-btn icon-cart"
+                            <button
+                                className="icon-btn icon-cart"
                                 onClick={() => handleClick('cart')}
-                                title="購物車"></button>
+                                title="購物車"
+                                aria-label="查看購物車"
+                            ></button>
                         </li>
                     </ul>
                 </nav>
 
 
             </header>
+
+            {/* 購物車小視窗 */}
+            <CartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
+        
         </>
 
 

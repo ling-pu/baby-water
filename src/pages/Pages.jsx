@@ -5,6 +5,7 @@ import World from "./World"
 import Timesale from "./Timesale"
 import User from "./User"
 import NotFound from "./NotFound"
+import Cart from "./Cart"
 
 export default function Pages() {
     return (
@@ -17,6 +18,7 @@ export default function Pages() {
                 <Route path="/world" element={<World />} />
                 <Route path="/timesale" element={<Timesale />} />
                 <Route path="/user" element={<User />} />
+                <Route path="/cart" element={<Cart />} />
             </Routes>
 
         </>
