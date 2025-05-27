@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .homemade-apple-regular {
   font-family: "Homemade Apple", cursive;
   font-weight: 400;
@@ -62,4 +63,44 @@
   font-family: "Lato", sans-serif;
   font-weight: 900;
   font-style: italic;
+}
+
+/* 跑馬燈 */
+.announcement {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  background-color: #23222A;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.announcement__marquee {
+  position: relative;
+  width: 100%;
+}
+
+.announcement__track {
+  display: flex;
+  width: fit-content;
+  animation: marquee 100s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.announcement__track span {
+  font-size: 1rem;
+  color: #ffffff;
+  display: inline-block;
+  padding-right: 5rem; /* 控制每句之間的間距 */
+  white-space: nowrap;
 }
