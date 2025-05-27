@@ -5,11 +5,12 @@ import Announcement from './component/Announcement'
 import Pages from './pages/Pages'
 import Footer from './component/Footer'
 import CartDrawer from './component/CartDrawer'
+const base = import.meta.env.BASE_URL;
 
 function App() {
-
   return (
     <>
+    
       <BrowserRouter>
         <Announcement />
         <Header />
