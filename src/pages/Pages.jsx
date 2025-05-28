@@ -12,13 +12,13 @@ export default function Pages() {
         <>
             {/* 呼叫頁面 */}
             <Routes>
-                <Route path="*" element={<NotFound />} />
                 <Route path="/" element={<Home />} />
                 <Route path="/japan" element={<Japan />} />
                 <Route path="/world" element={<World />} />
                 <Route path="/timesale" element={<Timesale />} />
                 <Route path="/user" element={<User />} />
                 <Route path="/cart" element={<Cart />} />
+                <Route path="*" element={<NotFound />} />
             </Routes>
 
         </>

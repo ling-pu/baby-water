@@ -200,6 +200,72 @@ a {
   text-decoration: none;
 }
 
+.homemade-apple-regular {
+  font-family: "Homemade Apple", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.lato-thin {
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.lato-light {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.lato-regular {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.lato-bold {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.lato-black {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.lato-thin-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.lato-light-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.lato-regular-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.lato-bold-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.lato-black-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
 /* 跑馬燈 */
 .announcement {
   position: sticky;
@@ -443,6 +509,7 @@ a {
 
 /* Footer */
 footer {
+  position: relative;
   padding: 48px 80px;
   flex-direction: column;
   justify-content: center;
@@ -582,7 +649,7 @@ footer .terms {
 }
 .home h1 {
   font-family: "Special Elite", system-ui;
-  font-size: 64px;
+  font-size: 40px;
 }
 .home .pick-head {
   padding: 16px 16px 0px;
@@ -673,6 +740,117 @@ footer .terms {
   border: 2px solid var(--Neutral-dark-gray, #2E2F30);
 }
 
+#jp {
+  align-items: flex-start;
+  display: flex;
+  max-width: 1440px;
+  padding: 0px auto;
+  margin: 48px auto;
+  gap: 48px;
+  justify-content: center;
+}
+#jp span {
+  /* noto 10 10% */
+  font-family: "Noto Sans";
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  /* 15px */
+  letter-spacing: 1px;
+}
+#jp li {
+  font-family: "Noto Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  /* 24px */
+  letter-spacing: 1.6px;
+}
+
+#filter {
+  display: flex;
+  padding: 0px 16px;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+}
+.title h1 {
+  font-family: "Noto Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  /* 24px */
+  letter-spacing: 1.6px;
+}
+.title #itemList-number {
+  color: var(--Neutral-medium-gray-2, #6F7275);
+  /* noto 16 10% */
+  font-family: "Noto Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  /* 24px */
+  letter-spacing: 1.6px;
+}
+
+#products {
+  display: flex;
+  width: 1022px;
+  padding-bottom: 100px;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  flex-shrink: 0;
+}
+#products .title .title-row1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-self: stretch;
+}
+#products .title .title-row1 div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#products .title .title-row2 {
+  display: flex;
+  justify-content: flex-end;
+  align-self: stretch;
+  padding: 0px 8px;
+  gap: 8px;
+}
+#products .scroll-area {
+  display: flex;
+  padding-bottom: 100px;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+#products .cardlist {
+  display: grid;
+  height: 452px;
+  row-gap: 20px;
+  column-gap: 20px;
+  align-self: stretch;
+  grid-template-rows: repeat(1, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+#products .cardlist img {
+  object-fit: cover;
+}
+
 .item-card {
   display: flex;
   width: 100%;
@@ -689,7 +867,7 @@ footer .terms {
   background: url(<path-to-image>) lightgray 50%/cover no-repeat;
 }
 .item-card figure img {
-  width: 100%;
+  height: 100%;
 }
 .item-card .content-container {
   display: flex;
@@ -731,6 +909,54 @@ footer .terms {
   background: url(<path-to-image>) lightgray 50%/cover no-repeat;
 }
 
+.cart-drawer {
+  z-index: 99;
+  right: 0;
+  position: fixed;
+  display: block;
+}
+
+.cart-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cart-drawer-panel {
+  width: 300px;
+  height: 100%;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: inline-flex;
+  padding: 24px;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  border-radius: 8px;
+  border: 1px solid #23222A;
+  background: var(--bg, #E8E8E8);
+}
+
+.showProgress-stoke {
+  position: relative;
+  height: 16px;
+  align-self: stretch;
+  border-radius: 48px;
+  border: 1px solid var(--black, #23222A);
+  background: var(--bg, #E8E8E8);
+  overflow: hidden;
+}
+.showProgress-stoke .showProgress-solid {
+  width: 60%;
+  height: 14px;
+  position: absolute;
+  top: 1px;
+  border-radius: 48px 0px 0px 48px;
+  background: var(--pink, #FFB8C6);
+}
+
 * {
   color: #2a2929;
   font-family: "Lato", sans-serif;
@@ -742,4 +968,4 @@ footer .terms {
 h1 {
   font-size: 2rem;
   color: #2a2929;
-}/*# sourceMappingURL=main.css.map */
+}

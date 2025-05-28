@@ -1,7 +1,13 @@
+import { useNavigate } from "react-router-dom";
 import Card from "../component/Card"
 import { picks, world } from "../data/Data"
+const base = import.meta.env.BASE_URL;
 
 export default function Japan() {
+  const navigate = useNavigate();
+  function onClickArea(id) {
+    navigate(`${base}/japan/${id}`)
+  }
   return (
     <>
       <main id="jp">

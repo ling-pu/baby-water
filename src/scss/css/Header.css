@@ -133,3 +133,22 @@
 .siteHeader .main-nav li {
   margin: 8px 24px;
 }
+.siteHeader .main-nav li.active > a {
+  color: #f60;
+  font-weight: bold;
+}
+.siteHeader .main-search-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.siteHeader .main-search-box {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+}

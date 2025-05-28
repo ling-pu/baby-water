@@ -1,7 +1,9 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "/logo/logo.svg";
 import { useState } from "react";
 import CartDrawer from './CartDrawer';
+import categories from "../js/categories";
+import MainSearch from "./MainSearch";
 
 export default function Header() {
 
@@ -12,10 +14,7 @@ export default function Header() {
     const handleClick = (type) => {
         switch (type) {
             case 'search':
-                const keyword = prompt('輸入關鍵字');
-                if (keyword) {
-                    navigate(`/search?q=${encodeURIComponent(keyword)}`);
-                }
+                setIsSearchOpen(true);
                 break;
             case 'user':
                 navigate('/user');
@@ -27,6 +26,14 @@ export default function Header() {
                 break;
         }
     }
+
+    const location = useLocation();
+
+    const [isSearchOpen, setIsSearchOpen] = useState(false);
+    const handleSearch = (keyword) => {
+        navigate(`/search?q=${encodeURIComponent(keyword)}`);
+    };
+
 
     return (
         <>
@@ -40,11 +47,14 @@ export default function Header() {
                 {/* 導覽列區 */}
                 <nav className="main-nav">
                     <ul>
-                        <li><Link to="/japan">日本代購</Link></li>
-                        <li><Link to="/world">世界選品</Link></li>
-                        <li><Link to="/timesale">每週超優惠</Link></li>
+                        {categories.map((c) => (
+                            <li key={c.id} className={location.pathname === c.path ? 'active' : ''}>
+                                <Link to={c.path}>{c.label}</Link>
+                            </li>
+                        ))}
                     </ul>
                 </nav>
+
                 <nav className="icon-nav">
                     <ul className="icon">
                         <li>
@@ -79,7 +89,15 @@ export default function Header() {
 
             {/* 購物車小視窗 */}
             <CartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
-        
+
+            {/* 搜尋彈窗 */}
+            {isSearchOpen && (
+                <MainSearch
+                    onClose={() => setIsSearchOpen(false)}
+                    onSearch={handleSearch}
+                />
+            )}
+
         </>
 
 
