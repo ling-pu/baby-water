@@ -1,3 +1,6 @@
+const base = import.meta.env.BASE_URL;
+
+
 export default function Footer() {
   return (
     <>
@@ -6,8 +9,8 @@ export default function Footer() {
           <div className="follow-us">
             <h2>Follow us</h2>
             <div className="footer-icon-container">
-              <img src="/icons/IG.svg" alt="instagram" />
-              <img src="/icons/line.svg" alt="line" />
+              <img src={`${base}icons/IG.svg`} alt="instagram" />
+              <img src={`${base}icons/line.svg`} alt="line" />
             </div>
           </div>
           <div className="contact-us">
@@ -21,11 +24,11 @@ export default function Footer() {
         <div className="copyright">
             copyright © 2025 babywater.All rights reserved.
           </div>
-          <div className="terms">
+          {/* <div className="terms">
             <span>服務條款</span> | 
             <span>隱私政策</span> | 
             <span>退款政策</span>
-          </div>
+          </div> */}
       </footer>
     </>
 
