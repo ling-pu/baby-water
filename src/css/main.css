@@ -440,6 +440,25 @@ a {
 .siteHeader .main-nav li {
   margin: 8px 24px;
 }
+.siteHeader .main-nav li.active > a {
+  color: #f60;
+  font-weight: bold;
+}
+.siteHeader .main-search-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.siteHeader .main-search-box {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+}
 
 .homemade-apple-regular {
   font-family: "Homemade Apple", cursive;
@@ -969,3 +988,36 @@ h1 {
   font-size: 2rem;
   color: #2a2929;
 }
+
+/* 游標 */
+body {
+  cursor: none;
+}
+
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.cursor__ball {
+  position: absolute;
+  border-radius: 50%;
+  will-change: transform;
+}
+
+.cursor__ball--big {
+  width: 30px;
+  height: 30px;
+  background-color: #2a2929;
+  transition: transform 0.2s ease;
+}
+
+.cursor__ball--small {
+  width: 8px;
+  height: 8px;
+  background-color: rgb(135, 127, 127);
+  transition: transform 0.1s ease;
+}/*# sourceMappingURL=main.css.map */

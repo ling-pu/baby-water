@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 
 export const picks = [
   {
+    id: "classic-tshirt-white",
     imgSrc: "/images/tops/1/1.JPG",
     pic1: "/images/tops/1/1.JPG",
     pic2: "/images/tops/1/2.JPG",
@@ -14,6 +15,7 @@ export const picks = [
     link: "#" // 內容頁面
   },
   {
+    id: "classic-tshirt-white2",
     imgSrc: "/images/tops/1/1.JPG",
     pic1: "/images/tops/1/1.JPG",
     pic2: "/images/tops/1/2.JPG",
@@ -26,6 +28,7 @@ export const picks = [
     link: "#" // 內容頁面
   },
   {
+    id: "classic-tshirt-white3",
     imgSrc: "/images/tops/1/1.JPG",
     pic1: "/images/tops/1/1.JPG",
     pic2: "/images/tops/1/2.JPG",
@@ -38,6 +41,7 @@ export const picks = [
     link: "#" // 內容頁面
   },
   {
+    id: "classic-tshirt-white",
     imgSrc: "/images/tops/1/1.JPG",
     pic1: "/images/tops/1/1.JPG",
     pic2: "/images/tops/1/2.JPG",
@@ -54,6 +58,7 @@ export const picks = [
 
 export const world = [
   {
+    id: "summer-vest-beige",
     imgSrc: "/images/world/1/1.JPG",
     pic1: "/images/world/1/1.JPG",
     pic2: "/images/world/1/2.JPG",
@@ -66,6 +71,7 @@ export const world = [
     link: "#" // 內容頁面
   },
   {
+    id: "summer-vest-beige2",
     imgSrc: "/images/world/2/1.JPG",
     pic1: "/images/world/2/01.JPG",
     pic2: "/images/world/2/2.JPG",
@@ -78,6 +84,7 @@ export const world = [
     link: "#" // 內容頁面
   },
   {
+    id: "summer-vest-beige3",
     imgSrc: "/images/world/3/1.JPG",
     pic1: "/images/world/3/1.JPG",
     pic2: "/images/world/3/2.JPG",
@@ -91,6 +98,7 @@ export const world = [
     content: ''
   },
   {
+    id: "summer-vest-beige4",
     imgSrc: "/images/tops/1/1.JPG",
     pic1: "/images/tops/1/1.JPG",
     pic2: "/images/tops/1/2.JPG",

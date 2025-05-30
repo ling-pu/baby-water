@@ -23,7 +23,8 @@ export default function Home() {
               {/* Picks卡片區 */}
               {picks.map((picks, index) => (
                 <Card
-                  key={index}
+                  key={picks.id || index}
+                  id={picks.id} // ✅ 傳入 id
                   imgSrc={picks.imgSrc}
                   title={picks.title}
                   price={picks.price}
@@ -52,7 +53,8 @@ export default function Home() {
               {/* World卡片區 */}
               {world.map((world, index) => (
                 <Card
-                  key={index}
+                  key={world.id || index}
+                  id={world.id} // ✅ 傳入 id
                   imgSrc={world.imgSrc}
                   title={world.title}
                   price={world.price}

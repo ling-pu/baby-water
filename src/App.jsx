@@ -5,6 +5,7 @@ import Announcement from './component/Announcement'
 import Pages from './pages/Pages'
 import Footer from './component/Footer'
 import CartDrawer from './component/CartDrawer'
+import Cursor from './component/Cursor.jsx'
 // 確保根目錄路徑正確部署到github
 const base = import.meta.env.BASE_URL;
 
@@ -12,6 +13,7 @@ function App() {
   return (
     <>
       <BrowserRouter basename={base}>
+      <Cursor/>
         <Announcement />
         <Header />
         <Pages/>

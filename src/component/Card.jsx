@@ -1,14 +1,15 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 const base = import.meta.env.BASE_URL;
 
 const addBase = (path) => {
   if (!path) return "";
-  // 避免重複斜線
   return base + path.replace(/^\/+/, "");
 };
 
 const Card = ({
+  id, // ⬅️ 加上 id
   imgSrc,
   pic1,
   pic2,
@@ -18,17 +19,23 @@ const Card = ({
   style3,
   title,
   price,
-  link = "#"
 }) => {
   const [mainImg, setMainImg] = useState(imgSrc);
+  const navigate = useNavigate();
+
+  // ⬇️ 點擊跳轉到 /product/:id
+  const handleClick = () => {
+    if (id) navigate(`/product/${id}`);
+  };
 
   return (
-    <Link to={link} className="item-card">
+    <div onClick={handleClick} className="item-card hoverable">
       <figure>
         <img src={addBase(mainImg)} alt={title} />
       </figure>
       <div className="content-container">
         <h3 className="title">{title}</h3>
+        <del className="item-price-og">{price}</del>
         <p className="item-price">{price}</p>
         <div className="pic-sm-container" onMouseLeave={() => setMainImg(imgSrc)}>
           {pic1 && (
@@ -54,7 +61,7 @@ const Card = ({
           )}
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
 
