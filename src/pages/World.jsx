@@ -72,6 +72,7 @@ export default function World() {
               {filteredItems.map((world, index) => (
                 <Card
                   key={index}
+                  id={world.id}
                   imgSrc={world.imgSrc}
                   title={world.title}
                   price={world.price}

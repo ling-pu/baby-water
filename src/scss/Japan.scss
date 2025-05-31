@@ -124,8 +124,8 @@
         row-gap: 20px;
         column-gap: 20px;
         align-self: stretch;
-        grid-template-rows: repeat(1, minmax(0, 1fr));
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-columns: repeat(4, 1fr); // 固定 4 欄
+        grid-auto-rows: auto; // 每列根據內容決定高度
 
         img {
             object-fit: cover;

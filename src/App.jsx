@@ -12,13 +12,14 @@ const base = import.meta.env.BASE_URL;
 function App() {
   return (
     <>
-      <BrowserRouter basename={base}>
-      <Cursor/>
-        <Announcement />
-        <Header />
-        <Pages/>
-        <Footer/>
-      </BrowserRouter>
+        <BrowserRouter basename={base}>
+          <Cursor />
+          <Announcement />
+          <Header />
+          <Pages />
+          <Footer />
+        </BrowserRouter>
+
     </>
   )
 }

@@ -528,7 +528,6 @@ a {
 
 /* Footer */
 footer {
-  position: relative;
   padding: 48px 80px;
   flex-direction: column;
   justify-content: center;
@@ -868,8 +867,8 @@ footer .terms {
   row-gap: 20px;
   column-gap: 20px;
   align-self: stretch;
-  grid-template-rows: repeat(1, minmax(0, 1fr));
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: auto;
 }
 #products .cardlist img {
   object-fit: cover;
@@ -928,6 +927,7 @@ footer .terms {
 .item-card .content-container .pic-sm-container img {
   width: 40px;
   height: 40px;
+  object-fit: cover;
   border-radius: 4px;
   border: 1px solid var(--Neutral-light-gray, #F3F7FB);
   background: url(<path-to-image>) lightgray 50%/cover no-repeat;
@@ -1021,4 +1021,18 @@ h1 {
   height: 8px;
   background-color: transparent;
   transition: transform 0.1s ease;
+}
+
+html, body {
+  height: 100%;
+}
+
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }/*# sourceMappingURL=main.css.map */

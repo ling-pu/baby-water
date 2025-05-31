@@ -62,3 +62,17 @@ body {
   background-color: transparent;
   transition: transform 0.1s ease;
 }
+// 讓footer 貼底
+html, body {
+  height: 100%;
+}
+
+.page-wrapper {
+  min-height: 100vh; // 頁面最少撐滿一個畫面
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1; // 讓 main 撐滿剩下空間，footer 貼底
+}

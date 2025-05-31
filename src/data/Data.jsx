@@ -41,7 +41,7 @@ export const picks = [
     category: "Tops",
   },
   {
-    id: "classic-tshirt-white",
+    id: "classic-tshirt-white4",
     imgSrc: "/images/tops/1/1.JPG",
     pic1: "/images/tops/1/1.JPG",
     pic2: "/images/tops/1/2.JPG",
@@ -53,6 +53,20 @@ export const picks = [
     price: "NT$ 520",
     category: "Tops",
   },
+  {
+    id: "classic-tshirt-white5",
+    imgSrc: "/images/tops/1/1.JPG",
+    pic1: "/images/tops/1/1.JPG",
+    pic2: "/images/tops/1/2.JPG",
+    pic3: "/images/tops/1/3.JPG",
+    style1: "白色款",
+    style2: "黑色款",
+    style3: "棕色款",
+    title: "經典舒適T恤",
+    price: "NT$ 600",
+    category: "Tops",
+  },
+  
   
 ];
 

@@ -51,7 +51,8 @@
 .item-card .content-container .pic-sm-container img {
   width: 40px;
   height: 40px;
+  object-fit: cover;
   border-radius: 4px;
   border: 1px solid var(--Neutral-light-gray, #F3F7FB);
   background: url(<path-to-image>) lightgray 50%/cover no-repeat;
-}
+}/*# sourceMappingURL=Card.css.map */

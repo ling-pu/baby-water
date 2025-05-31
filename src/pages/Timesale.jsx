@@ -70,6 +70,7 @@ export default function Timesale() {
               {filteredItems.map((picks, index) => (
                 <Card
                   key={index}
+                  id={picks.id}
                   imgSrc={picks.imgSrc}
                   title={picks.title}
                   price={picks.price}

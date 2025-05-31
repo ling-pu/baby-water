@@ -14,7 +14,8 @@ export default function Header() {
     const handleClick = (type) => {
         switch (type) {
             case 'search':
-                setIsSearchOpen(true);
+                setIsCartOpen(false);           // 先關掉購物車（如果開著）
+                setIsSearchOpen(prev => !prev); // 切換開關狀態
                 break;
             case 'user':
                 navigate('/user');
@@ -65,6 +66,7 @@ export default function Header() {
                                 aria-label="搜尋商品"
                             ></button>
                         </li>
+
                         <li>
                             <button
                                 className="icon-btn icon-user"
