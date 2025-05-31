@@ -11,7 +11,7 @@ export const picks = [
     style2: "黑色款",
     style3: "棕色款",
     title: "經典舒適T恤",
-    price: "NT$ 520",
+    price: "520",
     category: "Tops",
   },
   {
@@ -24,7 +24,7 @@ export const picks = [
     style2: "黑色款",
     style3: "棕色款",
     title: "經典舒適T恤",
-    price: "NT$ 520",
+    price: "520",
     category: "Tops",
   },
   {
@@ -37,7 +37,7 @@ export const picks = [
     style2: "黑色款",
     style3: "棕色款",
     title: "經典舒適T恤",
-    price: "NT$ 520",
+    price: "520",
     category: "Tops",
   },
   {
@@ -50,7 +50,7 @@ export const picks = [
     style2: "黑色款",
     style3: "棕色款",
     title: "經典舒適T恤",
-    price: "NT$ 520",
+    price: "520",
     category: "Tops",
   },
   {
@@ -63,7 +63,7 @@ export const picks = [
     style2: "黑色款",
     style3: "棕色款",
     title: "經典舒適T恤",
-    price: "NT$ 600",
+    price: "600",
     category: "Tops",
   },
   
@@ -81,7 +81,7 @@ export const world = [
     style2: "棕色款",
     style3: "粉色款",
     title: "夏日必備小背心",
-    price: "NT$ 520",
+    price: "520",
     category: "Tops",
   },
   {
@@ -94,7 +94,7 @@ export const world = [
     style2: "薄荷綠",
     style3: "藍莓色",
     title: "澎澎南瓜細肩背心",
-    price: "NT$ 899",
+    price: "899",
     category: "Tops",
   },
   {
@@ -107,7 +107,7 @@ export const world = [
     style2: "黑色款",
     style3: "棕色款",
     title: "Lily Rose 系列泳裝",
-    price: "NT$ 1,490起",
+    price: "1490",
     category: "Swimwear",
     content: ''
   },
@@ -121,7 +121,7 @@ export const world = [
     style2: "黑色款",
     style3: "棕色款",
     title: "經典舒適T恤",
-    price: "NT$ 520",
+    price: "520",
     category: "Tops",
   },
   

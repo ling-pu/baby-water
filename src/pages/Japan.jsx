@@ -9,11 +9,11 @@ const base = import.meta.env.BASE_URL;
 export default function Japan() {
   const navigate = useNavigate();
   const allItems = [...picks]; // 合併陣列
-  // 篩選服飾類型
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const filteredItems = selectedCategory === "All"
+  // 篩選服飾類型(多選)
+  const [selectedCategories, setSelectedCategories] = useState(["All"]);
+  const filteredItems = selectedCategories.includes("All")
     ? allItems
-    : allItems.filter(item => item.category === selectedCategory);
+    : allItems.filter(item => selectedCategories.includes(item.category));
   // 排序
   const [sortBy, setSortBy] = useState("none");
   const [sortDirection, setSortDirection] = useState("asc"); // 預設為升序
@@ -52,18 +52,18 @@ export default function Japan() {
       <main id="jp">
         {/* 篩選區 */}
         <FilterPanel
-          selectedCategory={selectedCategory}
-          setSelectedCategory={setSelectedCategory}
+          selectedCategories={selectedCategories}
+          setSelectedCategories={setSelectedCategories}
         />
 
         {/* 展示 */}
         <section id="products">
           {/* 排序區 */}
           <SortPanel
-          sortBy={sortBy}
-          sortDirection={sortDirection}
-          handleSortClick={handleSortClick}
-          itemCount={filteredItems.length}
+            sortBy={sortBy}
+            sortDirection={sortDirection}
+            handleSortClick={handleSortClick}
+            itemCount={sortedItems.length}
           />
 
           {/* 展示區 */}

@@ -6,10 +6,11 @@ import SortPanel from "../component/SortPanel";
 
 export default function Timesale() {
   const allItems = [...picks]; // 合併陣列
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const filteredItems = selectedCategory === "All"
-    ? allItems
-    : allItems.filter(item => item.category === selectedCategory);
+ // 篩選服飾類型(多選)
+ const [selectedCategories, setSelectedCategories] = useState(["All"]);
+ const filteredItems = selectedCategories.includes("All")
+   ? allItems
+   : allItems.filter(item => selectedCategories.includes(item.category));
   // 排序
   const [sortBy, setSortBy] = useState("none");
   const [sortDirection, setSortDirection] = useState("asc"); // 預設為升序
@@ -47,8 +48,8 @@ export default function Timesale() {
       <main id="jp">
         {/* 篩選 */}
         <FilterPanel
-          selectedCategory={selectedCategory}
-          setSelectedCategory={setSelectedCategory}
+          selectedCategories={selectedCategories}
+          setSelectedCategories={setSelectedCategories}
         />
         
         {/* 展示 */}
@@ -59,7 +60,7 @@ export default function Timesale() {
             sortBy={sortBy}
             sortDirection={sortDirection}
             handleSortClick={handleSortClick}
-            itemCount={filteredItems.length}
+            itemCount={sortedItems.length}
           />
 
           {/* 展示區 */}
@@ -67,7 +68,7 @@ export default function Timesale() {
             {/* 1列4欄 */}
             <div className="cardlist">
               {/* 卡片區 */}
-              {filteredItems.map((picks, index) => (
+              {sortedItems.map((picks, index) => (
                 <Card
                   key={index}
                   id={picks.id}

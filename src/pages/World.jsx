@@ -8,19 +8,26 @@ import SortPanel from "../component/SortPanel";
 export default function World() {
 
   const allItems = [...world]; // 合併陣列
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const filteredItems = selectedCategory === "All"
-    ? allItems
-    : allItems.filter(item => item.category === selectedCategory);
+ // 篩選服飾類型(多選)
+ const [selectedCategories, setSelectedCategories] = useState(["All"]);
+ const filteredItems = selectedCategories.includes("All")
+   ? allItems
+   : allItems.filter(item => selectedCategories.includes(item.category));
   // 排序
   const [sortBy, setSortBy] = useState("none");
   const [sortDirection, setSortDirection] = useState("asc"); // 預設為升序
+  const parsePrice = (priceStr) => {
+    // "NT$ 520" → 520
+    return parseFloat(priceStr.replace(/[^\d.]/g, ''));
+  };
 
   let sortedItems = [...filteredItems];
 
   if (sortBy === "price") {
     sortedItems.sort((a, b) =>
-      sortDirection === "asc" ? a.price - b.price : b.price - a.price
+      sortDirection === "asc"
+        ? parsePrice(a.price) - parsePrice(b.price)
+        : parsePrice(b.price) - parsePrice(a.price)
     );
   } else if (sortBy === "popularity") {
     sortedItems.sort((a, b) =>
@@ -50,8 +57,8 @@ export default function World() {
       <main id="jp">
         {/* 篩選 */}
         <FilterPanel
-          selectedCategory={selectedCategory}
-          setSelectedCategory={setSelectedCategory} />
+          selectedCategories={selectedCategories}
+          setSelectedCategories={setSelectedCategories} />
 
         {/* 展示 */}
         <section id="products">
@@ -61,7 +68,7 @@ export default function World() {
             sortBy={sortBy}
             sortDirection={sortDirection}
             handleSortClick={handleSortClick}
-            itemCount={filteredItems.length}
+            itemCount={sortedItems.length}
           />
 
           {/* 展示區 */}
@@ -69,7 +76,7 @@ export default function World() {
             {/* 1列4欄 */}
             <div className="cardlist">
               {/* World卡片區 */}
-              {filteredItems.map((world, index) => (
+              {sortedItems.map((world, index) => (
                 <Card
                   key={index}
                   id={world.id}

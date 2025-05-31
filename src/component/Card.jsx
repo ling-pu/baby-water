@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import PriceFormatter from "./PriceFormatter";
 
 const base = import.meta.env.BASE_URL;
 
@@ -35,8 +36,8 @@ const Card = ({
       </figure>
       <div className="content-container">
         <h3 className="title">{title}</h3>
-        <del className="item-price-og">{price}</del>
-        <p className="item-price">{price}</p>
+        <del className="item-price-og"><PriceFormatter price={price}/></del>
+        <p className="item-price"><PriceFormatter price={price}/></p>
         <div className="pic-sm-container" onMouseLeave={() => setMainImg(imgSrc)}>
           {pic1 && (
             <img
