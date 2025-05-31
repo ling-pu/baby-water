@@ -13,6 +13,7 @@ export const picks = [
     title: "經典舒適T恤",
     price: "520",
     category: "Tops",
+    endtime: "2025-06-01T23:59:59",
   },
   {
     id: "classic-tshirt-white2",
@@ -26,6 +27,7 @@ export const picks = [
     title: "經典舒適T恤",
     price: "520",
     category: "Tops",
+    endtime: "2025-06-01T23:59:59",
   },
   {
     id: "classic-tshirt-white3",
@@ -39,6 +41,7 @@ export const picks = [
     title: "經典舒適T恤",
     price: "520",
     category: "Tops",
+    endtime: "2025-06-01T23:59:59",
   },
   {
     id: "classic-tshirt-white4",
@@ -52,6 +55,7 @@ export const picks = [
     title: "經典舒適T恤",
     price: "520",
     category: "Tops",
+    endtime: "2025-06-01T23:59:59",
   },
   {
     id: "classic-tshirt-white5",
@@ -65,6 +69,7 @@ export const picks = [
     title: "經典舒適T恤",
     price: "600",
     category: "Tops",
+    endtime: "2025-06-01T23:59:59",
   },
   
   
@@ -83,6 +88,7 @@ export const world = [
     title: "夏日必備小背心",
     price: "520",
     category: "Tops",
+    endtime: "2025-06-10T23:59:59",
   },
   {
     id: "summer-vest-beige2",
@@ -96,6 +102,7 @@ export const world = [
     title: "澎澎南瓜細肩背心",
     price: "899",
     category: "Tops",
+    endtime: "2025-06-10T23:59:59",
   },
   {
     id: "summer-vest-beige3",
@@ -109,7 +116,7 @@ export const world = [
     title: "Lily Rose 系列泳裝",
     price: "1490",
     category: "Swimwear",
-    content: ''
+    endtime: "2025-06-10T23:59:59",
   },
   {
     id: "summer-vest-beige4",
@@ -123,6 +130,7 @@ export const world = [
     title: "經典舒適T恤",
     price: "520",
     category: "Tops",
+    endtime: "2025-06-10T23:59:59",
   },
   
 ];
