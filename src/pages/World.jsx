@@ -1,9 +1,18 @@
+import { useState } from "react";
 import Card from "../component/Card"
 import { picks, world } from "../data/Data"
 
+
 export default function World() {
-    return(
-      <>
+
+const allItems = [...world]; // 合併陣列
+const [selectedCategory, setSelectedCategory] = useState("All");
+const filteredItems = selectedCategory === "All"
+  ? allItems
+  : allItems.filter(item => item.category === selectedCategory);
+
+  return (
+    <>
       <main id="jp">
         {/* 篩選 */}
         <section id="filter">
@@ -19,13 +28,16 @@ export default function World() {
 
           <br />
           <ul className="filter2">
-            <li>Tops</li>
-            <li>Bottoms</li>
-            <li>Swim Wear</li>
-            <li>Dresses</li>
-            <li>Others</li>
+            {["All", "Tops", "Bottoms", "Swimwear", "Dresses", "Others"].map((cat) => (
+              <li
+                key={cat}
+                className={selectedCategory === cat ? "active" : ""}
+                onClick={() => setSelectedCategory(cat)}
+              >
+                {cat}
+              </li>
+            ))}
           </ul>
-
         </section>
 
         {/* 展示 */}
@@ -34,7 +46,7 @@ export default function World() {
           <div className="title">
             <div className="title-row1">
               <div><h1>世界選品~6/10收單</h1></div>
-              <div><span id="itemList-number">28</span><h1>個商品</h1></div>
+              <div><span id="itemList-number">{filteredItems.length}</span><h1>個商品</h1></div>
             </div>
             <div className="title-row2">
               <span>依收單日期排序</span>
@@ -50,7 +62,7 @@ export default function World() {
             {/* 1列4欄 */}
             <div className="cardlist">
               {/* World卡片區 */}
-              {world.map((world, index) => (
+              {filteredItems.map((world, index) => (
                 <Card
                   key={index}
                   imgSrc={world.imgSrc}
@@ -67,6 +79,6 @@ export default function World() {
 
         </section>
       </main>
-      </>
-    )
-  }
+    </>
+  )
+}

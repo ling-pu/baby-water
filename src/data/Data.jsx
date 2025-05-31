@@ -12,7 +12,7 @@ export const picks = [
     style3: "棕色款",
     title: "經典舒適T恤",
     price: "NT$ 520",
-    link: "#" // 內容頁面
+    category: "Tops",
   },
   {
     id: "classic-tshirt-white2",
@@ -25,7 +25,7 @@ export const picks = [
     style3: "棕色款",
     title: "經典舒適T恤",
     price: "NT$ 520",
-    link: "#" // 內容頁面
+    category: "Tops",
   },
   {
     id: "classic-tshirt-white3",
@@ -38,7 +38,7 @@ export const picks = [
     style3: "棕色款",
     title: "經典舒適T恤",
     price: "NT$ 520",
-    link: "#" // 內容頁面
+    category: "Tops",
   },
   {
     id: "classic-tshirt-white",
@@ -51,7 +51,7 @@ export const picks = [
     style3: "棕色款",
     title: "經典舒適T恤",
     price: "NT$ 520",
-    link: "#" // 內容頁面
+    category: "Tops",
   },
   
 ];
@@ -68,7 +68,7 @@ export const world = [
     style3: "粉色款",
     title: "夏日必備小背心",
     price: "NT$ 520",
-    link: "#" // 內容頁面
+    category: "Tops",
   },
   {
     id: "summer-vest-beige2",
@@ -81,7 +81,7 @@ export const world = [
     style3: "藍莓色",
     title: "澎澎南瓜細肩背心",
     price: "NT$ 899",
-    link: "#" // 內容頁面
+    category: "Tops",
   },
   {
     id: "summer-vest-beige3",
@@ -94,7 +94,7 @@ export const world = [
     style3: "棕色款",
     title: "Lily Rose 系列泳裝",
     price: "NT$ 1,490起",
-    link: "#", // 內容頁面
+    category: "Swimwear",
     content: ''
   },
   {
@@ -108,7 +108,7 @@ export const world = [
     style3: "棕色款",
     title: "經典舒適T恤",
     price: "NT$ 520",
-    link: "#" // 內容頁面
+    category: "Tops",
   },
   
 ];

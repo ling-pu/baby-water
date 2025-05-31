@@ -1,13 +1,17 @@
 import { useNavigate } from "react-router-dom";
 import Card from "../component/Card"
 import { picks, world } from "../data/Data"
+import { useState } from "react";
 const base = import.meta.env.BASE_URL;
 
 export default function Japan() {
   const navigate = useNavigate();
-  function onClickArea(id) {
-    navigate(`${base}/japan/${id}`)
-  }
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const allItems = [...picks]; // 合併陣列
+  const filteredItems = selectedCategory === "All"
+    ? allItems
+    : allItems.filter(item => item.category === selectedCategory);
+
   return (
     <>
       <main id="jp">
@@ -25,11 +29,15 @@ export default function Japan() {
 
           <br />
           <ul className="filter2">
-            <li>Tops</li>
-            <li>Bottoms</li>
-            <li>Swim Wear</li>
-            <li>Dresses</li>
-            <li>Others</li>
+            {["All", "Tops", "Bottoms", "Swimwear", "Dresses", "Others"].map((cat) => (
+              <li
+                key={cat}
+                className={selectedCategory === cat ? "active" : ""}
+                onClick={() => setSelectedCategory(cat)}
+              >
+                {cat}
+              </li>
+            ))}
           </ul>
 
         </section>
@@ -40,7 +48,7 @@ export default function Japan() {
           <div className="title">
             <div className="title-row1">
               <div><h1>日本代購</h1></div>
-              <div><span id="itemList-number">28</span><h1>個商品</h1></div>
+              <div><span id="itemList-number">{filteredItems.length}</span><h1>個商品</h1></div>
             </div>
             <div className="title-row2">
               <span>依收單日期排序</span>
@@ -56,16 +64,18 @@ export default function Japan() {
             {/* 1列4欄 */}
             <div className="cardlist">
               {/* 卡片區 */}
-              {picks.map((picks, index) => (
+              {filteredItems.map((item, index) => (
                 <Card
                   key={index}
-                  imgSrc={picks.imgSrc}
-                  title={picks.title}
-                  price={picks.price}
-                  link={picks.link}
-                  pic1={picks.pic1}
-                  pic2={picks.pic2}
-                  pic3={picks.pic3}
+                  id={item.id}
+                  imgSrc={item.imgSrc}
+                  title={item.title}
+                  alt={item.title}
+                  price={item.price}
+                  link={item.link}
+                  pic1={item.pic1}
+                  pic2={item.pic2}
+                  pic3={item.pic3}
                 />
               ))}
             </div>

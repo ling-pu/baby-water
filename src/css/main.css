@@ -794,6 +794,11 @@ footer .terms {
   flex-direction: column;
   gap: 24px;
 }
+#filter .filter2 li.active {
+  font-weight: bold;
+  color: #d23e3e;
+  cursor: default;
+}
 
 .title {
   display: flex;
@@ -990,10 +995,6 @@ h1 {
 }
 
 /* 游標 */
-body {
-  cursor: none;
-}
-
 .cursor {
   position: fixed;
   top: 0;
@@ -1018,6 +1019,6 @@ body {
 .cursor__ball--small {
   width: 8px;
   height: 8px;
-  background-color: rgb(135, 127, 127);
+  background-color: transparent;
   transition: transform 0.1s ease;
 }/*# sourceMappingURL=main.css.map */

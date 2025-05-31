@@ -33,6 +33,11 @@
   flex-direction: column;
   gap: 24px;
 }
+#filter .filter2 li.active {
+  font-weight: bold;
+  color: #d23e3e;
+  cursor: default;
+}
 
 .title {
   display: flex;
@@ -107,4 +112,4 @@
 }
 #products .cardlist img {
   object-fit: cover;
-}
+}/*# sourceMappingURL=Japan.css.map */

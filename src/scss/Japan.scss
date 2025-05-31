@@ -35,6 +35,12 @@
     padding: 0px 16px;
     flex-direction: column;
     gap: 24px;
+
+    .filter2 li.active {
+        font-weight: bold;
+        color: #d23e3e;
+        cursor: default;
+    }
 }
 
 .title {
