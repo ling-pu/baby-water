@@ -2,69 +2,76 @@ import { useNavigate } from "react-router-dom";
 import Card from "../component/Card"
 import { picks, world } from "../data/Data"
 import { useState } from "react";
+import FilterPanel from "../component/FilterPanel";
+import SortPanel from "../component/SortPanel";
 const base = import.meta.env.BASE_URL;
 
 export default function Japan() {
   const navigate = useNavigate();
-  const [selectedCategory, setSelectedCategory] = useState("All");
   const allItems = [...picks]; // 合併陣列
+  // 篩選服飾類型
+  const [selectedCategory, setSelectedCategory] = useState("All");
   const filteredItems = selectedCategory === "All"
     ? allItems
     : allItems.filter(item => item.category === selectedCategory);
+  // 排序
+  const [sortBy, setSortBy] = useState("none");
+  const [sortDirection, setSortDirection] = useState("asc"); // 預設為升序
+
+  let sortedItems = [...filteredItems];
+
+  if (sortBy === "price") {
+    sortedItems.sort((a, b) =>
+      sortDirection === "asc" ? a.price - b.price : b.price - a.price
+    );
+  } else if (sortBy === "popularity") {
+    sortedItems.sort((a, b) =>
+      sortDirection === "asc" ? a.popularity - b.popularity : b.popularity - a.popularity
+    );
+  } else if (sortBy === "date") {
+    sortedItems.sort((a, b) =>
+      sortDirection === "asc"
+        ? new Date(a.endDate) - new Date(b.endDate)
+        : new Date(b.endDate) - new Date(a.endDate)
+    );
+  }
+
+  function handleSortClick(type) {
+    if (sortBy === type) {
+      // 如果點到同一個排序，再次點擊就反轉方向
+      setSortDirection((prev) => (prev === "asc" ? "desc" : "asc"));
+    } else {
+      // 點到不同的排序類型，設為升序
+      setSortBy(type);
+      setSortDirection("asc");
+    }
+  }
 
   return (
     <>
       <main id="jp">
-        {/* 篩選 */}
-        <section id="filter">
-          <div className="title">
-            <h1>// 全部商品</h1>
-          </div>
-          <br />
-          <ul className="filter1">
-            <li>世界選品~6/10</li>
-            <li>每週超優惠~5/30</li>
-            <li>夏日必備</li>
-          </ul>
-
-          <br />
-          <ul className="filter2">
-            {["All", "Tops", "Bottoms", "Swimwear", "Dresses", "Others"].map((cat) => (
-              <li
-                key={cat}
-                className={selectedCategory === cat ? "active" : ""}
-                onClick={() => setSelectedCategory(cat)}
-              >
-                {cat}
-              </li>
-            ))}
-          </ul>
-
-        </section>
+        {/* 篩選區 */}
+        <FilterPanel
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
+        />
 
         {/* 展示 */}
         <section id="products">
-
-          <div className="title">
-            <div className="title-row1">
-              <div><h1>日本代購</h1></div>
-              <div><span id="itemList-number">{filteredItems.length}</span><h1>個商品</h1></div>
-            </div>
-            <div className="title-row2">
-              <span>依收單日期排序</span>
-              <span>/</span>
-              <span>依價格排序</span>
-              <span>/</span>
-              <span>依人氣排序</span>
-            </div>
-          </div>
+          {/* 排序區 */}
+          <SortPanel
+          sortBy={sortBy}
+          sortDirection={sortDirection}
+          handleSortClick={handleSortClick}
+          itemCount={filteredItems.length}
+          />
 
           {/* 展示區 */}
           <div className="scroll-area">
             {/* 1列4欄 */}
             <div className="cardlist">
               {/* 卡片區 */}
-              {filteredItems.map((item, index) => (
+              {sortedItems.map((item, index) => (
                 <Card
                   key={index}
                   id={item.id}
