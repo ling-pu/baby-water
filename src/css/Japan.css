@@ -1,3 +1,4 @@
+/* Japan */
 #jp {
   align-items: flex-start;
   display: flex;
@@ -110,4 +111,6 @@
 }
 #products .cardlist img {
   object-fit: cover;
-}/*# sourceMappingURL=Japan.css.map */
+}
+
+/* ProductPage *//*# sourceMappingURL=Japan.css.map */
