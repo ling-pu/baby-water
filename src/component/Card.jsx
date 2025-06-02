@@ -12,16 +12,12 @@ const addBase = (path) => {
 const Card = ({
   id, // ⬅️ 加上 id
   imgSrc,
-  pic1,
-  pic2,
-  pic3,
-  style1,
-  style2,
-  style3,
+  pics = [],       // 預設為空陣列，避免沒傳出錯
+  styles = [],     // 同上     
   title,
   price,
 }) => {
-  const [mainImg, setMainImg] = useState(imgSrc);
+  const [mainImg, setMainImg] = useState(imgSrc || pics[0]);
   const navigate = useNavigate();
 
   // ⬇️ 點擊跳轉到 /product/:id
@@ -36,30 +32,23 @@ const Card = ({
       </figure>
       <div className="content-container">
         <h3 className="title">{title}</h3>
-        <del className="item-price-og"><PriceFormatter price={price}/></del>
-        <p className="item-price"><PriceFormatter price={price}/></p>
-        <div className="pic-sm-container" onMouseLeave={() => setMainImg(imgSrc)}>
-          {pic1 && (
+        <div className="item-price-area">
+          <del className="item-price-del"><PriceFormatter price={price} /></del>
+          <p className="item-price"><PriceFormatter price={price} /></p>
+        </div>
+        {/* ✅ 小圖切換區，支援 pics + styles */}
+        <div
+          className="pic-sm-container"
+          onMouseLeave={() => setMainImg(imgSrc ? imgSrc : pics[0] || "")}
+        >
+          {pics.map((pic, idx) => (
             <img
-              src={addBase(pic1)}
-              alt={style1}
-              onMouseEnter={() => setMainImg(pic1)}
+              key={idx}
+              src={addBase(pic)}
+              alt={styles[idx] || `樣式 ${idx + 1}`}
+              onMouseEnter={() => setMainImg(pic)}
             />
-          )}
-          {pic2 && (
-            <img
-              src={addBase(pic2)}
-              alt={style2}
-              onMouseEnter={() => setMainImg(pic2)}
-            />
-          )}
-          {pic3 && (
-            <img
-              src={addBase(pic3)}
-              alt={style3}
-              onMouseEnter={() => setMainImg(pic3)}
-            />
-          )}
+          ))}
         </div>
       </div>
     </div>

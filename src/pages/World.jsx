@@ -83,10 +83,7 @@ export default function World() {
                   imgSrc={world.imgSrc}
                   title={world.title}
                   price={world.price}
-                  link={world.link}
-                  pic1={world.pic1}
-                  pic2={world.pic2}
-                  pic3={world.pic3}
+                  pics={world.pics}
                 />
               ))}
             </div>

@@ -14,7 +14,7 @@
         border-radius: 6px;
         background: url(<path-to-image>) lightgray 50% / cover no-repeat;
 
-        img{
+        img {
             height: 100%;
         }
 
@@ -40,6 +40,12 @@
 
         }
 
+        .item-price-area {
+            gap: 16px;
+            display: flex;
+            align-items: center;
+        }
+
         .item-price {
             font-family: "Allerta", sans-serif;
             font-size: 24px;
@@ -47,6 +53,10 @@
             font-weight: 400;
             line-height: 150%;
             /* 36px */
+        }
+
+        .item-price-del {
+            color: $color-gray;
         }
 
         .pic-sm-container {

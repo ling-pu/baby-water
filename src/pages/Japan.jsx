@@ -79,10 +79,7 @@ export default function Japan() {
                   title={item.title}
                   alt={item.title}
                   price={item.price}
-                  link={item.link}
-                  pic1={item.pic1}
-                  pic2={item.pic2}
-                  pic3={item.pic3}
+                  pics={item.pics}
                 />
               ))}
             </div>

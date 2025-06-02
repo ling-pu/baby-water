@@ -21,17 +21,14 @@ export default function Home() {
             {/* 1列4欄 */}
             <div className="cardlist">
               {/* Picks卡片區 */}
-              {picks.map((picks, index) => (
+              {picks.slice(0,4).map((picks, index) => (
                 <Card
                   key={picks.id || index}
                   id={picks.id} // ✅ 傳入 id
                   imgSrc={picks.imgSrc}
                   title={picks.title}
                   price={picks.price}
-                  link={picks.link}
-                  pic1={picks.pic1}
-                  pic2={picks.pic2}
-                  pic3={picks.pic3}
+                  pics={picks.pics}
                 />
               ))}
             </div>
@@ -51,17 +48,14 @@ export default function Home() {
             {/* 1列4欄 */}
             <div className="cardlist">
               {/* World卡片區 */}
-              {world.map((world, index) => (
+              {world.slice(0,4).map((world, index) => (
                 <Card
                   key={world.id || index}
                   id={world.id} // ✅ 傳入 id
                   imgSrc={world.imgSrc}
                   title={world.title}
                   price={world.price}
-                  link={world.link}
-                  pic1={world.pic1}
-                  pic2={world.pic2}
-                  pic3={world.pic3}
+                  pics={world.pics}
                 />
               ))}
 

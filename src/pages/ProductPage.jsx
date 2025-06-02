@@ -80,14 +80,17 @@ export default function ProductPage() {
 
   return (
     <>
-      <main>
+      <main id="product-page">
         {/* 標題區 */}
         <div className="ProductPage-title">
-          <p>全部商品</p>
-          <span>/</span>
-          <p>{title}</p>
-          <span>/</span>
-          <p>{product.category}</p>
+          <div>
+            <p>全部商品</p>
+            <span>/</span>
+            <p>{title}</p>
+            <span>/</span>
+            <p>{product.category}</p>
+          </div>
+
           {/* 倒數 */}
           <div className="countdown">
             <Countdown endTime={product.endtime} />
@@ -235,21 +238,21 @@ export default function ProductPage() {
         <div className="else">
           <p>您可能會喜歡</p>
           <div className="cardlist">
-              {/* Picks卡片區 */}
-              {picks.map((picks, index) => (
-                <Card
-                  key={picks.id || index}
-                  id={picks.id} // ✅ 傳入 id
-                  imgSrc={picks.imgSrc}
-                  title={picks.title}
-                  price={picks.price}
-                  link={picks.link}
-                  pic1={picks.pic1}
-                  pic2={picks.pic2}
-                  pic3={picks.pic3}
-                />
-              ))}
-            </div>
+            {/* Picks卡片區 */}
+            {picks.map((picks, index) => (
+              <Card
+                key={picks.id || index}
+                id={picks.id} // ✅ 傳入 id
+                imgSrc={picks.imgSrc}
+                title={picks.title}
+                price={picks.price}
+                link={picks.link}
+                pic1={picks.pic1}
+                pic2={picks.pic2}
+                pic3={picks.pic3}
+              />
+            ))}
+          </div>
         </div>
       </main>
     </>

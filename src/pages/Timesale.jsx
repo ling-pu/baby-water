@@ -75,10 +75,7 @@ export default function Timesale() {
                   imgSrc={picks.imgSrc}
                   title={picks.title}
                   price={picks.price}
-                  link={picks.link}
-                  pic1={picks.pic1}
-                  pic2={picks.pic2}
-                  pic3={picks.pic3}
+                  pics={picks.pics}
                 />
               ))}
             </div>
