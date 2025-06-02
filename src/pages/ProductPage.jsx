@@ -97,142 +97,149 @@ export default function ProductPage() {
           </div>
         </div>
 
-        {/* 主要內容 */}
-        <div className="ProductPage-row">
+        <div className="ProductPage-item">
+          {/* 主要內容 */}
+          <div className="ProductPage-row1">
 
-          <div className="pic">
-            {/* 主圖＆圖片頁籤 */}
-            {/* 大圖 */}
-            <img
-              src={addBase(mainImg)}
-              alt={product.title}
-              style={{ width: "300px", marginBottom: "1rem" }}
-            />
-            {/* 小圖列 */}
-            <div className="pic-sm" style={{ display: "flex", gap: "10px", marginTop: "1rem", width: "300px" }}>
+            <div className="pic">
+              {/* 主圖＆圖片頁籤 */}
+              {/* 大圖 */}
+              <img
+                src={addBase(mainImg)}
+                alt={product.title}
+              />
+              {/* 小圖列 */}
+              <div className="pic-sm">
+                {product.pics.map((pic, index) => (
+                  <img
+                    key={index}
+                    src={addBase(pic)}
+                    alt={`pic${index + 1}`}
+                    width="80"
+                    onClick={() => setMainImg(pic)}
+                    style={{
+                      cursor: "pointer",
+                      border: mainImg === pic ? "2px solid black" : "none"
+                    }}
+                  />
+                ))}
+              </div>
+
+            </div>
+
+            <div className="content">
+
+              <h1>{product.title}</h1>
+              {/* 價格 */}
+              <div className="price">
+                <PriceFormatter price={product.price} />
+              </div>
+              {/* 文字描述 */}
+              <p className="content-description" style={{ whiteSpace: "pre-line" }}>{product.description}</p>
+              {/* 選項區3組 */}
+              <div className="item-options">
+                <div className="option">
+                  {/* 顯示已選顏色 */}
+                  <p>已選款式：{product.styles[selectedIndex]}</p>
+                  {/* 按鈕 */}
+                  <div className="item-color">
+                    {product.pics.map((pic, index) => (
+                      <img
+                        key={index}
+                        src={addBase(pic)}
+                        alt={`pic${index + 1}`}
+                        width="80"
+                        onClick={() => handleSelect(index)}
+                        style={{
+                          cursor: "pointer",
+                          border: selectedIndex === index ? "2px solid black" : "none",
+                        }}
+                      />
+                    ))}
+                  </div>
+
+                </div>
+                <div className="option">
+                  {/* 顯示已選尺寸 */}
+                  <p>
+                    已選尺寸：<strong>{product.sizes[selectedSizeIndex]}</strong>
+                  </p>
+                  {/* 按鈕 */}
+                  <div className="item-size">
+                    {product.sizes.map((size, i) => (
+                      <button
+                        key={i}
+                        onClick={() => setSelectedSizeIndex(i)}
+                        style={{
+                          fontWeight: selectedSizeIndex === i ? "bold" : "normal",
+                        }}
+                      >
+                        {size}
+                      </button>
+                    ))}
+                  </div>
+
+                </div>
+                <div className="option item-number">
+                  {/* 顯示已選數量 */}
+                  <p>
+                    已選擇：<strong>{quantity}</strong> 件
+                  </p>
+                  {/* 按鈕 */}
+                  <div >
+                    <p>件數：</p>
+                    <div>
+                      <button onClick={handleSubtract} style={{ width: "30px" }}>−</button>
+                      <span>{quantity}</span>
+                      <button onClick={handleAdd} style={{ width: "30px" }}>＋</button>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+
+              {/* 加入購物車 */}
+              <div className="add-to-cart-area">
+                <button onClick={handleAddToCart}>加入購物車</button>
+                <button onClick={handleBuyNow}>立即購買</button>
+              </div>
+
+            </div>
+
+
+          </div>
+
+          {/* 圖片展示區 */}
+          <div className="pic-md-area">
+            {/* 中圖 */}
+            <div className="pic-md">
               {product.pics.map((pic, index) => (
                 <img
                   key={index}
                   src={addBase(pic)}
                   alt={`pic${index + 1}`}
-                  width="80"
-                  onClick={() => setMainImg(pic)}
-                  style={{
-                    cursor: "pointer",
-                    border: mainImg === pic ? "2px solid black" : "none"
-                  }}
+                  width="200"
                 />
               ))}
             </div>
+            {/* 文字欄 */}
+            <div className="text-area">
+              <p>商品說明</p>
+              {product.sizeNote && (
+                <div className="size-note">
+                  <p style={{ whiteSpace: "pre-line" }}>{product.sizeNote}</p>
+                </div>
+              )}
+
+            </div>
+
 
           </div>
-
-          <div className="content">
-
-            <h1>{product.title}</h1>
-            {/* 價格 */}
-            <div className="price">
-              <PriceFormatter price={product.price} />
-            </div>
-            {/* 文字描述 */}
-            <p className="content-description" style={{ whiteSpace: "pre-line" }}>{product.description}</p>
-            {/* 選項區3組 */}
-            <div className="item-options">
-              <div className="item-color">
-                {/* 顯示已選顏色 */}
-                <p>已選款式：{product.styles[selectedIndex]}</p>
-                {/* 按鈕 */}
-                <div>
-                  {product.pics.map((pic, index) => (
-                    <img
-                      key={index}
-                      src={addBase(pic)}
-                      alt={`pic${index + 1}`}
-                      width="80"
-                      onClick={() => handleSelect(index)}
-                      style={{
-                        cursor: "pointer",
-                        border: selectedIndex === index ? "2px solid black" : "none",
-                      }}
-                    />
-                  ))}
-                </div>
-
-              </div>
-              <div className="item-size">
-                {/* 顯示已選尺寸 */}
-                <p>
-                  已選尺寸：<strong>{product.sizes[selectedSizeIndex]}</strong>
-                </p>
-                {/* 按鈕 */}
-                {product.sizes.map((size, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setSelectedSizeIndex(i)}
-                    style={{
-                      fontWeight: selectedSizeIndex === i ? "bold" : "normal",
-                    }}
-                  >
-                    {size}
-                  </button>
-                ))}
-              </div>
-              <div className="item-number">
-                {/* 顯示已選數量 */}
-                <p>
-                  已選擇：<strong>{quantity}</strong> 件
-                </p>
-                {/* 按鈕 */}
-                <div >
-                  <p>件數：</p>
-                  <div>
-                    <button onClick={handleSubtract} style={{ width: "30px" }}>−</button>
-                    <span>{quantity}</span>
-                    <button onClick={handleAdd} style={{ width: "30px" }}>＋</button>
-                  </div>
-
-                </div>
-              </div>
-
-            </div>
-
-            {/* 加入購物車 */}
-            <div className="add-to-cart-area">
-              <button onClick={handleAddToCart}>加入購物車</button>
-              <button onClick={handleBuyNow}>立即購買</button>
-            </div>
-
-          </div>
-
 
         </div>
 
-        {/* 圖片展示區 */}
-        <div className="pic-md-area">
-          {/* 中圖 */}
-          <div className="pic-md">
-            {product.pics.map((pic, index) => (
-              <img
-                key={index}
-                src={addBase(pic)}
-                alt={`pic${index + 1}`}
-                width="200"
-              />
-            ))}
-          </div>
-          {/* 文字欄 */}
-          <div className="text-area">
-            <p>商品說明</p>
-            {product.sizeNote && (
-              <div className="size-note">
-                <p style={{ whiteSpace: "pre-line" }}>{product.sizeNote}</p>
-              </div>
-            )}
 
-          </div>
-
-
-        </div>
 
         {/* 其他 */}
         <div className="else">

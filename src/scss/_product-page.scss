@@ -1,4 +1,5 @@
 @use "variable" as *;
+
 /* ProductPage */
 #product-page {
     display: flex;
@@ -13,9 +14,20 @@
         align-items: center;
         align-self: stretch;
 
+        div {
+            display: inline-flex;
+        }
+
+        .countdown {
+            display: flex;
+            padding: 0px 8px;
+            align-items: center;
+            gap: 8px;
+        }
+
         p,
         span {
-            color:$color-black;
+            color: $color-black;
 
             /* noto 16 10% */
             font-family: "Noto Sans";
@@ -26,7 +38,186 @@
             /* 24px */
             letter-spacing: 1.6px;
         }
-        
+
     }
+
+    .ProductPage-item {
+        display: flex;
+        // width: 1441px;
+        height: 800px; //捲動範圍
+        padding: 0px 200px 48px 200px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 80px;
+
+        .ProductPage-row1 {
+            display: flex;
+            align-items: flex-start;
+            gap: 48px;
+            align-self: stretch;
+
+            // 主圖＆圖片頁籤
+            .pic {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 48px;
+
+                img {
+                    object-fit: cover;
+                    height: 662.836px;
+                    align-self: stretch;
+                    aspect-ratio: 553.00/662.84;
+                }
+
+                .pic-sm {
+                    display: flex;
+                    padding: 0px 8px;
+                    align-items: center;
+                    align-content: center;
+                    gap: 16px;
+                    align-self: stretch;
+                    flex-wrap: wrap;
+
+                    img {
+                        object-fit: cover;
+                        width: 56px;
+                        height: 64px;
+                        aspect-ratio: 7/8;
+                    }
+                }
+            }
+
+            // 文字描述區
+            .content {
+                display: flex;
+                width: 440px;
+                padding: 32px 48px 48px 48px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+
+                // 絕美漸層上衣
+                h1 {
+                    color: var(--black, #23222A);
+
+                    /* noto10% */
+                    font-family: "Noto Sans TC";
+                    font-size: 36px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 150%;
+                    /* 54px */
+                    letter-spacing: 3.6px;
+                }
+
+                .price {
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 12px;
+
+                    color: var(--black, #23222A);
+
+                    /* Allerta32 */
+                    font-family: Allerta;
+                    font-size: 32px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 150%;
+                    /* 48px */
+                }
+
+                .content-description {
+                    display: flex;
+                    padding: 0px 12px;
+                    justify-content: center;
+                    align-items: center;
+                    align-self: stretch;
+
+                    color: var(--Neutral-medium-gray-2, #6F7275);
+
+                    /* noto 10% */
+                    font-family: "Noto Sans";
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 150%;
+                    /* 21px */
+                    letter-spacing: 1.4px;
+                }
+
+                // 選項區
+                .item-options {
+                    display: flex;
+                    padding: 0px 12px;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 12px;
+                    align-self: stretch;
+
+                    // 3組框
+                    .option {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 8px;
+                        align-self: stretch;
+
+                        // 顯示已選擇
+                        >p {
+                            display: flex;
+                            align-items: flex-start;
+                            gap: 11px;
+                            align-self: stretch;
+
+                            color: var(--Neutral-medium-gray-2, #6F7275);
+
+                            /* noto 16 10% */
+                            font-family: "Noto Sans";
+                            font-size: 16px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 150%;
+                            /* 24px */
+                            letter-spacing: 1.6px;
+                        }
+                    }
+
+                    .item-color,
+                    .item-size {
+                        display: flex;
+                        align-items: flex-start;
+                        gap: 8px;
+                        align-self: stretch;
+                    }
+
+                    .item-color {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+
+                        img {
+                            object-fit: cover;
+                            display: flex;
+                            width: 56px;
+                            height: 56px;
+                            flex-direction: column;
+                            align-items: flex-start;
+                            flex-shrink: 0;
+                            aspect-ratio: 1/1;
+
+                            border-radius: 4px;
+                            border: 1px solid var(--Neutral-medium-gray, #B5B9BE);
+                            background: url(<path-to-image>) lightgray 50% / cover no-repeat;
+                        }
+                    }
+
+                }
+            }
+        }
+
+
+    }
+
 
 }
