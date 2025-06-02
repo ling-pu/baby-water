@@ -367,7 +367,15 @@
             letter-spacing: 3.6px;
         }
 
-        
+        .cardlist {
+            display: flex;
+            height: 452px;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            align-self: stretch;
+            margin: 0 auto;
+        }
     }
 
 

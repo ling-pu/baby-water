@@ -502,6 +502,15 @@ a {
   /* 54px */
   letter-spacing: 3.6px;
 }
+#product-page .else .cardlist {
+  display: flex;
+  height: 452px;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  align-self: stretch;
+  margin: 0 auto;
+}
 
 .homemade-apple-regular {
   font-family: "Homemade Apple", cursive;

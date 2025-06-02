@@ -16,6 +16,7 @@
 
         img {
             height: 100%;
+            object-fit: cover;
         }
 
     }
@@ -46,7 +47,7 @@
             align-items: center;
         }
 
-        .item-price {
+        .item-price>span, .item-price-del {
             font-family: "Allerta", sans-serif;
             font-size: 24px;
             font-style: normal;
