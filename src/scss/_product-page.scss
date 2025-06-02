@@ -7,6 +7,7 @@
     align-items: flex-start;
     gap: 24px;
 
+    // 標題區
     .ProductPage-title {
         display: flex;
         padding: 0px 104px;
@@ -41,10 +42,12 @@
 
     }
 
+    // 圖片內容區(row1 + pic-md-area)
     .ProductPage-item {
         display: flex;
         // width: 1441px;
         height: 800px; //捲動範圍
+        overflow: hidden; //超過隱藏
         padding: 0px 200px 48px 200px;
         flex-direction: column;
         align-items: flex-start;
@@ -134,7 +137,7 @@
                     align-items: center;
                     align-self: stretch;
 
-                    color: var(--Neutral-medium-gray-2, #6F7275);
+                    color: var(--Neutral-medium-gray-2, #4A4D50);
 
                     /* noto 10% */
                     font-family: "Noto Sans";
@@ -163,18 +166,17 @@
                         gap: 8px;
                         align-self: stretch;
 
-                        // 顯示已選擇
+                        // 已選顏色/尺寸/數量
                         >p {
                             display: flex;
                             align-items: flex-start;
-                            gap: 11px;
+                            gap: 10px;
                             align-self: stretch;
 
-                            color: var(--Neutral-medium-gray-2, #6F7275);
-
+                            color: var(--Neutral-medium-gray-2, #4A4D50);
                             /* noto 16 10% */
                             font-family: "Noto Sans";
-                            font-size: 16px;
+                            font-size: 14px;
                             font-style: normal;
                             font-weight: 400;
                             line-height: 150%;
@@ -191,12 +193,16 @@
                         align-self: stretch;
                     }
 
+                    // 顏色選項區
                     .item-color {
                         display: flex;
-                        flex-direction: column;
                         align-items: flex-start;
 
                         img {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-start;
+
                             object-fit: cover;
                             display: flex;
                             width: 56px;
@@ -212,11 +218,156 @@
                         }
                     }
 
+                    // 尺寸選項區
+                    .item-size>button {
+                        display: flex;
+                        width: 56px;
+                        height: 56px;
+                        padding: 10px 20px;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        flex-shrink: 0;
+
+                        border-radius: 4px;
+                        border: 1px solid var(--Neutral-medium-gray-2, #4A4D50);
+
+                        .active {
+                            border-radius: 4px;
+                            border: 1px solid var(--Neutral-medium-gray-2, #4A4D50);
+                            background: var(--Neutral-medium-gray, #B5B9BE);
+                        }
+                    }
+
+                    // 件數
+                    .item-number {
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+
+                        // - +
+                        >button {
+                            all: unset;
+                            display: flex;
+                            width: 24px;
+                            height: 24px;
+                            justify-content: center;
+                            align-items: center;
+                            aspect-ratio: 1/1;
+                        }
+
+                        // 數字
+                        .number-area {
+                            display: flex;
+                            width: 120px;
+                            padding: 8px 12px;
+                            justify-content: center;
+                            align-items: center;
+
+                            border-radius: 24px;
+                            border: 1.5px solid var(--Neutral-medium-gray-2, #4A4D50);
+                        }
+                    }
+
+                }
+
+                .add-to-cart-area {
+                    display: flex;
+                    padding: 24px 0px 12px 0px;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 16px;
+                    align-self: stretch;
+
+                    >button {
+                        display: flex;
+                        height: 56px;
+                        padding: 16px 0px;
+                        justify-content: center;
+                        align-items: center;
+                        align-self: stretch;
+
+                        border-radius: 32px;
+                        background: var(--black, #23222A);
+                        color: $bg-color1;
+                    }
                 }
             }
         }
 
+        .pic-md-area {
+            display: flex;
+            align-items: flex-start;
+            align-content: flex-start;
+            gap: 48px;
+            align-self: stretch;
+            flex-wrap: wrap;
 
+            .pic-md {
+                width: 378px;
+                height: 512px;
+                border-radius: 4px;
+            }
+
+            .text-area {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 22px;
+                flex: 1 0 0;
+
+                // 商品說明
+                .title {
+                    color: $color-black;
+
+                    /* noto 16 10% */
+                    font-family: "Noto Sans";
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 150%;
+                    /* 24px */
+                    letter-spacing: 1.6px;
+                }
+
+                p {
+                    color: $color-black;
+
+                    /* noto 10% */
+                    font-family: "Noto Sans";
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 150%;
+                    /* 21px */
+                    letter-spacing: 1.4px;
+                }
+            }
+        }
+    }
+
+    // 您可能會喜歡
+    .else {
+        display: flex;
+        padding: 48px 104px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 48px;
+        align-self: stretch;
+
+        p {
+            color: $color-black;
+            /* noto10% */
+            font-family: "Noto Sans TC";
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;
+            /* 54px */
+            letter-spacing: 3.6px;
+        }
+
+        
     }
 
 

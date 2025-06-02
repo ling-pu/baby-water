@@ -148,7 +148,6 @@ export default function ProductPage() {
                         key={index}
                         src={addBase(pic)}
                         alt={`pic${index + 1}`}
-                        width="80"
                         onClick={() => handleSelect(index)}
                         style={{
                           cursor: "pointer",
@@ -169,10 +168,11 @@ export default function ProductPage() {
                     {product.sizes.map((size, i) => (
                       <button
                         key={i}
+                        className="acitve"
                         onClick={() => setSelectedSizeIndex(i)}
-                        style={{
-                          fontWeight: selectedSizeIndex === i ? "bold" : "normal",
-                        }}
+                      // style={{
+                      //   fontWeight: selectedSizeIndex === i ? "bold" : "normal",
+                      // }}
                       >
                         {size}
                       </button>
@@ -180,18 +180,19 @@ export default function ProductPage() {
                   </div>
 
                 </div>
-                <div className="option item-number">
+                <div className="option">
                   {/* 顯示已選數量 */}
                   <p>
-                    已選擇：<strong>{quantity}</strong> 件
+                    已選數量：<strong>{quantity}</strong> 件
                   </p>
                   {/* 按鈕 */}
                   <div >
-                    <p>件數：</p>
-                    <div>
-                      <button onClick={handleSubtract} style={{ width: "30px" }}>−</button>
-                      <span>{quantity}</span>
-                      <button onClick={handleAdd} style={{ width: "30px" }}>＋</button>
+                    <div className="item-number"> 
+                      <button onClick={handleSubtract} >−</button>
+                      <div className="number-area">
+                        <span>{quantity}</span>
+                      </div>
+                      <button onClick={handleAdd} >＋</button>
                     </div>
 
                   </div>
@@ -213,19 +214,17 @@ export default function ProductPage() {
           {/* 圖片展示區 */}
           <div className="pic-md-area">
             {/* 中圖 */}
-            <div className="pic-md">
               {product.pics.map((pic, index) => (
                 <img
+                className="pic-md"
                   key={index}
                   src={addBase(pic)}
                   alt={`pic${index + 1}`}
-                  width="200"
                 />
               ))}
-            </div>
             {/* 文字欄 */}
             <div className="text-area">
-              <p>商品說明</p>
+              <p className="title">商品說明</p>
               {product.sizeNote && (
                 <div className="size-note">
                   <p style={{ whiteSpace: "pre-line" }}>{product.sizeNote}</p>
@@ -246,17 +245,14 @@ export default function ProductPage() {
           <p>您可能會喜歡</p>
           <div className="cardlist">
             {/* Picks卡片區 */}
-            {picks.map((picks, index) => (
+            {picks.slice(0,4).map((picks, index) => (
               <Card
                 key={picks.id || index}
-                id={picks.id} // ✅ 傳入 id
-                imgSrc={picks.imgSrc}
-                title={picks.title}
-                price={picks.price}
-                link={picks.link}
-                pic1={picks.pic1}
-                pic2={picks.pic2}
-                pic3={picks.pic3}
+                  id={picks.id} // ✅ 傳入 id
+                  imgSrc={picks.imgSrc}
+                  title={picks.title}
+                  price={picks.price}
+                  pics={picks.pics}
               />
             ))}
           </div>
