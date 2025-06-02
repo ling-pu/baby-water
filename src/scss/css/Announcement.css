@@ -67,40 +67,78 @@
 
 /* 跑馬燈 */
 .announcement {
-  position: sticky;
-  top: 0;
-  width: 100%;
+  display: flex;
+  margin-inline: auto;
+  background: rgb(124, 145, 175);
+}
+
+/* Marquee styles */
+.marquee {
+  --gap: 1rem;
+  position: relative;
   display: flex;
   overflow: hidden;
-  background-color: #23222A;
-  position: relative;
-  overflow: hidden;
-  white-space: nowrap;
+  user-select: none;
+  gap: var(--gap);
 }
 
-.announcement__marquee {
-  position: relative;
-  width: 100%;
-}
-
-.announcement__track {
+.marquee__content {
+  flex-shrink: 0;
   display: flex;
-  width: fit-content;
-  animation: marquee 100s linear infinite;
+  justify-content: space-around;
+  gap: var(--gap);
+  min-width: 100%;
 }
 
-@keyframes marquee {
-  0% {
-    transform: translateX(0%);
+.marquee__content img {
+  max-width: 2rem;
+  width: 100%;
+  object-fit: contain;
+}
+
+.marquee__content > * {
+  flex: 0 0 auto;
+  margin: 2px;
+  padding: 0.5rem 2rem;
+  border-radius: 0.25rem;
+  text-align: center;
+}
+
+.marquee__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.marquee__item span {
+  color: #FFF;
+  /* noto 16 10% */
+  font-family: "Noto Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  /* 24px */
+  letter-spacing: 1.6px;
+}
+
+ul {
+  padding-left: 0;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
   }
-  100% {
-    transform: translateX(-100%);
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
   }
 }
-.announcement__track span {
-  font-size: 1rem;
-  color: #ffffff;
-  display: inline-block;
-  padding-right: 5rem; /* 控制每句之間的間距 */
-  white-space: nowrap;
+/* Enable animation */
+.enable-animation .marquee__content {
+  animation: scroll 20s linear infinite;
 }
+
+/* Pause on hover */
+.marquee:hover .marquee__content {
+  animation-play-state: paused;
+}/*# sourceMappingURL=Announcement.css.map */
