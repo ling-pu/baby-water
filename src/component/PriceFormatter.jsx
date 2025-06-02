@@ -14,5 +14,5 @@ export default function PriceFormatter({ price }) {
     }).format(number);
   };
 
-  return <span>NT$ {formatPrice(price)}</span>;
+  return <>NT$ {formatPrice(price)}</>;
 }

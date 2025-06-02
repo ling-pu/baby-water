@@ -1268,6 +1268,7 @@ footer .terms {
 }
 .item-card figure img {
   height: 100%;
+  object-fit: cover;
 }
 .item-card .content-container {
   display: flex;
@@ -1292,9 +1293,9 @@ footer .terms {
   display: flex;
   align-items: center;
 }
-.item-card .content-container .item-price {
+.item-card .content-container .item-price, .item-card .content-container .item-price-del {
   font-family: "Allerta", sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
