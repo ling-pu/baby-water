@@ -85,7 +85,8 @@
 
     .cardlist {
         display: grid;
-        height: 452px;
+        // height: 452px;
+        width: 100%;
         row-gap: 20px;
         column-gap: 20px;
         align-self: stretch;

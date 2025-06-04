@@ -21,15 +21,15 @@ export default function ProductPage() {
 
   const sizes = product?.sizes || ["F"]; // 預設有尺寸避免出錯
 
-// 判斷改成：
-if (
-  !product ||
-  !Array.isArray(product.pics) ||
-  !Array.isArray(product.styles) ||
-  !Array.isArray(sizes)
-) {
-  return <h2>商品資料不完整</h2>;
-}
+  // 判斷改成：
+  if (
+    !product ||
+    !Array.isArray(product.pics) ||
+    !Array.isArray(product.styles) ||
+    !Array.isArray(sizes)
+  ) {
+    return <h2>商品資料不完整</h2>;
+  }
   // 根據路徑對應標題文字
   const getTitleByPath = (path) => {
     if (path.startsWith("/japan")) return "日本代購";
@@ -160,6 +160,7 @@ if (
                     {Array.isArray(product.pics) &&
                       product.pics.map((pic, index) => (
                         <img
+                          className="card"
                           key={index}
                           src={addBase(pic)}
                           alt={`pic${index + 1}`}
@@ -186,8 +187,9 @@ if (
                     {product.sizes.map((size, i) => (
                       <button
                         key={i}
-                        className="acitve"
+                        className="acitve card"
                         onClick={() => setSelectedSizeIndex(i)}
+                        style={{cursor:"pointer"}}
                       // style={{
                       //   fontWeight: selectedSizeIndex === i ? "bold" : "normal",
                       // }}
@@ -206,11 +208,11 @@ if (
                   {/* 按鈕 */}
                   <div >
                     <div className="item-number">
-                      <button onClick={handleSubtract} >−</button>
+                      <button className="card" onClick={handleSubtract} >−</button>
                       <div className="number-area">
                         <span>{quantity}</span>
                       </div>
-                      <button onClick={handleAdd} >＋</button>
+                      <button className="card" onClick={handleAdd} >＋</button>
                     </div>
 
                   </div>
