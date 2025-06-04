@@ -1,27 +1,35 @@
 // src/Pages/ProductPage.jsx
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { picks, world } from "../data/Data";
 import { useState } from "react";
 import Countdown from "../component/Countdown";
 import PriceFormatter from "../component/PriceFormatter";
 import Card from "../component/Card";
 import { useCart } from "../context/CartContext";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
 
 const base = import.meta.env.BASE_URL;
 const addBase = (path) => (path ? base + path.replace(/^\/+/, "") : "");
 
 export default function ProductPage() {
+  const location = useLocation();
   const { id } = useParams();
   const allProducts = [...picks, ...world];
   const product = allProducts.find((p) => p.id === id);
 
   const [mainImg, setMainImg] = useState(product?.pics?.[0] || "");
 
-  if (!product) {
-    return <h2>找不到此商品</h2>;
-  }
+  const sizes = product?.sizes || ["F"]; // 預設有尺寸避免出錯
 
+// 判斷改成：
+if (
+  !product ||
+  !Array.isArray(product.pics) ||
+  !Array.isArray(product.styles) ||
+  !Array.isArray(sizes)
+) {
+  return <h2>商品資料不完整</h2>;
+}
   // 根據路徑對應標題文字
   const getTitleByPath = (path) => {
     if (path.startsWith("/japan")) return "日本代購";
@@ -47,7 +55,7 @@ export default function ProductPage() {
     if (quantity > 1) setQuantity((prev) => prev - 1);
   };
   // 加入購物車
-  const { addToCart,openCart } = useCart();
+  const { addToCart, openCart } = useCart();
   const handleAddToCart = () => {
     const cartItem = {
       id: product.id,
@@ -61,10 +69,10 @@ export default function ProductPage() {
     addToCart(cartItem);
     openCart(); // ✅ 新增這行：點擊後開啟購物車抽屜
   };
-  
+
   // 處理立即購買
-  const navigate = useNavigate(); 
-  
+  const navigate = useNavigate();
+
   const handleBuyNow = () => {
     const cartItem = {
       id: product.id,
@@ -75,10 +83,12 @@ export default function ProductPage() {
       size: product.sizes[selectedSizeIndex],
       quantity,
     };
-  
+
     // ✅ 傳陣列進結帳頁面
     navigate("/checkout", { state: { items: [cartItem] } });
   };
+
+  console.log("商品資料", product);
 
 
   return (
@@ -113,18 +123,20 @@ export default function ProductPage() {
               />
               {/* 小圖列 */}
               <div className="pic-sm">
-                {product.pics.map((pic, index) => (
-                  <img
-                    key={index}
-                    src={addBase(pic)}
-                    alt={`pic${index + 1}`}
-                    onClick={() => setMainImg(pic)}
-                    style={{
-                      cursor: "pointer",
-                      border: mainImg === pic ? "2px solid black" : "none"
-                    }}
-                  />
-                ))}
+                {Array.isArray(product.pics) &&
+                  product.pics.map((pic, index) => (
+                    <img
+                      key={index}
+                      src={addBase(pic)}
+                      alt={`pic${index + 1}`}
+                      onClick={() => setMainImg(pic)}
+                      style={{
+                        cursor: "pointer",
+                        border: mainImg === pic ? "2px solid black" : "none"
+                      }}
+                    />
+                  ))
+                }
               </div>
 
             </div>
@@ -145,18 +157,22 @@ export default function ProductPage() {
                   <p>已選款式：{product.styles[selectedIndex]}</p>
                   {/* 按鈕 */}
                   <div className="item-color">
-                    {product.pics.map((pic, index) => (
-                      <img
-                        key={index}
-                        src={addBase(pic)}
-                        alt={`pic${index + 1}`}
-                        onClick={() => handleSelect(index)}
-                        style={{
-                          cursor: "pointer",
-                          border: selectedIndex === index ? "2px solid black" : "none",
-                        }}
-                      />
-                    ))}
+                    {Array.isArray(product.pics) &&
+                      product.pics.map((pic, index) => (
+                        <img
+                          key={index}
+                          src={addBase(pic)}
+                          alt={`pic${index + 1}`}
+                          onClick={() => handleSelect(index)}
+                          style={{
+                            cursor: "pointer",
+                            border: selectedIndex === index ? "2px solid black" : "none",
+                          }}
+                        />
+                      ))
+                    }
+
+
                   </div>
 
                 </div>
@@ -216,14 +232,15 @@ export default function ProductPage() {
           {/* 圖片展示區 */}
           <div className="pic-md-area">
             {/* 中圖 */}
-            {product.pics.map((pic, index) => (
-              <img
-                className="pic-md"
-                key={index}
-                src={addBase(pic)}
-                alt={`pic${index + 1}`}
-              />
-            ))}
+            {Array.isArray(product.pics) &&
+              product.pics.map((pic, index) => (
+                <img
+                  className="pic-md"
+                  key={index}
+                  src={addBase(pic)}
+                  alt={`pic${index + 1}`}
+                />
+              ))}
             {/* 文字欄 */}
             <div className="text-area">
               <p className="title">商品說明</p>
@@ -244,7 +261,7 @@ export default function ProductPage() {
 
         {/* 其他 */}
         <div className="else">
-          <p>您可能會喜歡</p>
+          <p className="you_may_also_like">您可能會喜歡</p>
           <div className="cardlist">
             {/* Picks卡片區 */}
             {picks.slice(0, 4).map((picks, index) => (

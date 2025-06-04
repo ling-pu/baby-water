@@ -33,9 +33,9 @@ export default function FilterPanel({
       </div>
       <br />
       <ul className="filter1">
-        <li>世界選品~6/10</li>
-        <li>每週超優惠~5/30</li>
-        <li>夏日必備</li>
+        <li><a href="./world">世界選品~6/10</a></li>
+        <li><a href="./timesale">每週超優惠~5/30</a></li>
+        {/* <li>夏日必備</li> */}
       </ul>
 
       <br />

@@ -37,6 +37,13 @@ export const picks = [
     price: "520",
     category: "Tops",
     endtime: "2025-06-30T23:59:59",
+    description: "這件真的非常吸睛且又有氣質⋯和氣勢！\n三款顏色都柔和卻很有存在感🌙𓈒 𓂂𓏸\n\n▫️漸層拼色＋透膚感的網紗材質\n▫️剪裁是微貼身帶腰身的版型，但彈性很好，穿起來不勒\n▫️袖口還有指洞設計，小細節超加分！\n（ 米 × 焦糖棕、藍 × 橘、粉 × 灰 ）",
+    sizeNote: `尺寸 SIZE（FREE SIZE）：
+胸寬 44｜肩寬 35.5｜衣長 59｜袖長 71
+
+注意！此商品為一般預購，約14-21天（不含假日）抵台。
+—
+＊照片皆有些微色差，請以實體商品為準`,
   },
   {
     id: "classic-tshirt-white3",
@@ -47,10 +54,18 @@ export const picks = [
       "/images/tops/1/3.JPG",
     ],
     styles: ["白色款", "黑色款", "棕色款"],
+    sizes: ["F"],
     title: "經典舒適T恤",
     price: "520",
     category: "Tops",
     endtime: "2025-06-30T23:59:59",
+    description: "這件真的非常吸睛且又有氣質⋯和氣勢！\n三款顏色都柔和卻很有存在感🌙𓈒 𓂂𓏸\n\n▫️漸層拼色＋透膚感的網紗材質\n▫️剪裁是微貼身帶腰身的版型，但彈性很好，穿起來不勒\n▫️袖口還有指洞設計，小細節超加分！\n（ 米 × 焦糖棕、藍 × 橘、粉 × 灰 ）",
+    sizeNote: `尺寸 SIZE（FREE SIZE）：
+胸寬 44｜肩寬 35.5｜衣長 59｜袖長 71
+
+注意！此商品為一般預購，約14-21天（不含假日）抵台。
+—
+＊照片皆有些微色差，請以實體商品為準`,
   },
   {
     id: "classic-tshirt-white4",
@@ -61,10 +76,18 @@ export const picks = [
       "/images/tops/1/3.JPG",
     ],
     styles: ["白色款", "黑色款", "棕色款"],
+    sizes: ["F"],
     title: "經典舒適T恤",
     price: "520",
     category: "Tops",
     endtime: "2025-06-30T23:59:59",
+    description: "這件真的非常吸睛且又有氣質⋯和氣勢！\n三款顏色都柔和卻很有存在感🌙𓈒 𓂂𓏸\n\n▫️漸層拼色＋透膚感的網紗材質\n▫️剪裁是微貼身帶腰身的版型，但彈性很好，穿起來不勒\n▫️袖口還有指洞設計，小細節超加分！\n（ 米 × 焦糖棕、藍 × 橘、粉 × 灰 ）",
+    sizeNote: `尺寸 SIZE（FREE SIZE）：
+胸寬 44｜肩寬 35.5｜衣長 59｜袖長 71
+
+注意！此商品為一般預購，約14-21天（不含假日）抵台。
+—
+＊照片皆有些微色差，請以實體商品為準`,
   },
   {
     id: "classic-tshirt-white5",
@@ -75,10 +98,18 @@ export const picks = [
       "/images/tops/1/3.JPG",
     ],
     styles: ["白色款", "黑色款", "棕色款"],
+    sizes: ["F"],
     title: "經典舒適T恤",
-    price: "600",
+    price: "520",
     category: "Tops",
     endtime: "2025-06-30T23:59:59",
+    description: "這件真的非常吸睛且又有氣質⋯和氣勢！\n三款顏色都柔和卻很有存在感🌙𓈒 𓂂𓏸\n\n▫️漸層拼色＋透膚感的網紗材質\n▫️剪裁是微貼身帶腰身的版型，但彈性很好，穿起來不勒\n▫️袖口還有指洞設計，小細節超加分！\n（ 米 × 焦糖棕、藍 × 橘、粉 × 灰 ）",
+    sizeNote: `尺寸 SIZE（FREE SIZE）：
+胸寬 44｜肩寬 35.5｜衣長 59｜袖長 71
+
+注意！此商品為一般預購，約14-21天（不含假日）抵台。
+—
+＊照片皆有些微色差，請以實體商品為準`,
   },
 ];
 
@@ -93,10 +124,18 @@ export const world = [
       "/images/world/1/3.JPG",
     ],
     styles: ["米色款", "棕色款", "粉色款"],
+    sizes: ["F"],
     title: "夏日必備小背心",
     price: "520",
     category: "Tops",
-    endtime: "2025-06-10T23:59:59",
+    endtime: "2025-06-30T23:59:59",
+    description: "這件真的非常吸睛且又有氣質⋯和氣勢！\n三款顏色都柔和卻很有存在感🌙𓈒 𓂂𓏸\n\n▫️漸層拼色＋透膚感的網紗材質\n▫️剪裁是微貼身帶腰身的版型，但彈性很好，穿起來不勒\n▫️袖口還有指洞設計，小細節超加分！\n（ 米 × 焦糖棕、藍 × 橘、粉 × 灰 ）",
+    sizeNote: `尺寸 SIZE（FREE SIZE）：
+胸寬 44｜肩寬 35.5｜衣長 59｜袖長 71
+
+注意！此商品為一般預購，約14-21天（不含假日）抵台。
+—
+＊照片皆有些微色差，請以實體商品為準`,
   },
   {
     id: "summer-vest-beige2",
@@ -107,6 +146,7 @@ export const world = [
       "/images/world/2/3.JPG",
     ],
     styles: ["芭蕾粉", "薄荷綠", "藍莓色"],
+    sizes: ["F"],
     title: "澎澎南瓜細肩背心",
     price: "899",
     category: "Tops",
@@ -121,6 +161,7 @@ export const world = [
       "/images/world/3/3.JPG",
     ],
     styles: ["白色款", "黑色款", "棕色款"],
+    sizes: ["F"],
     title: "Lily Rose 系列泳裝",
     price: "1490",
     category: "Swimwear",
@@ -135,6 +176,7 @@ export const world = [
       "/images/tops/1/3.JPG",
     ],
     styles: ["白色款", "黑色款", "棕色款"],
+    sizes: ["F"],
     title: "經典舒適T恤",
     price: "520",
     category: "Tops",

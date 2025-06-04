@@ -26,6 +26,7 @@ const Card = ({
   };
 
   return (
+    
     <div onClick={handleClick} className="item-card hoverable">
       <figure>
         <img src={addBase(mainImg)} alt={title} />
