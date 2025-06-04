@@ -1,12 +1,16 @@
 import { useNavigate } from "react-router-dom";
 import Card from "../component/Card"
 import { picks, world } from "../data/Data"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FilterPanel from "../component/FilterPanel";
 import SortPanel from "../component/SortPanel";
 const base = import.meta.env.BASE_URL;
 
 export default function Japan() {
+  useEffect(() => {
+    window.scrollTo(0, 0); // 捲動到頁面頂部
+  }, []);
+
   const navigate = useNavigate();
   const allItems = [...picks]; // 合併陣列
   // 篩選服飾類型(多選)

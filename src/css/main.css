@@ -238,7 +238,9 @@ a {
 #product-page .ProductPage-item {
   display: flex;
   height: 800px;
-  overflow: hidden;
+  overflow-y: auto;
+  padding-right: 12px;
+  /* 避免 scrollbar 壓住內Ｆ容 */
   padding: 0px 200px 48px 200px;
   flex-direction: column;
   align-items: flex-start;
@@ -284,6 +286,8 @@ a {
   flex-direction: column;
   align-items: flex-start;
   gap: 12px;
+  border-radius: 8px;
+  background: #f5f3f3;
 }
 #product-page .ProductPage-item .ProductPage-row1 .content h1 {
   color: var(--black, #23222A);
@@ -453,6 +457,9 @@ a {
   width: 378px;
   height: 512px;
   border-radius: 4px;
+}
+#product-page .ProductPage-item .pic-md-area .pic-md img {
+  object-fit: cover;
 }
 #product-page .ProductPage-item .pic-md-area .text-area {
   display: flex;
@@ -913,7 +920,7 @@ footer .footer-row1 {
 footer .footer-row1 .follow-us {
   display: flex;
   width: 400px;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   gap: 60px;
 }
@@ -931,7 +938,7 @@ footer .footer-row1 .follow-us .footer-icon-container img {
 footer .footer-row1 .contact-us {
   display: flex;
   width: 400px;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   gap: 60px;
 }

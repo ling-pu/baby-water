@@ -47,7 +47,9 @@
         display: flex;
         // width: 1441px;
         height: 800px; //捲動範圍
-        overflow: hidden; //超過隱藏
+        overflow-y: auto;
+        padding-right: 12px;
+        /* 避免 scrollbar 壓住內Ｆ容 */
         padding: 0px 200px 48px 200px;
         flex-direction: column;
         align-items: flex-start;
@@ -99,6 +101,10 @@
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 12px;
+
+                border-radius: 8px;
+                background: #f5f3f3;
+                // z-index: 98;
 
                 // 絕美漸層上衣
                 h1 {
@@ -307,6 +313,10 @@
                 width: 378px;
                 height: 512px;
                 border-radius: 4px;
+
+                img {
+                    object-fit: cover;
+                }
             }
 
             .text-area {

@@ -5,6 +5,8 @@ import { useState } from "react";
 import Countdown from "../component/Countdown";
 import PriceFormatter from "../component/PriceFormatter";
 import Card from "../component/Card";
+import { useCart } from "../context/CartContext";
+import { useNavigate } from "react-router-dom"; 
 
 const base = import.meta.env.BASE_URL;
 const addBase = (path) => (path ? base + path.replace(/^\/+/, "") : "");
@@ -45,6 +47,7 @@ export default function ProductPage() {
     if (quantity > 1) setQuantity((prev) => prev - 1);
   };
   // 加入購物車
+  const { addToCart,openCart } = useCart();
   const handleAddToCart = () => {
     const cartItem = {
       id: product.id,
@@ -55,13 +58,13 @@ export default function ProductPage() {
       size: product.sizes[selectedSizeIndex],
       quantity,
     };
-    alert(`已加入購物車：
-      商品：${cartItem.title}
-      款式：${cartItem.style}
-      尺寸：${cartItem.size}
-      件數：${cartItem.quantity}`);
+    addToCart(cartItem);
+    openCart(); // ✅ 新增這行：點擊後開啟購物車抽屜
   };
+  
   // 處理立即購買
+  const navigate = useNavigate(); 
+  
   const handleBuyNow = () => {
     const cartItem = {
       id: product.id,
@@ -72,9 +75,9 @@ export default function ProductPage() {
       size: product.sizes[selectedSizeIndex],
       quantity,
     };
-
-    // 前往結帳頁，並傳遞資料
-    navigate("/checkout", { state: { item: cartItem } });
+  
+    // ✅ 傳陣列進結帳頁面
+    navigate("/checkout", { state: { items: [cartItem] } });
   };
 
 
@@ -115,7 +118,6 @@ export default function ProductPage() {
                     key={index}
                     src={addBase(pic)}
                     alt={`pic${index + 1}`}
-                    width="80"
                     onClick={() => setMainImg(pic)}
                     style={{
                       cursor: "pointer",
@@ -187,7 +189,7 @@ export default function ProductPage() {
                   </p>
                   {/* 按鈕 */}
                   <div >
-                    <div className="item-number"> 
+                    <div className="item-number">
                       <button onClick={handleSubtract} >−</button>
                       <div className="number-area">
                         <span>{quantity}</span>
@@ -214,14 +216,14 @@ export default function ProductPage() {
           {/* 圖片展示區 */}
           <div className="pic-md-area">
             {/* 中圖 */}
-              {product.pics.map((pic, index) => (
-                <img
+            {product.pics.map((pic, index) => (
+              <img
                 className="pic-md"
-                  key={index}
-                  src={addBase(pic)}
-                  alt={`pic${index + 1}`}
-                />
-              ))}
+                key={index}
+                src={addBase(pic)}
+                alt={`pic${index + 1}`}
+              />
+            ))}
             {/* 文字欄 */}
             <div className="text-area">
               <p className="title">商品說明</p>
@@ -245,14 +247,14 @@ export default function ProductPage() {
           <p>您可能會喜歡</p>
           <div className="cardlist">
             {/* Picks卡片區 */}
-            {picks.slice(0,4).map((picks, index) => (
+            {picks.slice(0, 4).map((picks, index) => (
               <Card
                 key={picks.id || index}
-                  id={picks.id} // ✅ 傳入 id
-                  imgSrc={picks.imgSrc}
-                  title={picks.title}
-                  price={picks.price}
-                  pics={picks.pics}
+                id={picks.id} // ✅ 傳入 id
+                imgSrc={picks.imgSrc}
+                title={picks.title}
+                price={picks.price}
+                pics={picks.pics}
               />
             ))}
           </div>

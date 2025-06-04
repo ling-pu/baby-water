@@ -34,7 +34,7 @@ export default function Home() {
             </div>
             {/* btn */}
             <div className="btn-container">
-              <a href="./Timesale" className="btn-seemore">see more</a>
+              <a href="./timesale" className="btn-seemore">see more</a>
             </div>
           </div>
         </section>
@@ -62,7 +62,7 @@ export default function Home() {
             </div>
             {/* btn */}
             <div className="btn-container">
-              <a href="./World" className="btn-seemore">shop now</a>
+              <a href="./world" className="btn-seemore">shop now</a>
             </div>
           </div>
         </section>

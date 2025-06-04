@@ -9,17 +9,21 @@ import Cursor from './component/Cursor.jsx'
 // 確保根目錄路徑正確部署到github
 const base = import.meta.env.BASE_URL;
 
+import { CartProvider } from './context/CartContext.jsx'
+
 function App() {
   return (
     <>
+    <CartProvider> {/* 全域提供購物車狀態 */}
         <BrowserRouter basename={base}>
           <Cursor />
           <Announcement />
           <Header />
           <Pages />
           <Footer />
+          <CartDrawer /> {/* 放在 Router 內層，能使用 context */}
         </BrowserRouter>
-
+        </CartProvider>
     </>
   )
 }
