@@ -11,6 +11,8 @@ export default function Header() {
 
     const navigate = useNavigate();
     const location = useLocation();
+    // 漢堡按鈕
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const { isCartOpen, openCart, closeCart } = useCart();
 
@@ -48,9 +50,11 @@ export default function Header() {
                 </div>
 
                 {/* 漢堡按鈕 */}
-                {/* <button class="hamburger">
+                <button className="hamburger"
+                onClick={()=> setIsMobileMenuOpen(prev => !prev)}
+                >
                     <img src={hamburger} alt="hamburger-button" />
-                </button> */}
+                </button>
 
                 {/* 導覽列 */}
                 <nav className="main-nav">

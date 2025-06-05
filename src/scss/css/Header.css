@@ -74,12 +74,18 @@
   padding: 16px 48px;
   background-color: #e8e8e8;
   border-bottom: 1px solid #23222A;
+  /*手機 */
 }
 .siteHeader ul {
   display: flex;
 }
 .siteHeader .logo-container {
   flex: 1;
+}
+@media (max-width:640px) {
+  .siteHeader .logo-container {
+    display: none;
+  }
 }
 .siteHeader .logo-container .logo {
   flex: 1;
@@ -92,8 +98,20 @@
   justify-content: center;
   align-items: center;
 }
-@media (max-width:640px) {
-  .siteHeader .logo-container .logo {
+.siteHeader .main-nav {
+  display: flex;
+  align-items: center;
+  align-self: center;
+}
+.siteHeader .hamburger {
+  margin-bottom: 10px;
+  /*  修改button預設樣式  */
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+@media (min-width:641px) {
+  .siteHeader .hamburger {
     display: none;
   }
 }
