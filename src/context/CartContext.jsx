@@ -1,7 +1,8 @@
 // src/context/CartContext.jsx
+
 import { createContext, useContext, useState, useCallback } from "react";
 
-const CartContext = createContext();
+export const CartContext = createContext({});
 
 export function CartProvider({ children }) {
   const [isCartOpen, setCartOpen] = useState(false);

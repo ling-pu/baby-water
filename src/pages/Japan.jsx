@@ -1,12 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import Card from "../component/Card"
 import { picks, world } from "../data/Data"
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import FilterPanel from "../component/FilterPanel";
 import SortPanel from "../component/SortPanel";
 const base = import.meta.env.BASE_URL;
 
 export default function Japan() {
+
   useEffect(() => {
     window.scrollTo(0, 0); // 捲動到頁面頂部
   }, []);

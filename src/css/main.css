@@ -1493,6 +1493,60 @@ footer .terms {
   border: 1px solid #23222A;
   background: var(--bg, #E8E8E8);
 }
+.cart-drawer-panel .content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  border: none;
+  padding: 0;
+}
+.cart-drawer-panel .content .total {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-self: stretch;
+}
+.cart-drawer-panel .content .buyItemCard {
+  display: flex;
+  padding: 24px 0px;
+  align-items: center;
+  gap: 48px;
+}
+.cart-drawer-panel .content .buyItemCard div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+.cart-drawer-panel .content .buyItemCard div .col img {
+  width: 56px;
+}
+.cart-drawer-panel .content .buyItemCard div .info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+}
+.cart-drawer-panel .content .buyItemCard div .info p {
+  color: var(--black, #23222A);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+  /* 25.6px */
+  letter-spacing: 0.256px;
+}
+.cart-drawer-panel .content .buyItemCard div .info div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.cart-drawer-panel .content .buyItemCard div .info div p {
+  color: var(--Neutral-medium-gray-2, #4A4D50);
+  font-size: 12px;
+}
 
 .showProgress-stoke {
   position: relative;
@@ -1624,4 +1678,4 @@ body {
 
 main {
   flex: 1;
-}
+}/*# sourceMappingURL=main.css.map */

@@ -5,13 +5,14 @@ import { useEffect, useState } from "react";
 import Countdown from "../component/Countdown";
 import PriceFormatter from "../component/PriceFormatter";
 import Card from "../component/Card";
-import { useCart } from "../context/CartContext";
 import { useNavigate } from "react-router-dom";
+import { useCart } from "../context/CartContext";
 
 const base = import.meta.env.BASE_URL;
 const addBase = (path) => (path ? base + path.replace(/^\/+/, "") : "");
 
 export default function ProductPage() {
+
   useEffect(() => {
     window.scrollTo(0, 0); // 捲動到頁面頂部
   }, []);
@@ -226,8 +227,8 @@ export default function ProductPage() {
 
               {/* 加入購物車 */}
               <div className="add-to-cart-area">
-                <button onClick={handleAddToCart}>加入購物車</button>
-                <button onClick={handleBuyNow}>立即購買</button>
+                <button onClick={handleAddToCart} style={{cursor:'pointer'}}>加入購物車</button>
+                <button onClick={handleBuyNow} style={{cursor:'pointer'}}>立即購買</button>
               </div>
 
             </div>
