@@ -11,6 +11,10 @@
   background-color: $bg-color1;
   border-bottom: 1px solid $color-black;
 
+  @media ($media-640) {
+    padding: 8px 8px;
+  }
+
 
   ul {
     display: flex;
@@ -40,15 +44,22 @@
   }
 
   /*手機 */
-  .main-nav {
-    display: flex;
-    align-items: center;
-    align-self: center;
+  .logo-mobile {
+    a {
+      display: flex;
+      justify-content: center;
 
+      img {
+        justify-content: center;
+      }
+    }
+
+    @media ($media-640-up) {
+      display: none;
+    }
   }
 
   .hamburger {
-    margin-bottom: 10px;
     /*  修改button預設樣式  */
     background-color: transparent;
     border: none;
@@ -83,14 +94,29 @@
     /* icon背景 */
     .icon-search {
       background-image: url('../assets/icons/Search.svg');
+
+      @media ($media-640) {
+        display: block;
+        width: 24px;
+      }
     }
 
     .icon-user {
       background-image: url('../assets/icons/User.svg');
+
+      @media ($media-640) {
+        display: block;
+        width: 24px;
+      }
     }
 
     .icon-cart {
       background-image: url('../assets/icons/Shopping\ cart.svg');
+
+      @media ($media-640) {
+        display: block;
+        width: 24px;
+      }
     }
 
   }
@@ -101,6 +127,10 @@
     flex-direction: column;
     align-items: center;
     align-self: center;
+
+    @media ($media-640) {
+      display: none;
+    }
 
     ul {
       gap: 12px;

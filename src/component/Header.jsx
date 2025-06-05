@@ -5,7 +5,8 @@ import CartDrawer from './CartDrawer';
 import categories from "../js/categories";
 import MainSearch from "./MainSearch";
 import { useCart } from "../context/CartContext";
-import hamburger from "../assets/icons/burger.svg"
+import hamburger from "../assets/icons/burger.svg";
+import logoMobile from "../assets/icons/logo.svg";
 
 export default function Header() {
 
@@ -50,11 +51,16 @@ export default function Header() {
                 </div>
 
                 {/* 漢堡按鈕 */}
-                <button className="hamburger"
-                onClick={()=> setIsMobileMenuOpen(prev => !prev)}
+                <button
+                    className="hamburger"
+                    onClick={() => setIsMobileMenuOpen(prev => !prev)}
                 >
                     <img src={hamburger} alt="hamburger-button" />
                 </button>
+                {/* 手機 logo */}
+                <h1 className="logo-mobile">
+                    <Link to="/"><img src={logoMobile} alt="水寶日本代購 Baby Water Online Store" /></Link>
+                </h1>
 
                 {/* 導覽列 */}
                 <nav className="main-nav">

@@ -1,4 +1,5 @@
 @use "variable" as *;
+
 /* Japan */
 #jp {
     align-items: flex-start;
@@ -9,11 +10,16 @@
     gap: 48px;
     justify-content: center;
 
+    @media ($media-640) {
+        width: 90%;
+        margin: 16px auto;
+    }
+
     // 字級
     span {
         /* noto 10 10% */
         font-family: "Noto Sans";
-        font-size: 10px;
+        font-size: 12px;
         font-style: normal;
         font-weight: 400;
         line-height: 150%;
@@ -37,6 +43,10 @@
     padding: 0px 16px;
     flex-direction: column;
     gap: 24px;
+
+    @media ($media-640) {
+        display: none;
+    }
 
     .filter2 li.active {
         font-weight: bold;
@@ -80,6 +90,17 @@
 
 // 展示區
 #products {
+    display: flex;
+    width: 1022px;
+    padding-bottom: 100px;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    flex-shrink: 0;
+
+    @media ($media-640) {
+        width: 100%;
+    }
 
     // 商品數量
     .title .title-row1 {
@@ -104,13 +125,6 @@
         gap: 8px;
     }
 
-    display: flex;
-    width: 1022px;
-    padding-bottom: 100px;
-    flex-direction: column;
-    align-items: center;
-    gap: 48px;
-    flex-shrink: 0;
 
     .scroll-area {
         display: flex;
@@ -128,12 +142,14 @@
         grid-template-columns: repeat(4, 1fr); // 固定 4 欄
         grid-auto-rows: auto; // 每列根據內容決定高度
 
+        @media ($media-640) {
+            grid-template-columns: repeat(2, 1fr);
+
+        }
+
         img {
             object-fit: cover;
         }
 
     }
 }
-
-
-

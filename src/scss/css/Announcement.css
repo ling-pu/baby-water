@@ -70,6 +70,7 @@
   display: flex;
   margin-inline: auto;
   background: rgb(124, 145, 175);
+  overflow-x: hidden;
 }
 
 /* Marquee styles */
@@ -88,6 +89,8 @@
   justify-content: space-around;
   gap: var(--gap);
   min-width: 100%;
+  width: max-content;
+  /* 內容寬度由子元素撐開 */
 }
 
 .marquee__content img {
@@ -108,6 +111,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex: 0 0 auto;
+  /* 可加入 max-width 或 min-width 限制寬度 */
 }
 .marquee__item span {
   color: #FFF;
@@ -119,6 +124,11 @@
   line-height: 150%;
   /* 24px */
   letter-spacing: 1.6px;
+}
+@media (max-width:640px) {
+  .marquee__item span {
+    font-size: 12px;
+  }
 }
 
 ul {
