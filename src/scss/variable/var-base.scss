@@ -1,0 +1,36 @@
+// RWD斷點
+// 大型設備，設定min-width
+$media--993:"min-width:993px";
+$media-1024:"max-width:1024px";
+// 中
+$media-820:"max-width:820px";
+// $media-768:"max-width:768px";
+// 小
+$media-640:"max-width:640px";
+// $media-576:"max-width:576px";
+
+// 手機版以上
+$media-640-up:"min-width:641px";
+
+
+// 速率
+$speed-high: 0.35s;
+$speed-low: 0.65s;
+
+// 邊框
+$border-default: 2px solid transparent;
+$border-s: 1px solid;
+$border-m: 2px solid;
+$border-l: 3px solid;
+
+// 圓角
+$radius-xs:4px;
+$radius-s:8px;
+$radius-m:16px;
+
+$radius-ex: 99px; //膠囊
+
+// z-index (預設為0)
+$z-index-ex: 999;
+$z-index-sm: 111;
+$z-index-bg:-1;

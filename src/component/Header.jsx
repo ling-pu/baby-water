@@ -5,6 +5,7 @@ import CartDrawer from './CartDrawer';
 import categories from "../js/categories";
 import MainSearch from "./MainSearch";
 import { useCart } from "../context/CartContext";
+import hamburger from "../assets/icons/burger.svg"
 
 export default function Header() {
 
@@ -46,6 +47,11 @@ export default function Header() {
                     </h1>
                 </div>
 
+                {/* 漢堡按鈕 */}
+                {/* <button class="hamburger">
+                    <img src={hamburger} alt="hamburger-button" />
+                </button> */}
+
                 {/* 導覽列 */}
                 <nav className="main-nav">
                     <ul>
@@ -53,7 +59,7 @@ export default function Header() {
                             <li key={c.id} className={location.pathname.startsWith(c.path) ? 'active' : ''}>
                                 <Link to={c.path}>{c.label}</Link>
                             </li>
-                            
+
                         ))}
 
                     </ul>

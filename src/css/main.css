@@ -758,6 +758,11 @@ ul {
   justify-content: center;
   align-items: center;
 }
+@media (max-width:640px) {
+  .siteHeader .logo-container .logo {
+    display: none;
+  }
+}
 .siteHeader .icon-nav {
   display: flex;
   flex: 1;
@@ -912,6 +917,7 @@ footer span, footer address, footer a {
 }
 footer .footer-row1 {
   display: flex;
+  flex: 1;
   padding: 12px 60px;
   justify-content: space-between;
   align-items: center;
@@ -921,7 +927,6 @@ footer .footer-row1 {
 }
 footer .footer-row1 .follow-us {
   display: flex;
-  width: 400px;
   justify-content: center;
   align-items: center;
   gap: 60px;
@@ -939,7 +944,6 @@ footer .footer-row1 .follow-us .footer-icon-container img {
 }
 footer .footer-row1 .contact-us {
   display: flex;
-  width: 400px;
   justify-content: center;
   align-items: center;
   gap: 60px;

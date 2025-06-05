@@ -11,12 +11,16 @@
   background-color: $bg-color1;
   border-bottom: 1px solid $color-black;
 
+   
+
   ul {
     display: flex;
   }
 
   .logo-container {
     flex: 1;
+
+    
 
     .logo {
       flex: 1;
@@ -28,10 +32,13 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+
+      @media ($media-640){
+        display: none;
+      }
     }
 
   }
-
 
 
   .icon-nav {

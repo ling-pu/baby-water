@@ -92,6 +92,11 @@
   justify-content: center;
   align-items: center;
 }
+@media (max-width:640px) {
+  .siteHeader .logo-container .logo {
+    display: none;
+  }
+}
 .siteHeader .icon-nav {
   display: flex;
   flex: 1;

@@ -26,7 +26,7 @@ const Card = ({
   };
 
   return (
-    
+
     <div onClick={handleClick} className="item-card hoverable">
       <figure>
         <img src={addBase(mainImg)} alt={title} />
@@ -35,7 +35,7 @@ const Card = ({
         <h3 className="title">{title}</h3>
         <div className="item-price-area">
           <p className="item-price"><PriceFormatter price={price} /></p>
-          <del className="item-price-del"><PriceFormatter price={price} /></del>          
+          <del className="item-price-del"><PriceFormatter price={price} /></del>
         </div>
         {/* ✅ 小圖切換區，支援 pics + styles */}
         <div
@@ -44,6 +44,7 @@ const Card = ({
         >
           {pics.map((pic, idx) => (
             <img
+              className="card"
               key={idx}
               src={addBase(pic)}
               alt={styles[idx] || `樣式 ${idx + 1}`}
