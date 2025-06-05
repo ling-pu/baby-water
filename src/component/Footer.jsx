@@ -9,18 +9,23 @@ export default function Footer() {
         <section className="follow-us">
           <h5>Follow us</h5>
           <div className="footer-icon-container">
-            <p>@babywater.stuff</p><a href="https://www.instagram.com/babywater.stuff/" target="_blank" rel="noopener noreferrer">
-              {/* <img src={`${base}icons/IG.svg`} alt="Instagram" /> */}
-            </a>
+            <div>
+              <a href="https://www.instagram.com/babywater.stuff/" target="_blank" rel="noopener noreferrer">Instagram @babywater.stuff
+                {/* <img src={`${base}icons/IG.svg`} alt="Instagram" /> */}
+              </a>
+            </div>
+
           </div>
         </section>
 
         {/* Contact us */}
         <section className="contact-us">
           <h5>Contact us</h5>
-          <address>
-            官方 LINE：<a href="https://line.me/R/ti/p/@064nzskq?ts=06201355&oat_content=url">@babywater</a>
-          </address>
+            <address>
+              <a href="https://line.me/R/ti/p/@064nzskq?ts=06201355&oat_content=url">Line @babywater</a>
+            </address>
+  
+
         </section>
       </div>
 

@@ -34,8 +34,8 @@ const Card = ({
       <div className="content-container">
         <h3 className="title">{title}</h3>
         <div className="item-price-area">
-          <del className="item-price-del"><PriceFormatter price={price} /></del>
           <p className="item-price"><PriceFormatter price={price} /></p>
+          <del className="item-price-del"><PriceFormatter price={price} /></del>          
         </div>
         {/* ✅ 小圖切換區，支援 pics + styles */}
         <div

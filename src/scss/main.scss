@@ -37,6 +37,7 @@ h1 {
 body {
   // cursor: none;
 }
+
 .cursor {
   position: fixed;
   top: 0;
@@ -54,7 +55,7 @@ body {
 .cursor__ball--big {
   width: 30px;
   height: 30px;
-  background-color: $text-color1;
+  background-color: rgb(124, 145, 175);
   transition: transform 0.2s ease;
 }
 
@@ -64,8 +65,10 @@ body {
   background-color: transparent;
   transition: transform 0.1s ease;
 }
+
 // 讓footer 貼底
-html, body {
+html,
+body {
   height: 100%;
 }
 

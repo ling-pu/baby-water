@@ -83,8 +83,10 @@
                     gap: 16px;
                     align-self: stretch;
                     flex-wrap: wrap;
+                    
 
                     img {
+                        border-radius: 4px;
                         object-fit: cover;
                         width: 56px;
                         height: 64px;
@@ -104,6 +106,7 @@
 
                 border-radius: 8px;
                 background: #f5f3f3;
+                border: none;
                 // z-index: 98;
 
                 // 絕美漸層上衣

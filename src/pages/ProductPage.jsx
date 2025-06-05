@@ -1,7 +1,7 @@
 // src/Pages/ProductPage.jsx
 import { useLocation, useParams } from "react-router-dom";
 import { picks, world } from "../data/Data";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Countdown from "../component/Countdown";
 import PriceFormatter from "../component/PriceFormatter";
 import Card from "../component/Card";
@@ -12,6 +12,10 @@ const base = import.meta.env.BASE_URL;
 const addBase = (path) => (path ? base + path.replace(/^\/+/, "") : "");
 
 export default function ProductPage() {
+  useEffect(() => {
+    window.scrollTo(0, 0); // 捲動到頁面頂部
+  }, []);
+
   const location = useLocation();
   const { id } = useParams();
   const allProducts = [...picks, ...world];
