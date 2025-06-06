@@ -45,6 +45,8 @@
 
   /*手機 */
   .logo-mobile {
+    display: flex;
+
     a {
       display: flex;
       justify-content: center;
@@ -128,8 +130,38 @@
     align-items: center;
     align-self: center;
 
+    .cat-mobile {
+      @media ($media-640-up) {
+      display: none;
+    }
+    }
+
+    // PC 預設顯示
+    @media ($media-640-up) {
+      display: flex;
+    }
+
+    // 手機預設隱藏
     @media ($media-640) {
       display: none;
+
+      transition: max-height 0.3s ease;
+      overflow: hidden;
+      max-height: 0;
+
+      &.open {
+        display: block;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: rgba(#f0efef, 1);
+        padding: 1rem;
+        z-index: 100;
+        overflow-x: scroll;
+
+        max-height: 100vh; // 根據實際內容調整
+      }
     }
 
     ul {
@@ -138,6 +170,11 @@
 
     li {
       margin: 8px 24px;
+
+      @media ($media-640) {
+        font-size: 14px;
+        margin: 8px 16px;
+      }
     }
 
     // 作用中顏色
@@ -168,4 +205,28 @@
   }
 
 
+}
+
+/* 預設手機版 main-nav 是隱藏的 */
+.main-nav {
+  display: none;
+}
+
+/* 如果有 .open class，就顯示出來 */
+.main-nav.open {
+  display: block;
+}
+
+/* 可搭配媒體查詢，只在手機時這樣顯示 */
+@media ($media-640) {
+  .main-nav {
+    position: absolute;
+    top: 60px;
+    /* 根據 header 高度調整 */
+    left: 0;
+    right: 0;
+    background-color: white;
+    padding: 1rem;
+    z-index: 100;
+  }
 }

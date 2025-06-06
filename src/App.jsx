@@ -10,11 +10,13 @@ import Cursor from './component/Cursor.jsx'
 const base = import.meta.env.BASE_URL;
 
 import { CartProvider } from './context/CartContext.jsx'
+import { CategoryProvider } from './context/CategoryContext.jsx'
 
 function App() {
   return (
     <>
     <CartProvider> {/* 全域提供購物車狀態 */}
+      <CategoryProvider>
         <BrowserRouter basename={base}>
           <Cursor />
           <Announcement />
@@ -23,6 +25,7 @@ function App() {
           <Footer />
           <CartDrawer /> {/* 放在 Router 內層，能使用 context */}
         </BrowserRouter>
+        </CategoryProvider>
         </CartProvider>
     </>
   )

@@ -91,6 +91,7 @@ footer span, footer address, footer a {
 }
 footer .footer-row1 {
   display: flex;
+  flex-wrap: wrap;
   flex: 1;
   padding: 12px 60px;
   justify-content: space-between;
@@ -101,6 +102,7 @@ footer .footer-row1 {
 }
 footer .footer-row1 .follow-us {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 60px;
@@ -118,6 +120,7 @@ footer .footer-row1 .follow-us .footer-icon-container img {
 }
 footer .footer-row1 .contact-us {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 60px;
@@ -133,4 +136,4 @@ footer .terms {
   font-size: 16px;
   font-weight: 400;
   line-height: 160%;
-}/*# sourceMappingURL=Footer.css.map */
+}

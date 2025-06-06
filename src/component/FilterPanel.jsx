@@ -1,30 +1,30 @@
 import React from "react";
+import { useCategory } from "../context/CategoryContext";
 
-export default function FilterPanel({
-  selectedCategories,
-  setSelectedCategories,
-}) {
+export default function FilterPanel() {
+  const { selectedCategories, toggleCategory } = useCategory();
+
   const categories = ["All", "Tops", "Bottoms", "Swimwear", "Dresses", "Others"];
 
-  const toggleCategory = (cat) => {
-    if (cat === "All") {
-      setSelectedCategories(["All"]);
-    } else {
-      setSelectedCategories((prev) => {
-        const isSelected = prev.includes(cat);
-        let newSelection;
+// const toggleCategory = (cat) => {
+//     if (cat === "All") {
+//       setSelectedCategories(["All"]);
+//     } else {
+//       setSelectedCategories((prev) => {
+//         const isSelected = prev.includes(cat);
+//         let newSelection;
 
-        if (isSelected) {
-          newSelection = prev.filter((item) => item !== cat);
-        } else {
-          newSelection = [...prev.filter((item) => item !== "All"), cat];
-        }
+//         if (isSelected) {
+//           newSelection = prev.filter((item) => item !== cat);
+//         } else {
+//           newSelection = [...prev.filter((item) => item !== "All"), cat];
+//         }
 
-        // 如果沒選任何分類，預設選 All
-        return newSelection.length > 0 ? newSelection : ["All"];
-      });
-    }
-  };
+//         // 如果沒選任何分類，預設選 All
+//         return newSelection.length > 0 ? newSelection : ["All"];
+//       });
+//     }
+//   };
 
   return (
     <section id="filter">

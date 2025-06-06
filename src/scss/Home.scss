@@ -50,6 +50,14 @@
         width: 80%;
         max-width: 100%;
     }
+
+    .p-banner {
+
+        @media ($media-640){
+            display: none;
+        }
+
+    }
 }
 
 .pick,

@@ -7,6 +7,7 @@ import MainSearch from "./MainSearch";
 import { useCart } from "../context/CartContext";
 import hamburger from "../assets/icons/burger.svg";
 import logoMobile from "../assets/icons/logo.svg";
+import { useCategory } from "../context/CategoryContext";
 
 export default function Header() {
 
@@ -14,6 +15,10 @@ export default function Header() {
     const location = useLocation();
     // 漢堡按鈕
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    // 手機 衣服分類選單
+    const { selectedCategories, toggleCategory } = useCategory(); // 加這行
+    const clothingCategories = ["All", "Tops", "Bottoms", "Swimwear", "Dresses", "Others"]; // 加這行
+
 
     const { isCartOpen, openCart, closeCart } = useCart();
 
@@ -63,15 +68,27 @@ export default function Header() {
                 </h1>
 
                 {/* 導覽列 */}
-                <nav className="main-nav">
+                <nav className={`main-nav ${isMobileMenuOpen ? 'open' : ''}`}>
                     <ul>
                         {categories.map((c) => (
                             <li key={c.id} className={location.pathname.startsWith(c.path) ? 'active' : ''}>
-                                <Link to={c.path}>{c.label}</Link>
+                                <Link to={c.path} onClick={() => setIsMobileMenuOpen(false)}>{c.label}</Link>
                             </li>
 
                         ))}
+                    </ul>
 
+                    {/* 手機版才有 衣服類型區 */}
+                    <ul className="filter2 cat-mobile">
+                        {clothingCategories.map((cat) => (
+                            <li
+                                key={cat}
+                                className={selectedCategories.includes(cat) ? "active" : ""}
+                                onClick={() => toggleCategory(cat)}
+                            >
+                                {cat}
+                            </li>
+                        ))}
                     </ul>
                 </nav>
 

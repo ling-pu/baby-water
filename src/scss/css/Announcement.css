@@ -67,6 +67,7 @@
 
 /* 跑馬燈 */
 .announcement {
+  width: 100%;
   display: flex;
   margin-inline: auto;
   background: rgb(124, 145, 175);
@@ -75,6 +76,7 @@
 
 /* Marquee styles */
 .marquee {
+  width: 100%;
   --gap: 1rem;
   position: relative;
   display: flex;
@@ -88,8 +90,6 @@
   display: flex;
   justify-content: space-around;
   gap: var(--gap);
-  min-width: 100%;
-  width: max-content;
   /* 內容寬度由子元素撐開 */
 }
 
@@ -151,4 +151,4 @@ ul {
 /* Pause on hover */
 .marquee:hover .marquee__content {
   animation-play-state: paused;
-}/*# sourceMappingURL=Announcement.css.map */
+}
