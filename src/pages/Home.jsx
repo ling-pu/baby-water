@@ -36,8 +36,8 @@ export default function Home() {
             <div className="btn-container">
               <a href="./timesale" className="btn-seemore">see more
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9.34148 18.6067L14.6585 11.9829L9.34148 5.39334" stroke-width="3"
-                    stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M9.34148 18.6067L14.6585 11.9829L9.34148 5.39334" strokeWidth="3"
+                    strokeLinecap="round" strokeLinejoin="round" />
                 </svg></a>
             </div>
           </div>
@@ -68,8 +68,8 @@ export default function Home() {
             <div className="btn-container">
               <a href="./world" className="btn-seemore">shop now
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9.34148 18.6067L14.6585 11.9829L9.34148 5.39334" stroke-width="3"
-                    stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M9.34148 18.6067L14.6585 11.9829L9.34148 5.39334" strokeWidth="3"
+                    strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </a>
             </div>

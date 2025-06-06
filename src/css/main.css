@@ -1726,35 +1726,6 @@ h1 {
 }
 
 /* 游標 */
-.cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 9999;
-}
-
-.cursor__ball {
-  position: absolute;
-  border-radius: 50%;
-  will-change: transform;
-}
-
-.cursor__ball--big {
-  width: 30px;
-  height: 30px;
-  background-color: rgb(124, 145, 175);
-  transition: transform 0.2s ease;
-}
-
-.cursor__ball--small {
-  width: 8px;
-  height: 8px;
-  background-color: transparent;
-  transition: transform 0.1s ease;
-}
-
-/* 游標 */
 body {
   cursor: none;
 }
@@ -1773,6 +1744,11 @@ body .cursor__ball {
 
 body .cursor__ball circle {
   fill: rgb(124, 145, 175);
+}
+
+.cursor__ball--big {
+  pointer-events: none;
+  /* 其他樣式 */
 }
 
 html,
