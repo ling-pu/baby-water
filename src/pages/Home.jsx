@@ -21,7 +21,7 @@ export default function Home() {
             {/* 1列4欄 */}
             <div className="cardlist">
               {/* Picks卡片區 */}
-              {picks.slice(0,4).map((picks, index) => (
+              {picks.slice(0, 4).map((picks, index) => (
                 <Card
                   key={picks.id || index}
                   id={picks.id} // ✅ 傳入 id
@@ -34,7 +34,11 @@ export default function Home() {
             </div>
             {/* btn */}
             <div className="btn-container">
-              <a href="./timesale" className="btn-seemore">see more</a>
+              <a href="./timesale" className="btn-seemore">see more
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.34148 18.6067L14.6585 11.9829L9.34148 5.39334" stroke-width="3"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg></a>
             </div>
           </div>
         </section>
@@ -48,7 +52,7 @@ export default function Home() {
             {/* 1列4欄 */}
             <div className="cardlist">
               {/* World卡片區 */}
-              {world.slice(0,4).map((world, index) => (
+              {world.slice(0, 4).map((world, index) => (
                 <Card
                   key={world.id || index}
                   id={world.id} // ✅ 傳入 id
@@ -62,7 +66,12 @@ export default function Home() {
             </div>
             {/* btn */}
             <div className="btn-container">
-              <a href="./world" className="btn-seemore">shop now</a>
+              <a href="./world" className="btn-seemore">shop now
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.34148 18.6067L14.6585 11.9829L9.34148 5.39334" stroke-width="3"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
             </div>
           </div>
         </section>

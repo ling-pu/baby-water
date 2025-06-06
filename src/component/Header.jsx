@@ -72,7 +72,7 @@ export default function Header() {
                     <ul>
                         {categories.map((c) => (
                             <li key={c.id} className={location.pathname.startsWith(c.path) ? 'active' : ''}>
-                                <Link to={c.path} onClick={() => setIsMobileMenuOpen(false)}>{c.label}</Link>
+                                <Link to={c.path} className="hoverable" onClick={() => setIsMobileMenuOpen(false)}>{c.label}</Link>
                             </li>
 
                         ))}

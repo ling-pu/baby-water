@@ -101,6 +101,11 @@
   height: 60vh;
   background-size: cover;
 }
+@media (max-width:640px) {
+  .banner-container {
+    height: 20vh;
+  }
+}
 .banner-container img {
   object-fit: contain;
   width: 80%;
@@ -163,13 +168,32 @@
   border: none;
 }
 
-.btn-container {
+.btn-seemore {
+  text-decoration: none;
+  cursor: pointer;
   display: flex;
-  padding: 12px 0px;
-}
-.btn-container .btn-seemore {
-  display: flex;
-  padding: 8px 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
   border-radius: 99px;
-  border: 2px solid var(--Neutral-dark-gray, #2E2F30);
+  border: 2px solid rgb(124, 145, 175);
+  background-color: rgb(248, 248, 240);
+  color: rgb(124, 145, 175);
+  font-size: 1.5rem;
+  font-weight: 800;
+  transition: 0.45s;
+}
+.btn-seemore svg {
+  transition: 0.45s;
+  transform: translateX(0.5rem);
+  stroke: rgb(124, 145, 175);
+}
+.btn-seemore:hover {
+  border: 2px solid rgb(248, 248, 240);
+  color: rgb(248, 248, 240);
+  background-color: rgb(124, 145, 175);
+}
+.btn-seemore:hover svg {
+  transform: translateX(1rem);
+  stroke: rgb(248, 248, 240);
 }
