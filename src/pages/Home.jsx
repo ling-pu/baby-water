@@ -1,4 +1,5 @@
 import banner from "../assets/banner.gif"
+import babywater from "../assets/icons/logo.svg"
 import bg from "../assets/bg.svg"
 import Card from "../component/Card"
 import { picks, world } from "../data/Data"
@@ -6,13 +7,21 @@ import { picks, world } from "../data/Data"
 export default function Home() {
   return (
     <>
-      <div className="home">
-        <section className="banner-container">
-          <img src={banner} alt="" />
-          <p className="p-banner">Baby Water選物，想帶大家認識「值得收藏」的衣櫃成員——質感、經典、耐穿，好搭又能陪你很多年的那種，是會讓人越穿越愛、每年都想再拿出來穿的存在 ♡ 選得少一點，選得更剛好。</p>
-        </section>
+      <section className="banner-container">
+        <div>
+          <img src={babywater} alt="" />
+          <p className="p-banner">想帶大家認識「值得收藏」的衣櫃成員——質感、經典、耐穿，能陪你走過好幾個季節的存在 ♡ </p>
+          <div className="btn-container">
+            <a href="#timesale" className="btn-seemore">おすすめ ITEM</a>
+          </div>
+        </div>
 
-        <section className="pick">
+        <img src={banner} alt="" />
+      </section>
+      <div className="home">
+
+
+        <section className="pick" id="timesale">
           <div className="pick-head">
             <h1 className="title">Baby Water’s Pick</h1>
             <h1 className="timesale">Time Sale ~ 05/30</h1>
