@@ -1753,6 +1753,7 @@ body {
 
 body .cursor {
   pointer-events: none;
+  z-index: 1000;
 }
 
 body .cursor__ball {

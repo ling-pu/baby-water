@@ -73,6 +73,7 @@ body {
 
 body .cursor {
   pointer-events: none;
+  z-index: 1000;
   // color: $color-blue;
 }
 body .cursor__ball {
