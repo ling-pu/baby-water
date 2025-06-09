@@ -14,7 +14,7 @@ export function CartProvider({ children }) {
 
   const addToCart = (item) => {
     setCartItems(prev => {
-      const existingIndex = prev.findIndex(i => 
+      const existingIndex = prev.findIndex(i =>
         i.id === item.id &&
         i.style === item.style &&
         i.size === item.size
@@ -29,10 +29,17 @@ export function CartProvider({ children }) {
     setCartOpen(true);
   };
 
-  const removeFromCart = (indexToRemove) => {
-    console.log("刪除項目索引:", indexToRemove);
-    setCartItems(prev => prev.filter((_, index) => index !== indexToRemove));
-  };
+const removeFromCart = (itemToRemove) => {
+  setCartItems(prev =>
+    prev.filter(item =>
+      !(item.id === itemToRemove.id &&
+        item.style === itemToRemove.style &&
+        item.size === itemToRemove.size)
+    )
+  );
+};
+
+const clearCart = () => setCartItems([]);
 
   return (
     <CartContext.Provider
@@ -43,7 +50,8 @@ export function CartProvider({ children }) {
         toggleCart,
         cartItems,
         addToCart,
-        removeFromCart
+        removeFromCart,
+        clearCart
       }}
     >
       {children}

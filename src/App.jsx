@@ -15,18 +15,20 @@ import { CategoryProvider } from './context/CategoryContext.jsx'
 function App() {
   return (
     <>
-    <CartProvider> {/* 全域提供購物車狀態 */}
-      <CategoryProvider>
-        <BrowserRouter basename={base}>
-          <Cursor />
-          <Announcement />
-          <Header />
-          <Pages />
-          <Footer />
-          <CartDrawer /> {/* 放在 Router 內層，能使用 context */}
-        </BrowserRouter>
-        </CategoryProvider>
+
+      <BrowserRouter basename={base}>
+        <CartProvider> {/* 全域提供購物車狀態 */}
+          <CategoryProvider>
+            <Cursor />
+            <Announcement />
+            <Header />
+            <Pages />
+            <Footer />
+            <CartDrawer /> {/* 放在 Router 內層，能使用 context */}
+          </CategoryProvider>
         </CartProvider>
+      </BrowserRouter>
+
     </>
   )
 }

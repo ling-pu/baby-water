@@ -93,8 +93,7 @@ export default function ProductPage() {
     navigate("/checkout", { state: { items: [cartItem] } });
   };
 
-  console.log("商品資料", product);
-
+  // console.log("商品資料", product);
 
   return (
     <>

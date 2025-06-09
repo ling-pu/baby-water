@@ -1,6 +1,7 @@
 import { useCart } from "../context/CartContext";
 import { useNavigate } from "react-router-dom";
 import X from "../assets/icons/icons/x.png";
+import { useState } from "react";
 
 const base = import.meta.env.BASE_URL;
 
@@ -10,6 +11,18 @@ const addBase = (path) => {
 };
 
 export default function CartDrawer() {
+  // 提示訊息
+  const [message, setMessage] = useState("");
+  const handleRemove = (item) => {
+    try {
+      removeFromCart(item);
+      setMessage(`已移除「${item.title}」`);
+      setTimeout(() => setMessage(""), 3000);
+    } catch (error) {
+      console.error("移除商品失敗", error);
+    }
+  };
+
   const { isCartOpen, closeCart, cartItems, removeFromCart } = useCart();
   const navigate = useNavigate();
 
@@ -24,12 +37,20 @@ export default function CartDrawer() {
     closeCart();
   };
 
+
   return (
     <div className="cart-drawer open">
       <div className="cart-drawer-overlay" onClick={closeCart}></div>
       <div className="cart-drawer-panel" onClick={e => e.stopPropagation()}>
         {/* <button className="close-btn" onClick={closeCart}>×</button> */}
         <h2>購物車商品</h2>
+
+        {/* 已刪除的提示 */}
+        {message && (
+          <div className="cart-message">
+            {message}
+          </div>
+        )}
 
         <div className="showProgress-stoke">
           <div className="showProgress-solid"></div>
@@ -42,8 +63,8 @@ export default function CartDrawer() {
           </div>
 
           {/* 商品列表 */}
-          {cartItems.map((item, index) => (
-            <div key={index} className="buyItemCard">
+          {cartItems.map((item) => (
+            <div key={`${item.id}-${item.style}-${item.size}`} className="buyItemCard">
 
               <div>
                 <div className="col">
@@ -63,12 +84,12 @@ export default function CartDrawer() {
 
               {/* 總金額＆刪除按鈕區 */}
               <div>
-              <p>NT$ <span>{(item.price * item.quantity).toLocaleString()}</span></p>
+                <p>NT$ <span>{(item.price * item.quantity).toLocaleString()}</span></p>
 
-              <button onClick={() => removeFromCart(index)}
-                style={{ cursor: 'pointer' }}>
-                <img src={X} alt="" />
-              </button>
+                <button onClick={() => handleRemove(item)}
+                  style={{ cursor: 'pointer' }}>
+                  <img src={X} alt="移除" draggable="false" />
+                </button>
               </div>
 
 
