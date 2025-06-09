@@ -157,6 +157,7 @@
 @media (max-width:640px) {
   #products {
     width: 100%;
+    gap: 2rem;
   }
 }
 #products .title .title-row1 {
@@ -194,8 +195,11 @@
 @media (max-width:640px) {
   #products .cardlist {
     grid-template-columns: repeat(2, 1fr);
+    row-gap: 1rem;
+    column-gap: 0;
+    width: 90%;
   }
 }
 #products .cardlist img {
   object-fit: cover;
-}
+}/*# sourceMappingURL=Japan.css.map */

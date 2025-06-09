@@ -100,6 +100,7 @@
 
     @media ($media-640) {
         width: 100%;
+        gap: 2rem;
     }
 
     // 商品數量
@@ -144,6 +145,9 @@
 
         @media ($media-640) {
             grid-template-columns: repeat(2, 1fr);
+            row-gap: 1rem;
+            column-gap: 0;
+            width: 90%;
 
         }
 
