@@ -7,16 +7,26 @@
 }
 
 // overlay background
-.cart-drawer-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: flex-end;
+// .cart-drawer-overlay {
+//     position: fixed;
+//     inset: 0;
+//     z-index: 99;
+//     display: flex;
+//     justify-content: flex-end;
+// }
+
+.cart-drawer {
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(100%);
+}
+
+.cart-drawer.open {
+  transform: translateX(0%);
 }
 
 // 視窗本人
 .cart-drawer-panel {
+    z-index: 100; /* panel 層級高於 overlay */
     width: 300px;
     height: 100%;
     box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);

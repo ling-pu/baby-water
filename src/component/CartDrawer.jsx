@@ -1,7 +1,7 @@
 import { useCart } from "../context/CartContext";
 import { useNavigate } from "react-router-dom";
 import X from "../assets/icons/icons/x.png";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const base = import.meta.env.BASE_URL;
 
@@ -11,20 +11,35 @@ const addBase = (path) => {
 };
 
 export default function CartDrawer() {
-  // 提示訊息
-  const [message, setMessage] = useState("");
-  const handleRemove = (item) => {
-    try {
-      removeFromCart(item);
-      setMessage(`已移除「${item.title}」`);
-      setTimeout(() => setMessage(""), 3000);
-    } catch (error) {
-      console.error("移除商品失敗", error);
-    }
-  };
 
   const { isCartOpen, closeCart, cartItems, removeFromCart } = useCart();
   const navigate = useNavigate();
+  const drawerRef = useRef(null); // 用來偵測點擊是否在 drawer 內
+
+  // 提示訊息
+  const [message, setMessage] = useState("");
+  const handleRemove = (item) => {
+    removeFromCart(item);
+    setMessage(`已移除「${item.title}」`);
+    setTimeout(() => setMessage(""), 2000);
+  };
+  if (typeof removeFromCart !== "function") {
+    console.warn("removeFromCart 尚未定義");
+    return;
+  }
+  // 點擊 drawer 外部就關閉
+  useEffect(() => {
+    if (!isCartOpen) return;
+
+    const handleClickOutside = (event) => {
+      if (drawerRef.current && !drawerRef.current.contains(event.target)) {
+        closeCart();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isCartOpen, closeCart]);
 
   if (!isCartOpen) return null;
 
@@ -38,73 +53,80 @@ export default function CartDrawer() {
   };
 
 
+
+
   return (
-    <div className="cart-drawer open">
-      <div className="cart-drawer-overlay" onClick={closeCart}></div>
-      <div className="cart-drawer-panel" onClick={e => e.stopPropagation()}>
-        {/* <button className="close-btn" onClick={closeCart}>×</button> */}
-        <h2>購物車商品</h2>
+    <>
+      {isCartOpen && (
+        <div className="cart-drawer open" onClick={e => e.stopPropagation()}>
+          <div className="cart-drawer-panel" >
+            <h2>購物車商品</h2>
 
-        {/* 已刪除的提示 */}
-        {message && (
-          <div className="cart-message">
-            {message}
-          </div>
-        )}
+            {/* 已刪除的提示 */}
+            {message && (
+              <div className="cart-message">
+                {message}
+              </div>
+            )}
 
-        <div className="showProgress-stoke">
-          <div className="showProgress-solid"></div>
-        </div>
+            <div className="showProgress-stoke">
+              <div className="showProgress-solid"></div>
+            </div>
 
-        <div className="content">
-          <div className="total">
-            <p>全部商品（<span>{totalQuantity}</span> 件）</p>
-            <p>NT$ <span>{totalPrice.toLocaleString()}</span></p>
-          </div>
-
-          {/* 商品列表 */}
-          {cartItems.map((item) => (
-            <div key={`${item.id}-${item.style}-${item.size}`} className="buyItemCard">
-
-              <div>
-                <div className="col">
-                  <img src={addBase(item.image)} alt={item.title} className="pic-s" />
-                </div>
-                <div className="info">
-                  <p>{item.title}</p>
-                  {/* <div>
-                    <p>款式：{item.style}</p>
-                    <p>尺寸：{item.size}</p>
-                    <p>數量：{item.quantity}</p>
-                  </div> */}
-
-
-                </div>
+            <div className="content">
+              <div className="total">
+                <p>全部商品（<span>{totalQuantity}</span> 件）</p>
+                <p>NT$ <span>{totalPrice.toLocaleString()}</span></p>
               </div>
 
-              {/* 總金額＆刪除按鈕區 */}
-              <div>
-                <p>NT$ <span>{(item.price * item.quantity).toLocaleString()}</span></p>
+              {/* 商品列表 */}
+              {Array.isArray(cartItems) && cartItems.length > 0 && cartItems.map((item) => (
+                <div key={`${item.id}-${item.style}-${item.size}`} className="buyItemCard">
 
-                <button onClick={() => handleRemove(item)}
-                  style={{ cursor: 'pointer' }}>
-                  <img src={X} alt="移除" draggable="false" />
-                </button>
-              </div>
+                  <div>
+                    <div className="col">
+                      <img src={addBase(item.image)} alt={item.title} className="pic-s" />
+                    </div>
+                    <div className="info">
+                      <p>{item.title}</p>
+                      <div>
+                        <p>款式：{item.style}</p>
+                        <p>尺寸：{item.size}</p>
+                        <p>數量：{item.quantity}</p>
+                      </div>
 
 
+                    </div>
+                  </div>
+
+                  {/* 總金額＆刪除按鈕區 */}
+                  <div>
+                    <p>NT$ <span>{(item.price * item.quantity).toLocaleString()}</span></p>
+
+                    <button
+                      onClick={() => handleRemove(item)}
+                      style={{ cursor: "pointer" }}
+                    >
+                      <img src={X} alt="移除" />
+                    </button>
+                  </div>
+
+
+                </div>
+              ))}
+
+              {/* 結帳按鈕 */}
+              {cartItems.length > 0 && (
+                <div className="checkout-btn-area">
+                  <button onClick={handleCheckout} style={{ cursor: "pointer" }}>前往結帳</button>
+                </div>
+              )}
             </div>
-          ))}
-
-          {/* 結帳按鈕 */}
-          {cartItems.length > 0 && (
-            <div className="checkout-btn-area">
-              <button onClick={handleCheckout}>前往結帳</button>
-            </div>
-          )}
+          </div>
         </div>
-      </div>
-    </div>
+      )}
+
+    </>
   );
 }
 
