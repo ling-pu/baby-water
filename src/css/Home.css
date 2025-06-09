@@ -72,6 +72,11 @@
   flex-direction: column;
   gap: 3rem;
 }
+@media (max-width:640px) {
+  .home {
+    width: 90%;
+  }
+}
 .home h1 {
   font-family: "Special Elite", system-ui;
   font-size: 2.5rem;
@@ -117,12 +122,19 @@
 .banner-container > div img {
   width: 100%;
 }
+@media (max-width:640px) {
+  .banner-container > div img {
+    display: none;
+  }
+}
+.banner-container > div .btn-container {
+  padding: 0 5%;
+}
 .banner-container img:nth-child(2) {
   display: flex;
   object-fit: contain;
   width: 65%;
   max-width: 100%;
-  z-index: 99;
 }
 .banner-container .p-banner {
   padding-left: 1rem;
@@ -149,12 +161,12 @@
 
 .content {
   display: flex;
-  padding: 24px 48px;
+  padding: 2rem 3rem;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
+  gap: 2rem;
   align-self: stretch;
-  border-radius: 0px 0px 12px 12px;
+  border-radius: 0px 0px 0.5rem 0.5rem;
   border-right: 2px solid var(--Neutral-medium-gray-2, #6F7275);
   border-bottom: 2px solid var(--Neutral-medium-gray-2, #6F7275);
   border-left: 2px solid var(--Neutral-medium-gray-2, #6F7275);
@@ -164,8 +176,8 @@
 .content .cardlist {
   display: grid;
   width: 100%;
-  row-gap: 20px;
-  column-gap: 20px;
+  row-gap: 1.5rem;
+  column-gap: 1.5rem;
   align-self: stretch;
   grid-template-rows: repeat(1, minmax(0, 1fr));
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -217,5 +229,6 @@
 }
 
 #timesale {
-  scroll-margin-top: 100px; /* 根據 header 高度調整 */
-}/*# sourceMappingURL=Home.css.map */
+  scroll-margin-top: 100px;
+  /* 根據 header 高度調整 */
+}

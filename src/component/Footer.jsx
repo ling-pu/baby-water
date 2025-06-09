@@ -10,7 +10,7 @@ export default function Footer() {
           <h5>Follow us</h5>
           <div className="footer-icon-container">
             <div>
-              <a href="https://www.instagram.com/babywater.stuff/" target="_blank" rel="noopener noreferrer">Instagram @babywater.stuff
+              <a className="hoverable" href="https://www.instagram.com/babywater.stuff/" target="_blank" rel="noopener noreferrer">Instagram @babywater.stuff
                 {/* <img src={`${base}icons/IG.svg`} alt="Instagram" /> */}
               </a>
             </div>
@@ -22,7 +22,7 @@ export default function Footer() {
         <section className="contact-us">
           <h5>Contact us</h5>
             <address>
-              <a href="https://line.me/R/ti/p/@064nzskq?ts=06201355&oat_content=url">Line @babywater</a>
+              <a className="hoverable" href="https://line.me/R/ti/p/@064nzskq?ts=06201355&oat_content=url">Line @babywater</a>
             </address>
   
 

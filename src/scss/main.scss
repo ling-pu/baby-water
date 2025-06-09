@@ -68,7 +68,7 @@ h1 {
 
 /* 游標 */
 body {
-  cursor: none;
+  // cursor: none;
 }
 
 body .cursor {
@@ -91,16 +91,6 @@ body .cursor__ball circle {
   pointer-events: none;
   /* 其他樣式 */
 }
-
-// a {
-//   color: $color-black;
-//   transition: color 0.3s ease;
-// }
-
-// a.hovered {
-//   color: $bg-color1 !important;
-// }
-
 
 // 讓footer 貼底
 html,
