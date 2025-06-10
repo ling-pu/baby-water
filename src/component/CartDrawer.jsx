@@ -64,7 +64,10 @@ export default function CartDrawer() {
     {/* 加入 ref={drawerRef} 會導致無法按刪除 */}
       {isCartOpen && (
         <div className="cart-drawer open"  onClick={e => e.stopPropagation()}>
-          <div className="cart-drawer-panel" >
+          <div className="cart-drawer-panel"
+          ref={drawerRef}
+          onClick={(e) => e.stopPropagation()}  >
+            
             <h2>購物車商品</h2>
 
             {/* 已刪除的提示 */}
@@ -85,17 +88,17 @@ export default function CartDrawer() {
               </div>
 
               {/* 商品列表 */}
-              <tbody>
+             
                 {Array.isArray(cartItems) && cartItems.length > 0 && cartItems.map((item) => (
-                  <tr key={`${item.id}-${item.style}-${item.size}`} className="buyItemCard">
+                  <div key={`${item.id}-${item.style}-${item.size}`} className="buyItemCard">
 
-                    <div>
-                      <td className="col">
+                    <div className="left-col">
+                      <div className="col">
                         <img src={addBase(item.image)} alt={item.title} className="pic-s"
                           onClick={() => handleClick(item.id)}
                           style={{ cursor: "pointer" }} />
-                      </td>
-                      <td className="info">
+                      </div>
+                      <div className="info">
                         <p className="title" onClick={() => handleClick(item.id)}
                           style={{ cursor: "pointer" }}
                         >{item.title}</p>
@@ -106,30 +109,29 @@ export default function CartDrawer() {
                         </div>
 
 
-                      </td>
+                      </div>
                     </div>
 
                     {/* 總金額＆刪除按鈕區 */}
-                    <div>
-                      <td className="item-price">
+                    <div className="right-col"> 
+                      <div className="item-price">
                         <p>NT$ <span>{(item.price * item.quantity).toLocaleString()}</span></p>
-                      </td>
-                      <td>
+                      </div>
+                      <div>
                         <button
                           onClick={() => handleRemove(item)}
                           style={{ cursor: "pointer", border: "none", background: "none" }}
                         >
                           <img src={X} alt="移除" style={{ width: "14px" }} />
                         </button>
-                      </td>
+                      </div>
 
                     </div>
 
 
 
-                  </tr>
+                  </div>
                 ))}
-              </tbody>
 
 
               {/* 結帳按鈕 */}
