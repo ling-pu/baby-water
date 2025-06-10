@@ -23,8 +23,8 @@ export default function Home() {
 
         <section className="pick" id="timesale">
           <div className="pick-head">
-            <h1 className="title">Baby Water’s Pick</h1>
-            <h1 className="timesale">Time Sale ~ 05/30</h1>
+            <h2 className="title">Baby Water’s Pick</h2>
+            <h2 className="timesale">Time Sale ~ 05/30</h2>
           </div>
           <div className="content">
             {/* 1列4欄 */}
@@ -54,8 +54,8 @@ export default function Home() {
 
         <section className="world">
           <div className="world-head">
-            <h1 className="title">World Special</h1>
-            <h1 className="timesale">Time Sale ~ 06/10</h1>
+            <h2 className="title">World Special</h2>
+            <h2 className="timesale">Time Sale ~ 06/10</h2>
           </div>
           <div className="content">
             {/* 1列4欄 */}

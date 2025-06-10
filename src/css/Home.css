@@ -74,12 +74,20 @@
 }
 @media (max-width:640px) {
   .home {
-    width: 90%;
+    width: 100%;
+    gap: 1rem;
+    margin: 0;
+    padding: 0 1.5rem;
   }
 }
-.home h1 {
+.home h2 {
   font-family: "Special Elite", system-ui;
   font-size: 2.5rem;
+}
+@media (max-width:640px) {
+  .home h2 {
+    font-size: 1rem;
+  }
 }
 .home .pick-head {
   padding: 1rem 1rem 0px;
@@ -111,7 +119,10 @@
 }
 @media (max-width:640px) {
   .banner-container {
-    height: 20vh;
+    height: 25vh;
+    padding: 2%;
+    padding-left: 4%;
+    gap: 0;
   }
 }
 .banner-container > div {
@@ -129,6 +140,12 @@
 }
 .banner-container > div .btn-container {
   padding: 0 5%;
+}
+@media (max-width:640px) {
+  .banner-container > div .btn-container {
+    width: 80%;
+    font-size: 1rem;
+  }
 }
 .banner-container img:nth-child(2) {
   display: flex;

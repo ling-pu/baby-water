@@ -61,8 +61,9 @@ export default function CartDrawer() {
 
   return (
     <>
+    {/* 加入 ref={drawerRef} 會導致無法按刪除 */}
       {isCartOpen && (
-        <div className="cart-drawer open" ref={drawerRef} onClick={e => e.stopPropagation()}>
+        <div className="cart-drawer open"  onClick={e => e.stopPropagation()}>
           <div className="cart-drawer-panel" >
             <h2>購物車商品</h2>
 

@@ -8,12 +8,19 @@
     gap: 3rem;
 
     @media ($media-640) {
-        width: 90%;
+        width: 100%;
+        gap: 1rem;
+        margin: 0;
+        padding: 0 1.5rem;
     }
 
-    h1 {
+    h2 {
         font-family: $font-en-handwrite;
         font-size: 2.5rem;
+
+        @media ($media-640) {
+            font-size: 1rem;
+        }
     }
 
     .pick-head {
@@ -51,7 +58,10 @@
     gap: 1rem;
 
     @media ($media-640) {
-        height: 20vh;
+        height: 25vh;
+        padding: 2%;
+        padding-left: 4%;
+        gap: 0;
     }
 
     // 品牌文字區
@@ -72,6 +82,11 @@
 
         .btn-container {
             padding: 0 5%;
+
+            @media ($media-640) {
+                width: 80%;
+                font-size: 1rem;
+            }
         }
     }
 
