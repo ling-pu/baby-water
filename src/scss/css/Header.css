@@ -183,7 +183,7 @@
   align-self: center;
 }
 @media (min-width:641px) {
-  .siteHeader .main-nav .cat-mobile {
+  .siteHeader .main-nav .cat-mobile, .siteHeader .main-nav .media-icon-mobile {
     display: none;
   }
 }

@@ -8,6 +8,8 @@ import { useCart } from "../context/CartContext";
 import hamburger from "../assets/icons/burger.svg";
 import logoMobile from "../assets/icons/logo.svg";
 import { useCategory } from "../context/CategoryContext";
+import lineIcon from '../assets/icons/icons/line.svg';
+import igIcon from '../assets/icons/icons/ig.svg'
 
 export default function Header() {
 
@@ -89,7 +91,19 @@ export default function Header() {
                                 {cat}
                             </li>
                         ))}
- 
+                    </ul>
+                    {/* 手機版 社群資訊 */}
+                    <ul className="media-icon-mobile">
+                        <li>
+                            <a className="hoverable" href="https://www.instagram.com/babywater.stuff/" target="_blank" rel="noopener noreferrer">
+                                <img src={igIcon} alt="Instagram Icon" />
+                            </a>
+                        </li>
+                        <li>
+                            <a className="hoverable" href="https://line.me/R/ti/p/@064nzskq?ts=06201355&oat_content=url">
+                                <img src={lineIcon} alt="line icon" />
+                            </a>
+                        </li>
                     </ul>
                 </nav>
 

@@ -1,4 +1,6 @@
 const base = import.meta.env.BASE_URL;
+import lineIcon from '../assets/icons/icons/line.svg';
+import igIcon from '../assets/icons/icons/ig.svg'
 
 export default function Footer() {
   return (
@@ -10,11 +12,10 @@ export default function Footer() {
           <h5>Follow us</h5>
           <div className="footer-icon-container">
             <div>
-              <a className="hoverable" href="https://www.instagram.com/babywater.stuff/" target="_blank" rel="noopener noreferrer">Instagram @babywater.stuff
-                {/* <img src={`${base}icons/IG.svg`} alt="Instagram" /> */}
+              <a className="hoverable" href="https://www.instagram.com/babywater.stuff/" target="_blank" rel="noopener noreferrer">
+              <img src={igIcon} alt="Instagram Icon" />
               </a>
             </div>
-
           </div>
         </section>
 
@@ -23,7 +24,8 @@ export default function Footer() {
           <h5>Contact us</h5>
             <address>
               <a className="hoverable" href="https://line.me/R/ti/p/@064nzskq?ts=06201355&oat_content=url">
-              <img src="src\assets\icons\icons\line.svg" alt="line" /></a>
+              <img src={lineIcon} alt="line icon" />
+              </a>
             </address>
   
 

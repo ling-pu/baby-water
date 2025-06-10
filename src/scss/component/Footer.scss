@@ -8,7 +8,7 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 12px;
-    background-color: rgb(124, 145, 175);
+    // background-color: rgb(124, 145, 175);
     bottom: 0px;
     width: 100%;
     display: flex;
@@ -31,80 +31,106 @@ footer {
     span,
     address,
     a {
-        color: var(--bg, #E8E8E8);
+        color: $color-black;
         font-family: "Noto Serif TC";
         font-weight: 400;
         line-height: 160%;
         letter-spacing: 1.6px;
 
         @media ($media-640) {
-            color: $color-blue;
-    }
+            color: $color-black;
+        }
     }
 
     .footer-row1 {
         display: flex;
         flex-wrap: wrap;
         flex: 1;
-        padding: 12px 60px;
-        justify-content: space-between;
+        // padding: 12px 60px;
+        justify-content: center;
+        flex-direction: column;
         align-items: center;
-        align-self: stretch;
+        gap: 1.5rem;
         margin: 16px 0;
 
         border-bottom: 1px solid var(--bg, #E8E8E8);
+
+        h5 {
+            width: 80%;
+            margin: 0 auto;
+        }
 
         @media ($media-640) {
             // display: none;
         }
 
         .follow-us {
+            text-align: center;
             display: flex;
             flex-wrap: wrap;
-            // width: 400px;
             justify-content: center;
             align-items: center;
-            gap: 60px;
+            gap: 1rem;
 
             .footer-icon-container {
                 display: flex;
-                width: 156px;
                 align-items: center;
                 gap: 12px;
                 flex-shrink: 0;
+
+                a {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 48px;
+                    height: 48px;
+
+                    img {
+                        width: 24px;
+                        height: 24px;
+                    }
+
+                }
+
+
+            }
+        }
+
+        .contact-us {
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+
+            a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 48px;
+                height: 48px;
 
                 img {
                     width: 24px;
                     height: 24px;
                 }
-            }
-        }
 
-        .contact-us {
-            display: flex;
-            flex-wrap: wrap;
-            // width: 400px;
-            justify-content: center;
-            align-items: center;
-            gap: 60px;
-
-            address {
-                // display: flex;
-                // text-align: center;
             }
         }
 
     }
 
     .copyright {
-        font-size: 16px;
+        font-size: 12px;
         font-weight: 400;
         line-height: 160%;
+        margin-top: 2rem;
+        margin-bottom: 6rem;
 
         @media ($media-640) {
             text-align: center;
             width: 100%;
-            font-size: 12px;
             margin-bottom: 5rem;
         }
     }

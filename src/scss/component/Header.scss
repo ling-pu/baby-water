@@ -130,7 +130,7 @@
     align-items: center;
     align-self: center;
 
-    .cat-mobile {
+    .cat-mobile, .media-icon-mobile {
       @media ($media-640-up) {
       display: none;
     }
