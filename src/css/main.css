@@ -1790,17 +1790,17 @@ body .cursor__ball {
   position: fixed;
   top: 0;
   left: 0;
-  mix-blend-mode: difference;
   z-index: 1000;
 }
 
 body .cursor__ball circle {
-  fill: #23222A;
+  fill: #7c91af;
 }
 
 .cursor__ball--big {
   pointer-events: none;
   /* 其他樣式 */
+  opacity: 0.5;
 }
 
 html,
@@ -1816,4 +1816,4 @@ body {
 
 main {
   flex: 1;
-}/*# sourceMappingURL=main.css.map */
+}
