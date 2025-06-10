@@ -131,6 +131,10 @@
 }
 .cart-drawer-panel .content tbody .buyItemCard div .col img {
   width: 56px;
+  background-color: transparent;
+}
+.cart-drawer-panel .content tbody .buyItemCard div .col .pic-s:hover {
+  background-color: rgba(0, 0, 0, 0.4);
 }
 .cart-drawer-panel .content tbody .buyItemCard div .info {
   display: flex;
@@ -147,6 +151,9 @@
   line-height: 160%;
   /* 25.6px */
   letter-spacing: 0.256px;
+}
+.cart-drawer-panel .content tbody .buyItemCard div .info .title:hover {
+  color: #F06086;
 }
 .cart-drawer-panel .content tbody .buyItemCard div .info div {
   display: flex;

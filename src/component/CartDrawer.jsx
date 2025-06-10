@@ -95,7 +95,7 @@ export default function CartDrawer() {
                           style={{ cursor: "pointer" }} />
                       </td>
                       <td className="info">
-                        <p onClick={() => handleClick(item.id)}
+                        <p className="title" onClick={() => handleClick(item.id)}
                           style={{ cursor: "pointer" }}
                         >{item.title}</p>
                         <div>

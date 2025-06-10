@@ -73,6 +73,10 @@
                     .col {
                         img {
                             width: 56px;
+                            background-color: transparent;
+                        }
+                        .pic-s:hover {
+                            background-color: rgba(0, 0, 0, 0.4);
                         }
                     }
 
@@ -92,6 +96,9 @@
                             /* 25.6px */
                             letter-spacing: 0.256px;
 
+                        }
+                        .title:hover {
+                            color: #F06086;
                         }
 
                         div {

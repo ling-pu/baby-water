@@ -1737,6 +1737,9 @@ footer .terms {
 .cart-drawer-panel .content tbody .buyItemCard div .col img {
   width: 56px;
 }
+.cart-drawer-panel .content tbody .buyItemCard div .col img:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
 .cart-drawer-panel .content tbody .buyItemCard div .info {
   display: flex;
   flex-direction: column;
