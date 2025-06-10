@@ -62,7 +62,7 @@ export default function CartDrawer() {
   return (
     <>
       {isCartOpen && (
-        <div className="cart-drawer open" onClick={e => e.stopPropagation()}>
+        <div className="cart-drawer open" ref={drawerRef} onClick={e => e.stopPropagation()}>
           <div className="cart-drawer-panel" >
             <h2>購物車商品</h2>
 
