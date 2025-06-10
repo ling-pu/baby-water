@@ -117,10 +117,6 @@ export default function ProductPage() {
             <p>{product.category}</p>
           </div>
 
-          {/* 倒數 */}
-          <div className="countdown">
-            <Countdown endTime={product.endtime} />
-          </div>
         </div>
 
         <div className="ProductPage-item">
@@ -161,6 +157,11 @@ export default function ProductPage() {
               <div className="price">
                 <PriceFormatter price={product.price} />
               </div>
+              {/* 倒數 */}
+              <div className="countdown">
+                <Countdown endTime={product.endtime} />
+              </div>
+
               {/* 文字描述 */}
               <p className="content-description" style={{ whiteSpace: "pre-line" }}>{product.description}</p>
               {/* 選項區3組 */}

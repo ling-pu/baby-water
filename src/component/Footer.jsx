@@ -22,7 +22,8 @@ export default function Footer() {
         <section className="contact-us">
           <h5>Contact us</h5>
             <address>
-              <a className="hoverable" href="https://line.me/R/ti/p/@064nzskq?ts=06201355&oat_content=url">Line @babywater</a>
+              <a className="hoverable" href="https://line.me/R/ti/p/@064nzskq?ts=06201355&oat_content=url">
+              <img src="src\assets\icons\icons\line.svg" alt="line" /></a>
             </address>
   
 
@@ -31,7 +32,7 @@ export default function Footer() {
 
       {/* 第二區塊：版權與政策連結 */}
       <div className="copyright">
-        copyright © 2025 babywater. All rights reserved.
+        © 2025 BABYWATER SELECT
       </div>
 
       {/* 預留：服務條款與政策連結 */}

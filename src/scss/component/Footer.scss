@@ -14,6 +14,13 @@ footer {
     display: flex;
     // padding: 16px 48px;
 
+    @media ($media-640) {
+        background-color: transparent;
+        width: 100%;
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+
     a {
         cursor: pointer;
     }
@@ -21,12 +28,18 @@ footer {
     h5,
     p,
     div,
-    span,address,a {
+    span,
+    address,
+    a {
         color: var(--bg, #E8E8E8);
         font-family: "Noto Serif TC";
         font-weight: 400;
         line-height: 160%;
         letter-spacing: 1.6px;
+
+        @media ($media-640) {
+            color: $color-blue;
+    }
     }
 
     .footer-row1 {
@@ -40,6 +53,10 @@ footer {
         margin: 16px 0;
 
         border-bottom: 1px solid var(--bg, #E8E8E8);
+
+        @media ($media-640) {
+            // display: none;
+        }
 
         .follow-us {
             display: flex;
@@ -55,6 +72,7 @@ footer {
                 align-items: center;
                 gap: 12px;
                 flex-shrink: 0;
+
                 img {
                     width: 24px;
                     height: 24px;
@@ -69,6 +87,7 @@ footer {
             justify-content: center;
             align-items: center;
             gap: 60px;
+
             address {
                 // display: flex;
                 // text-align: center;
@@ -81,6 +100,13 @@ footer {
         font-size: 16px;
         font-weight: 400;
         line-height: 160%;
+
+        @media ($media-640) {
+            text-align: center;
+            width: 100%;
+            font-size: 12px;
+            margin-bottom: 5rem;
+        }
     }
 
     .terms {

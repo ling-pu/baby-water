@@ -1,11 +1,35 @@
 @use "variable" as *;
 
+.countdown {
+    display: flex;
+    padding: 0;
+    align-items: center;
+    gap: 0.5rem;
+
+    h2,
+    .time-title {
+        color: #F06086;
+        font-weight: 700;
+    }
+
+
+    .time-title {
+        font-size: 0.8rem;
+    }
+}
+
 /* ProductPage */
 #product-page {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 24px;
+    gap: 1.5rem;
+
+    @media ($media-640) {
+        width: 100%;
+        gap: 0;
+    }
+
 
     // 標題區
     .ProductPage-title {
@@ -15,15 +39,13 @@
         align-items: center;
         align-self: stretch;
 
-        div {
-            display: inline-flex;
+        @media ($media-640) {
+            flex-wrap: wrap;
+            padding: 0.5rem 1.5rem;
         }
 
-        .countdown {
-            display: flex;
-            padding: 0px 8px;
-            align-items: center;
-            gap: 8px;
+        div {
+            display: inline-flex;
         }
 
         p,
@@ -32,12 +54,20 @@
 
             /* noto 16 10% */
             font-family: "Noto Sans";
-            font-size: 16px;
+            font-size: 1rem;
             font-style: normal;
             font-weight: 400;
             line-height: 150%;
             /* 24px */
             letter-spacing: 1.6px;
+
+            @media ($media-640) {
+                font-size: 0.8rem;
+            }
+        }
+
+        span {
+            margin: 0 0.5rem;
         }
 
     }
@@ -55,11 +85,22 @@
         align-items: flex-start;
         gap: 80px;
 
+        @media ($media-640) {
+            width: 100%;
+            padding: 0 1.5rem 2rem 1.5rem;
+            gap: 1rem;
+        }
+
         .ProductPage-row1 {
             display: flex;
             align-items: flex-start;
             gap: 48px;
             align-self: stretch;
+
+            @media ($media-640) {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
 
             // 主圖＆圖片頁籤
             .pic {
@@ -68,11 +109,20 @@
                 align-items: flex-start;
                 gap: 48px;
 
+                @media ($media-640) {
+                    width: 100%;
+                    gap: 1.5rem;
+                }
+
                 img {
                     object-fit: cover;
                     height: 662.836px;
                     align-self: stretch;
                     aspect-ratio: 553.00/662.84;
+
+                    @media ($media-640) {
+                        height: 80%;
+                    }
                 }
 
                 .pic-sm {
@@ -83,7 +133,7 @@
                     gap: 16px;
                     align-self: stretch;
                     flex-wrap: wrap;
-                    
+
 
                     img {
                         border-radius: 4px;
@@ -109,6 +159,12 @@
                 border: none;
                 // z-index: 98;
 
+                @media ($media-640) {
+                    width: 100%;
+                    gap: 0.5rem;
+                    padding: 1.5rem 1rem 1rem 1rem;
+                }
+
                 // 絕美漸層上衣
                 h1 {
                     color: var(--black, #23222A);
@@ -121,11 +177,16 @@
                     line-height: 150%;
                     /* 54px */
                     letter-spacing: 3.6px;
+
+                    @media ($media-640) {
+                        font-size: 1.5rem;
+                    }
                 }
 
                 .price {
                     display: flex;
                     align-items: flex-start;
+                    flex-direction: column;
                     gap: 12px;
 
                     color: var(--black, #23222A);
@@ -137,6 +198,10 @@
                     font-weight: 400;
                     line-height: 150%;
                     /* 48px */
+
+                    @media ($media-640) {
+                        font-size: 1rem;
+                    }
                 }
 
                 .content-description {
@@ -156,6 +221,10 @@
                     line-height: 150%;
                     /* 21px */
                     letter-spacing: 1.4px;
+
+                    @media ($media-640) {
+                        font-size: 0.8rem;
+                    }
                 }
 
                 // 選項區
@@ -315,13 +384,23 @@
             align-self: stretch;
             flex-wrap: wrap;
 
+            @media ($media-640) {
+                width: 100%;
+                gap: 1rem;
+            }
+
             .pic-md {
                 width: 378px;
                 border-radius: 4px;
 
+                @media ($media-640) {
+                    width: 100%;
+                }
+
                 img {
                     object-fit: cover;
                 }
+
             }
 
             .text-area {
@@ -330,6 +409,11 @@
                 align-items: flex-start;
                 gap: 22px;
                 flex: 1 0 0;
+
+                @media ($media-640) {
+                    flex-direction: row;
+                    overflow-x: scroll;
+                }
 
                 // 商品說明
                 .title {
@@ -370,6 +454,12 @@
         gap: 48px;
         align-self: stretch;
 
+        @media ($media-640) {
+            width: 100%;
+            padding: 2rem 1.5rem;
+            gap: 0.5rem;
+        }
+
         .you_may_also_like {
             color: $color-black;
 
@@ -378,7 +468,8 @@
             font-size: 36px;
             font-style: normal;
             font-weight: 400;
-            line-height: 150%; /* 54px */
+            line-height: 150%;
+            /* 54px */
             letter-spacing: 3.6px;
         }
 
@@ -390,6 +481,11 @@
             gap: 24px;
             align-self: stretch;
             margin: 0 auto;
+
+            @media ($media-640) {
+                width: 100%;
+                overflow-x: scroll;
+            }
         }
     }
 

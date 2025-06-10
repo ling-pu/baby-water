@@ -89,6 +89,7 @@ export default function Header() {
                                 {cat}
                             </li>
                         ))}
+ 
                     </ul>
                 </nav>
 

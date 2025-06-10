@@ -76,18 +76,38 @@ footer {
   width: 100%;
   display: flex;
 }
+@media (max-width:640px) {
+  footer {
+    background-color: transparent;
+    width: 100%;
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+}
 footer a {
   cursor: pointer;
 }
 footer h5,
 footer p,
 footer div,
-footer span, footer address, footer a {
+footer span,
+footer address,
+footer a {
   color: var(--bg, #E8E8E8);
   font-family: "Noto Serif TC";
   font-weight: 400;
   line-height: 160%;
   letter-spacing: 1.6px;
+}
+@media (max-width:640px) {
+  footer h5,
+  footer p,
+  footer div,
+  footer span,
+  footer address,
+  footer a {
+    color: #7c91af;
+  }
 }
 footer .footer-row1 {
   display: flex;
@@ -129,6 +149,14 @@ footer .copyright {
   font-size: 16px;
   font-weight: 400;
   line-height: 160%;
+}
+@media (max-width:640px) {
+  footer .copyright {
+    text-align: center;
+    width: 100%;
+    font-size: 12px;
+    margin-bottom: 5rem;
+  }
 }
 footer .terms {
   display: flex;
