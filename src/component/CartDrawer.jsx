@@ -53,6 +53,10 @@ export default function CartDrawer() {
   };
 
 
+  // ⬇️ 點擊跳轉到 /product/:id
+  const handleClick = (id) => {
+    if (id) navigate(`/product/${id}`);
+  };
 
 
   return (
@@ -80,45 +84,59 @@ export default function CartDrawer() {
               </div>
 
               {/* 商品列表 */}
-              {Array.isArray(cartItems) && cartItems.length > 0 && cartItems.map((item) => (
-                <div key={`${item.id}-${item.style}-${item.size}`} className="buyItemCard">
+              <tbody>
+                {Array.isArray(cartItems) && cartItems.length > 0 && cartItems.map((item) => (
+                  <tr key={`${item.id}-${item.style}-${item.size}`} className="buyItemCard">
 
-                  <div>
-                    <div className="col">
-                      <img src={addBase(item.image)} alt={item.title} className="pic-s" />
+                    <div>
+                      <td className="col">
+                        <img src={addBase(item.image)} alt={item.title} className="pic-s"
+                          onClick={() => handleClick(item.id)}
+                          style={{ cursor: "pointer" }} />
+                      </td>
+                      <td className="info">
+                        <p onClick={() => handleClick(item.id)}
+                          style={{ cursor: "pointer" }}
+                        >{item.title}</p>
+                        <div>
+                          <p>款式：{item.style}</p>
+                          <p>尺寸：{item.size}</p>
+                          <p>數量：{item.quantity}</p>
+                        </div>
+
+
+                      </td>
                     </div>
-                    <div className="info">
-                      <p>{item.title}</p>
-                      <div>
-                        <p>款式：{item.style}</p>
-                        <p>尺寸：{item.size}</p>
-                        <p>數量：{item.quantity}</p>
-                      </div>
 
+                    {/* 總金額＆刪除按鈕區 */}
+                    <div>
+                      <td className="item-price">
+                        <p>NT$ <span>{(item.price * item.quantity).toLocaleString()}</span></p>
+                      </td>
+                      <td>
+                        <button
+                          onClick={() => handleRemove(item)}
+                          style={{ cursor: "pointer", border: "none", background: "none" }}
+                        >
+                          <img src={X} alt="移除" style={{ width: "14px" }} />
+                        </button>
+                      </td>
 
                     </div>
-                  </div>
-
-                  {/* 總金額＆刪除按鈕區 */}
-                  <div>
-                    <p>NT$ <span>{(item.price * item.quantity).toLocaleString()}</span></p>
-
-                    <button
-                      onClick={() => handleRemove(item)}
-                      style={{ cursor: "pointer" }}
-                    >
-                      <img src={X} alt="移除" />
-                    </button>
-                  </div>
 
 
-                </div>
-              ))}
+
+                  </tr>
+                ))}
+              </tbody>
+
 
               {/* 結帳按鈕 */}
               {cartItems.length > 0 && (
                 <div className="checkout-btn-area">
-                  <button onClick={handleCheckout} style={{ cursor: "pointer" }}>前往結帳</button>
+                  <button onClick={handleCheckout} style={{ cursor: "pointer" }}>
+                    前往結帳
+                  </button>
                 </div>
               )}
             </div>

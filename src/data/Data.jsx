@@ -77,7 +77,7 @@ export const picks = [
     ],
     styles: ["白色款", "黑色款",],
     sizes: ["F"],
-    title: "超好看長裙",
+    title: "超好看皺褶長裙",
     price: "690",
     category: "Bottoms",
     endtime: "2025-06-30T23:59:59",

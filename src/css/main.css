@@ -237,8 +237,6 @@ a {
 }
 #product-page .ProductPage-item {
   display: flex;
-  height: 800px;
-  overflow-y: auto;
   padding-right: 12px;
   /* 避免 scrollbar 壓住內Ｆ容 */
   padding: 0px 200px 48px 200px;
@@ -1606,6 +1604,72 @@ footer .terms {
   background: url(<path-to-image>) lightgray 50%/cover no-repeat;
 }
 
+.homemade-apple-regular {
+  font-family: "Homemade Apple", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.lato-thin {
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.lato-light {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.lato-regular {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.lato-bold {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.lato-black {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.lato-thin-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.lato-light-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.lato-regular-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.lato-bold-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.lato-black-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
 .cart-drawer {
   z-index: 99;
   right: 0;
@@ -1623,8 +1687,9 @@ footer .terms {
 }
 
 .cart-drawer-panel {
-  z-index: 100; /* panel 層級高於 overlay */
-  width: 300px;
+  z-index: 100;
+  /* panel 層級高於 overlay */
+  width: 400px;
   height: 100%;
   box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -1638,6 +1703,7 @@ footer .terms {
   background: var(--bg, #E8E8E8);
 }
 .cart-drawer-panel .content {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -1651,29 +1717,34 @@ footer .terms {
   align-items: flex-start;
   align-self: stretch;
 }
-.cart-drawer-panel .content .buyItemCard {
+.cart-drawer-panel .content tbody {
+  width: 100%;
+}
+.cart-drawer-panel .content tbody .buyItemCard {
+  width: 100%;
   display: flex;
   padding: 24px 0px;
   align-items: center;
-  gap: 48px;
+  gap: auto;
 }
-.cart-drawer-panel .content .buyItemCard div {
+.cart-drawer-panel .content tbody .buyItemCard div {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 16px;
 }
-.cart-drawer-panel .content .buyItemCard div .col img {
+.cart-drawer-panel .content tbody .buyItemCard div .col img {
   width: 56px;
 }
-.cart-drawer-panel .content .buyItemCard div .info {
+.cart-drawer-panel .content tbody .buyItemCard div .info {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
   align-self: stretch;
 }
-.cart-drawer-panel .content .buyItemCard div .info p {
+.cart-drawer-panel .content tbody .buyItemCard div .info p {
   color: var(--black, #23222A);
   font-size: 14px;
   font-style: normal;
@@ -1682,14 +1753,30 @@ footer .terms {
   /* 25.6px */
   letter-spacing: 0.256px;
 }
-.cart-drawer-panel .content .buyItemCard div .info div {
+.cart-drawer-panel .content tbody .buyItemCard div .info div {
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
-.cart-drawer-panel .content .buyItemCard div .info div p {
+.cart-drawer-panel .content tbody .buyItemCard div .info div p {
   color: var(--Neutral-medium-gray-2, #4A4D50);
   font-size: 12px;
+}
+.cart-drawer-panel .content tbody .buyItemCard div .item-price {
+  width: 80px;
+}
+.cart-drawer-panel .content .checkout-btn-area {
+  width: 100%;
+}
+.cart-drawer-panel .content .checkout-btn-area button {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  border-radius: 99px;
+  padding: 0.5rem 0;
+  color: #E8E8E8;
+  background-color: #23222A;
 }
 
 .showProgress-stoke {

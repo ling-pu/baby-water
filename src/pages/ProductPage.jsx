@@ -93,6 +93,15 @@ export default function ProductPage() {
     navigate("/checkout", { state: { items: [cartItem] } });
   };
 
+  useEffect(() => {
+    if (product?.pics?.length > 0) {
+      setMainImg(product.pics[0]);
+      setSelectedIndex(0);
+      setSelectedSizeIndex(0);
+      setQuantity(1);
+    }
+  }, [id, product]);
+
   // console.log("商品資料", product);
 
   return (
@@ -193,7 +202,7 @@ export default function ProductPage() {
                         key={i}
                         className="acitve card"
                         onClick={() => setSelectedSizeIndex(i)}
-                        style={{cursor:"pointer"}}
+                        style={{ cursor: "pointer" }}
                       // style={{
                       //   fontWeight: selectedSizeIndex === i ? "bold" : "normal",
                       // }}
@@ -226,8 +235,8 @@ export default function ProductPage() {
 
               {/* 加入購物車 */}
               <div className="add-to-cart-area">
-                <button onClick={handleAddToCart} style={{cursor:'pointer'}}>加入購物車</button>
-                <button onClick={handleBuyNow} style={{cursor:'pointer'}}>立即購買</button>
+                <button onClick={handleAddToCart} style={{ cursor: 'pointer' }}>加入購物車</button>
+                <button onClick={handleBuyNow} style={{ cursor: 'pointer' }}>立即購買</button>
               </div>
 
             </div>
