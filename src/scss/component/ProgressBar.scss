@@ -1,0 +1,42 @@
+#progress-indicator {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+
+    // 每個步驟區（1~4）
+    >div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+
+        .step-pic {
+            display: flex;
+            padding: 4px 0px;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 0.25px;
+
+        }
+
+        .step-txt {
+            // 結帳文字流程說明區
+            
+            display: flex;
+            color: var(--black, #23222A);
+            text-align: center;
+
+            /* noto 10% */
+            font-family: "Noto Sans";
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;
+            /* 21px */
+            letter-spacing: 1.4px;
+        }
+    }
+
+}

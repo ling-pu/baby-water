@@ -1,0 +1,33 @@
+#progress-indicator {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-start;
+}
+#progress-indicator > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+#progress-indicator > div .step-pic {
+  display: flex;
+  padding: 4px 0px;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.25px;
+}
+#progress-indicator > div .step-txt {
+  display: flex;
+  color: var(--black, #23222A);
+  text-align: center;
+  /* noto 10% */
+  font-family: "Noto Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  /* 21px */
+  letter-spacing: 1.4px;
+}/*# sourceMappingURL=ProgressBar.css.map */

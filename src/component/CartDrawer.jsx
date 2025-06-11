@@ -19,14 +19,17 @@ export default function CartDrawer() {
   // 提示訊息
   const [message, setMessage] = useState("");
   const handleRemove = (item) => {
+    console.log("刪除前的 cartItems:", cartItems);
+    console.log("準備移除：", item);
+    if (typeof removeFromCart !== "function") {
+      console.warn("removeFromCart 尚未定義");
+      return;
+    }
     removeFromCart(item);
     setMessage(`已移除「${item.title}」`);
     setTimeout(() => setMessage(""), 2000);
   };
-  if (typeof removeFromCart !== "function") {
-    console.warn("removeFromCart 尚未定義");
-    return;
-  }
+  
   // 點擊 drawer 外部就關閉
   useEffect(() => {
     if (!isCartOpen) return;
@@ -65,17 +68,18 @@ export default function CartDrawer() {
       {isCartOpen && (
         <div className="cart-drawer open"  onClick={e => e.stopPropagation()}>
           <div className="cart-drawer-panel"
-          ref={drawerRef}
+          // ref={drawerRef}
           onClick={(e) => e.stopPropagation()}  >
             
             <h2>購物車商品</h2>
 
             {/* 已刪除的提示 */}
-            {message && (
-              <div className="cart-message">
+            {/* {message && (
+              <div className="cart-message"
+              style={{color:"#7c91af"}}>
                 {message}
               </div>
-            )}
+            )} */}
 
             <div className="showProgress-stoke">
               <div className="showProgress-solid"></div>
@@ -119,7 +123,10 @@ export default function CartDrawer() {
                       </div>
                       <div>
                         <button
-                          onClick={() => handleRemove(item)}
+                          onClick={(e) => {
+                            e.stopPropagation(); // ✅ 防止觸發父層的跳轉
+                            handleRemove(item);
+                          }}
                           style={{ cursor: "pointer", border: "none", background: "none" }}
                         >
                           <img src={X} alt="移除" style={{ width: "14px" }} />
