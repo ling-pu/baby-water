@@ -75,6 +75,9 @@ body {
 body .cursor {
   pointer-events: none;
   z-index: 1000;
+  @media($media-640){
+    display: none;
+  }
   // color: $color-blue;
 }
 body .cursor__ball {

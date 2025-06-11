@@ -1008,7 +1008,7 @@ ul {
   }
 }
 .siteHeader .main-nav li.active > a {
-  color: #f60;
+  color: #f0863f;
   font-weight: bold;
 }
 .siteHeader .main-search-overlay {
@@ -2064,6 +2064,11 @@ h1 {
 body .cursor {
   pointer-events: none;
   z-index: 1000;
+}
+@media (max-width:640px) {
+  body .cursor {
+    display: none;
+  }
 }
 
 body .cursor__ball {
