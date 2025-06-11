@@ -79,6 +79,9 @@
 }
 
 /* step 1 */
+.checkout .main-area .step-1 {
+  width: 100%;
+}
 .checkout .main-area .step-1 .cart-title {
   display: flex;
   justify-content: space-between;
