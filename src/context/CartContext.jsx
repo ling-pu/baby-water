@@ -41,6 +41,26 @@ const removeFromCart = (itemToRemove) => {
 
 const clearCart = () => setCartItems([]);
 
+// 增加數量
+const increaseQuantity = (index) => {
+  setCartItems((prevItems) => {
+    const updated = [...prevItems];
+    updated[index].quantity += 1;
+    return updated;
+  });
+};
+
+// 減少數量（不低於 1）
+const decreaseQuantity = (index) => {
+  setCartItems((prevItems) => {
+    const updated = [...prevItems];
+    if (updated[index].quantity > 1) {
+      updated[index].quantity -= 1;
+    }
+    return updated;
+  });
+};
+
   return (
     <CartContext.Provider
       value={{
@@ -51,7 +71,9 @@ const clearCart = () => setCartItems([]);
         cartItems,
         addToCart,
         removeFromCart,
-        clearCart
+        clearCart,
+        increaseQuantity,
+        decreaseQuantity,
       }}
     >
       {children}

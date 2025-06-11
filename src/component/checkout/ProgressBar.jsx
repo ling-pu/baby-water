@@ -40,9 +40,8 @@ export function StepCircle({ fill = "white", className, number }) {
         dominantBaseline="middle"
         textAnchor="middle"
         fontSize="16"
-        font-weight="600"
+        fontWeight="600"
         fill="black"
-        fontWeight="bold"
         pointerEvents="none"
       >
         {number}

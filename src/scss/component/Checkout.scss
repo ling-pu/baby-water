@@ -1,11 +1,98 @@
-.scroll-area {
+/* 全部步驟共用區*/
+
+/* 滾動條 */
+/* 針對 WebKit 瀏覽器 (Chrome, Safari) */
+.main-area::-webkit-scrollbar {
+    display: none;
+}
+
+/* Firefox 專用 */
+.main-area {
+    scrollbar-width: none;
+    /* 隱藏滾動條 */
+}
+
+/* 避免因隱藏 scrollbar 而導致內容無法滾動 */
+.main-area {
+    -ms-overflow-style: none;
+    /* IE 10+ */
+    overflow: auto;
+    /* 確保仍可滾動 */
+}
+
+.checkout {
     display: flex;
-    width: 1312px;
-    padding: 24px;
-    margin: 0 auto;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+    justify-content: center;
+    margin: 24px 104px 48px;
+    gap: 24px;
+    height: calc(100vh - 44px - 97px - 77px - 76px);
+
+    .main-area {
+        display: flex;
+        width: 100%;
+        margin: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        overflow-y: scroll;
+
+    }
+
+
+    .btn-area {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        // 下一步按鈕
+        .next-btn {
+            display: flex;
+            padding: 24px 80px;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 48px;
+            border: 2px solid var(--bg, #E8E8E8);
+            background: var(--black, #23222A);
+            color: var(--bg, #E8E8E8);
+
+            /* noto 16 10% */
+            font-family: "Noto Sans";
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;
+            /* 24px */
+            letter-spacing: 1.6px;
+        }
+
+        // 上一步按鈕
+        .pre-btn {
+            display: flex;
+            padding: 24px 80px;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 48px;
+            border: 2px solid var(--bg, #E8E8E8);
+            background: var(--pink-bg, #ECD0DF);
+
+            /* noto 16 10% */
+            font-family: "Noto Sans";
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;
+            /* 24px */
+            letter-spacing: 1.6px;
+        }
+    }
+
+}
+
+/* step 1 */
+.checkout .main-area .step-1 {
 
     // 購物車標題
     .cart-title {
@@ -171,7 +258,7 @@
 
                 display: flex;
                 width: 120px;
-                
+
                 color: var(--black, #23222A);
 
                 /* Allerta 24 */
@@ -186,9 +273,6 @@
 
             // 刪除按鈕
             button {
-                border: none;
-                background: none;
-                cursor: pointer;
                 display: flex;
                 width: 48px;
                 height: 48px;
@@ -196,6 +280,143 @@
                 align-items: center;
             }
 
+
+        }
+    }
+}
+
+/* step 2 */
+.checkout .main-area .step-2 {
+    width: 100%;
+    display: flex;
+
+    .form-area {
+        width: 100%;
+        display: flex;
+        justify-content: start;
+
+        h2 {
+
+            /* noto 24 */
+            font-family: "Noto Sans";
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;
+            /* 36px */
+            letter-spacing: 4.8px;
+        }
+
+        .shipping-form {
+            width: 100%;
+            display: flex;
+            flex: 2;
+            padding: 24px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 24px;
+
+            .customer {
+                width: 100%;
+                display: flex;
+                align-items: flex-start;
+                gap: 48px;
+                align-self: stretch;
+
+                label {
+                    width: 100px;
+                    /* noto 16 10% */
+                    font-family: "Noto Sans";
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 150%;
+                    /* 24px */
+                    letter-spacing: 1.6px;
+                }
+
+                input {
+                    width: 100%;
+                    display: flex;
+                    padding: 12px 24px;
+                    align-items: center;
+                    gap: 10px;
+
+                    border-radius: 8px;
+                    border: 1px solid var(--Neutral-medium-gray, #B5B9BE);
+                    background: var(--Neutral-light-gray, #F3F7FB);
+                }
+
+                // input輸入樣式
+                input[type="text"],
+                input[type="email"],
+                input[type="tel"],
+                input[type="password"],
+                input[type="number"] {
+                    all: unset;
+                    width: 100%;
+                    padding: 0.75em 1em;
+                    border: 1.5px solid #ccc;
+                    border-radius: 8px;
+                    font-size: 1rem;
+                    line-height: 1.5;
+                    box-sizing: border-box;
+                    background-color: #fff;
+                    color: #333;
+                    transition: border 0.3s, box-shadow 0.3s;
+                }
+
+                input:focus,
+                textarea:focus {
+                    border-color: rgba(249, 158, 191, 1);
+                    outline: none;
+                }
+            }
+
+            // ERROR
+            input.error {
+                border-color: #e74c3c;
+                background-color: #fff5f5;
+            }
+
+            // DISABLED
+            input:disabled {
+                background-color: #f5f5f5;
+                color: #aaa;
+                cursor: not-allowed;
+            }
+
+
+
+
+        }
+
+        .member-area {
+            width: 100%;
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 24px;
+            flex-shrink: 0;
+            min-width: 240px;
+            padding-top: 24px;
+
+            p {
+                width: 100%;
+            }
+
+            button {
+                width: 100%;
+                margin: 0;
+                display: flex;
+                padding: 12px 80px;
+                justify-content: center;
+
+                border-radius: 8px;
+                border: 1px solid var(--Neutral-medium-gray, #B5B9BE);
+                background: var(--pink-bg, #ECD0DF);
+            }
 
         }
     }

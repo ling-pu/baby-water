@@ -28,7 +28,12 @@ export default function CheckoutPage() {
                     <Step1Cart cartItems={cartItems} onNext={goNext} />
                 )}
                 {step === 2 && (
-                    <Step2Shipping info={shippingInfo} setInfo={setShippingInfo} onNext={goNext} onBack={goBack} />
+                    <Step2Shipping
+                    shippingInfo={shippingInfo}
+                    setShippingInfo={setShippingInfo}
+                    onNext={goNext}
+                    onBack={goBack}
+                  />
                 )}
                 {step === 3 && (
                     <Step3Review cartItems={cartItems} info={shippingInfo} onNext={goNext} onBack={goBack} />
