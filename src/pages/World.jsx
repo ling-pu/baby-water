@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Card from "../component/Card"
 import { picks, world } from "../data/Data"
 import FilterPanel from "../component/FilterPanel";
@@ -8,12 +8,16 @@ import { useCategory } from "../context/CategoryContext";
 
 export default function World() {
 
+  useEffect(() => {
+    window.scrollTo(0, 0); // 捲動到頁面頂部
+  }, []);
+
   const allItems = [...world]; // 合併陣列
- // 篩選服飾類型(多選)
- const { selectedCategories } = useCategory(); 
- const filteredItems = selectedCategories.includes("All")
-   ? allItems
-   : allItems.filter(item => selectedCategories.includes(item.category));
+  // 篩選服飾類型(多選)
+  const { selectedCategories } = useCategory();
+  const filteredItems = selectedCategories.includes("All")
+    ? allItems
+    : allItems.filter(item => selectedCategories.includes(item.category));
   // 排序
   const [sortBy, setSortBy] = useState("none");
   const [sortDirection, setSortDirection] = useState("asc"); // 預設為升序
@@ -57,7 +61,7 @@ export default function World() {
     <>
       <main id="jp">
         {/* 篩選 */}
-        <FilterPanel/>
+        <FilterPanel />
 
         {/* 展示 */}
         <section id="products">

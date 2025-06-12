@@ -3,6 +3,7 @@ import babywater from "../assets/icons/logo.svg"
 import bg from "../assets/bg.svg"
 import Card from "../component/Card"
 import { picks, world } from "../data/Data"
+import { Link } from "react-router-dom"
 const base = import.meta.env.BASE_URL;
 
 const addBase = (path) => {
@@ -50,11 +51,18 @@ export default function Home() {
             </div>
             {/* btn */}
             <div className="btn-container">
-              <a href={addBase("/timesale")} className="btn-seemore">see more
+              {/* <a href={addBase("/timesale")} className="btn-seemore">see more
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M9.34148 18.6067L14.6585 11.9829L9.34148 5.39334" strokeWidth="3"
                     strokeLinecap="round" strokeLinejoin="round" />
-                </svg></a>
+                </svg></a> */}
+              <Link to={("/timesale")} className="btn-seemore">
+                see more
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.34148 18.6067L14.6585 11.9829L9.34148 5.39334" strokeWidth="3"
+                    strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </Link>
             </div>
           </div>
         </section>
@@ -82,12 +90,12 @@ export default function Home() {
             </div>
             {/* btn */}
             <div className="btn-container">
-              <a href={addBase("/world")} className="btn-seemore">shop now
+              <Link to={("/world")} className="btn-seemore">shop now
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M9.34148 18.6067L14.6585 11.9829L9.34148 5.39334" strokeWidth="3"
                     strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-              </a>
+              </Link>
             </div>
           </div>
         </section>
