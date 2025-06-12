@@ -2666,13 +2666,31 @@ footer .terms {
   line-height: 150%;
   /* 36px */
 }
-.checkout .main-area .step-3 .review-area .review-cart .cart-summary p .free-note {
+.checkout .main-area .step-3 .review-area .review-cart .cart-summary p .free-note,
+.checkout .main-area .step-3 .review-area .review-cart .cart-summary p .note {
   color: #F06086;
   font-weight: bold;
   margin-left: 8px;
 }
 .checkout .main-area .step-3 .review-area .review-cart .cart-summary span {
   display: block;
+}
+
+.checkout .main-area .step4 {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+}
+.checkout .main-area .step4 .container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.checkout .main-area .step4 .container .payment-info {
+  flex: 1;
+}
+.checkout .main-area .step4 .container .remittance-form {
+  flex: 1;
 }
 
 #progress-indicator {

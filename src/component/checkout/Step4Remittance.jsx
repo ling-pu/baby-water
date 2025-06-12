@@ -39,98 +39,105 @@ export default function Step4Remittance({ orderId = "SA2500001", amount = 4080, 
     <>
       <main className="checkout">
         <ProgressBar currentStep={4} />
-        
+
         <div className="main-area">
           <div className="step-4">
             <h2>匯款通知與付款資訊</h2>
             <p>
-              請於 <strong>{todayStr}</strong> 至 <strong>{plus3Str}</strong> 匯款至水寶帳戶，並填寫匯款通知，<br />
-              我們會在核對款項後寄出商品，請留意 Email 通知，謝謝您！
+              請您於 <strong>{todayStr}</strong> 至 <strong>{plus3Str}</strong> 期間完成匯款，並填寫匯款通知表單。<br />
+              我們將於確認款項後儘速寄出商品，並透過 Email 通知您，感謝您的訂購！
             </p>
 
-            <section className="payment-info">
-              <h3>付款帳戶</h3>
-              <button className="copy-btn" type="button" onClick={() => copyToClipboard("ＸＸ商業銀行 台北城中分行 123 水寶 0000-0000-0000-0000")}>
-                點我複製
-              </button>
-              <p>銀行名稱｜ＸＸ商業銀行</p>
-              <p>分行名稱｜台北城中分行</p>
-              <p>銀行代碼｜123</p>
-              <p>帳戶名稱｜水寶</p>
-              <p>帳號｜0000-0000-0000-0000</p>
-            </section>
+            <div className="container">
+              <section className="payment-info">
+                <div className="title">
+                  <h3>付款帳戶</h3>
+                  <button className="copy-btn" type="button" onClick={() => copyToClipboard("ＸＸ商業銀行 台北城中分行 123 水寶 0000-0000-0000-0000")}>
+                    點我複製
+                  </button>
+                </div>
 
-            <section className="remittance-form">
-              <h3>匯款通知表單</h3>
-              <form onSubmit={handleSubmit}>
-                <label>
-                  訂單編號*<br />
-                  <input
-                    type="text"
-                    name="orderId"
-                    value={formData.orderId}
-                    readOnly
-                  />
-                </label>
-                <br />
+                <p>銀行名稱｜ＸＸ商業銀行</p>
+                <p>分行名稱｜台北城中分行</p>
+                <p>銀行代碼｜123</p>
+                <p>帳戶名稱｜水寶</p>
+                <p>帳號｜0000-0000-0000-0000</p>
+              </section>
 
-                <label>
-                  匯款金額*<br />
-                  <input
-                    type="number"
-                    name="amount"
-                    value={formData.amount}
-                    readOnly
-                  />
-                </label>
-                <br />
+              <section className="remittance-form">
+                <h3>匯款通知表單</h3>
+                <form onSubmit={handleSubmit}>
+                  <label>
+                    訂單編號*<br />
+                    <input
+                      type="text"
+                      name="orderId"
+                      value={formData.orderId}
+                      readOnly
+                    />
+                  </label>
+                  <br />
 
-                <label>
-                  匯款末5碼*<br />
-                  <input
-                    type="text"
-                    name="last5"
-                    maxLength={5}
-                    value={formData.last5}
-                    onChange={handleChange}
-                    placeholder="請輸入匯款帳號末五碼"
-                    required
-                  />
-                </label>
-                <br />
+                  <label>
+                    匯款金額*<br />
+                    <input
+                      type="number"
+                      name="amount"
+                      value={formData.amount}
+                      readOnly
+                    />
+                  </label>
+                  <br />
 
-                <label>
-                  匯款時間*<br />
-                  <input
-                    type="date"
-                    name="date"
-                    value={formData.date}
-                    max={plus3Str}
-                    min={todayStr}
-                    onChange={handleChange}
-                    required
-                  />
-                </label>
-                <br />
+                  <label>
+                    匯款末5碼*<br />
+                    <input
+                      type="text"
+                      name="last5"
+                      maxLength={5}
+                      value={formData.last5}
+                      onChange={handleChange}
+                      placeholder="請輸入匯款帳號末五碼"
+                      required
+                    />
+                  </label>
+                  <br />
 
-                <label>
-                  匯款人姓名*<br />
-                  <input
-                    type="text"
-                    name="payer"
-                    value={formData.payer}
-                    onChange={handleChange}
-                    placeholder="請輸入匯款人姓名"
-                    required
-                  />
-                </label>
-                <br />
+                  <label>
+                    匯款時間*<br />
+                    <input
+                      type="date"
+                      name="date"
+                      value={formData.date}
+                      max={plus3Str}
+                      min={todayStr}
+                      onChange={handleChange}
+                      required
+                    />
+                  </label>
+                  <br />
 
-                <button type="submit" className="submit-btn">完成匯款</button>
-              </form>
-            </section>
+                  <label>
+                    匯款人姓名*<br />
+                    <input
+                      type="text"
+                      name="payer"
+                      value={formData.payer}
+                      onChange={handleChange}
+                      placeholder="請輸入匯款人姓名"
+                      required
+                    />
+                  </label>
+                  <br />
 
-            <p className="note">
+                  <button type="submit" className="submit-btn">完成匯款</button>
+                </form>
+              </section>
+
+            </div>
+
+            <div className="note">
+              <p className="note">
               註：視窗關閉後可於訂單追蹤查看，並再次開啟匯款通知表單。
             </p>
 
@@ -144,6 +151,9 @@ export default function Step4Remittance({ orderId = "SA2500001", amount = 4080, 
             <p className="reminder">
               提醒您訂單編號可於訂單查詢頁面查詢訂單進度
             </p>
+            </div>
+
+            
           </div>
 
 

@@ -768,25 +768,48 @@
                     /* 36px */
 
                     // 運費
-                    .free-note, .note {
-                    color: #F06086;
-                    font-weight: bold;
-                    margin-left: 8px;
+                    .free-note,
+                    .note {
+                        color: #F06086;
+                        font-weight: bold;
+                        margin-left: 8px;
+                    }
                 }
-                }
+
                 span {
                     display: block;
                 }
 
-                
+
             }
         }
 
     }
 }
 
-.checkout .main-area .step4{
+.checkout .main-area .step-4 {
     width: 100%;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+
+    .container {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+
+        // 左 帳戶資訊 右 匯款表單
+        .payment-info {
+            flex: 1;
+        }
+        .remittance-form{
+            flex: 1;
+        }
+
+
+    }
+
+
 
 }
