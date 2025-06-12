@@ -47,6 +47,10 @@
     @media ($media-640) {
         display: none;
     }
+    li {
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+    }
 
     .filter2 li.active {
         font-weight: bold;

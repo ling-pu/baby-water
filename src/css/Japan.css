@@ -111,6 +111,10 @@
     display: none;
   }
 }
+#filter li {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+}
 #filter .filter2 li.active {
   font-weight: bold;
   color: #d23e3e;
@@ -202,4 +206,4 @@
 }
 #products .cardlist img {
   object-fit: cover;
-}
+}/*# sourceMappingURL=Japan.css.map */

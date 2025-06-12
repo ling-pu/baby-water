@@ -4,6 +4,7 @@ import { picks, world } from "../data/Data"
 import { useContext, useEffect, useState } from "react";
 import FilterPanel from "../component/FilterPanel";
 import SortPanel from "../component/SortPanel";
+import { useCategory } from "../context/CategoryContext";
 const base = import.meta.env.BASE_URL;
 
 export default function Japan() {
@@ -14,9 +15,11 @@ export default function Japan() {
 
   const navigate = useNavigate();
   const allItems = [...picks]; // 合併陣列
+
   // 篩選服飾類型(多選)
-  const [selectedCategories, setSelectedCategories] = useState(["All"]);
+  const { selectedCategories } = useCategory(); 
   const filteredItems = selectedCategories.includes("All")
+
     ? allItems
     : allItems.filter(item => selectedCategories.includes(item.category));
   // 排序
@@ -56,10 +59,7 @@ export default function Japan() {
     <>
       <main id="jp">
         {/* 篩選區 */}
-        <FilterPanel
-          selectedCategories={selectedCategories}
-          setSelectedCategories={setSelectedCategories}
-        />
+        <FilterPanel/>
 
         {/* 展示 */}
         <section id="products">

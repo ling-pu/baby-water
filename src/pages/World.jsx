@@ -3,13 +3,14 @@ import Card from "../component/Card"
 import { picks, world } from "../data/Data"
 import FilterPanel from "../component/FilterPanel";
 import SortPanel from "../component/SortPanel";
+import { useCategory } from "../context/CategoryContext";
 
 
 export default function World() {
 
   const allItems = [...world]; // 合併陣列
  // 篩選服飾類型(多選)
- const [selectedCategories, setSelectedCategories] = useState(["All"]);
+ const { selectedCategories } = useCategory(); 
  const filteredItems = selectedCategories.includes("All")
    ? allItems
    : allItems.filter(item => selectedCategories.includes(item.category));
@@ -56,9 +57,7 @@ export default function World() {
     <>
       <main id="jp">
         {/* 篩選 */}
-        <FilterPanel
-          selectedCategories={selectedCategories}
-          setSelectedCategories={setSelectedCategories} />
+        <FilterPanel/>
 
         {/* 展示 */}
         <section id="products">

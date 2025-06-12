@@ -1611,6 +1611,9 @@ footer .terms {
     display: none;
   }
 }
+#filter li {
+  cursor: pointer;
+}
 #filter .filter2 li.active {
   font-weight: bold;
   color: #d23e3e;
@@ -2676,20 +2679,22 @@ footer .terms {
   display: block;
 }
 
-.checkout .main-area .step4 {
+.checkout .main-area .step-4 {
   width: 100%;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   gap: 1rem;
 }
-.checkout .main-area .step4 .container {
+.checkout .main-area .step-4 .container {
   width: 100%;
   display: flex;
   flex-direction: row;
 }
-.checkout .main-area .step4 .container .payment-info {
+.checkout .main-area .step-4 .container .payment-info {
   flex: 1;
 }
-.checkout .main-area .step4 .container .remittance-form {
+.checkout .main-area .step-4 .container .remittance-form {
   flex: 1;
 }
 
@@ -2781,4 +2786,4 @@ body {
 
 main {
   flex: 1;
-}
+}/*# sourceMappingURL=main.css.map */

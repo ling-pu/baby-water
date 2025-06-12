@@ -6,26 +6,6 @@ export default function FilterPanel() {
 
   const categories = ["All", "Tops", "Bottoms", "Swimwear", "Dresses", "Others"];
 
-// const toggleCategory = (cat) => {
-//     if (cat === "All") {
-//       setSelectedCategories(["All"]);
-//     } else {
-//       setSelectedCategories((prev) => {
-//         const isSelected = prev.includes(cat);
-//         let newSelection;
-
-//         if (isSelected) {
-//           newSelection = prev.filter((item) => item !== cat);
-//         } else {
-//           newSelection = [...prev.filter((item) => item !== "All"), cat];
-//         }
-
-//         // 如果沒選任何分類，預設選 All
-//         return newSelection.length > 0 ? newSelection : ["All"];
-//       });
-//     }
-//   };
-
   return (
     <section id="filter">
       <div className="title">
@@ -53,3 +33,23 @@ export default function FilterPanel() {
     </section>
   );
 }
+
+// const toggleCategory = (cat) => {
+//     if (cat === "All") {
+//       setSelectedCategories(["All"]);
+//     } else {
+//       setSelectedCategories((prev) => {
+//         const isSelected = prev.includes(cat);
+//         let newSelection;
+
+//         if (isSelected) {
+//           newSelection = prev.filter((item) => item !== cat);
+//         } else {
+//           newSelection = [...prev.filter((item) => item !== "All"), cat];
+//         }
+
+//         // 如果沒選任何分類，預設選 All
+//         return newSelection.length > 0 ? newSelection : ["All"];
+//       });
+//     }
+//   };
