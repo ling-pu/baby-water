@@ -97,7 +97,7 @@ export default function Step1Cart({ onNext }) {
         </div>
 
         <div className="btn-area">
-          <button className="next-btn" onClick={onNext}>下一步：填寫資料</button>
+          <button className="next-btn" onClick={onNext}>下一步</button>
         </div>
 
 

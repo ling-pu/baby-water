@@ -56,7 +56,7 @@ const steps = ["結帳", "填寫收件資料", "完成訂單", "匯款通知"];
 export default function ProgressBar({ currentStep = 1 }) {
   // 顏色定義
   const finishedColor = "#7C91AF"; // 代表已完成
-  const activeColor = "#7C91AF"; // 代表當前
+  const activeColor = "#f99ebf"; // 代表當前
   const defaultColor = "#B5B9BE"; // 灰色，未到的步驟
 
   return (
@@ -72,23 +72,23 @@ export default function ProgressBar({ currentStep = 1 }) {
           idx === 0
             ? "transparent"
             : isFinished || isActive
-            ? finishedColor
-            : defaultColor;
+              ? finishedColor
+              : defaultColor;
 
         // 右線：最後一步不顯示
         const rightLineColor =
           idx === steps.length - 1
             ? "transparent"
             : stepNumber < currentStep
-            ? finishedColor
-            : defaultColor;
+              ? finishedColor
+              : defaultColor;
 
         // 圓圈顏色：當前用 activeColor，已完成用 finishedColor，未到用 defaultColor
         const circleFill = isActive
           ? activeColor
           : isFinished
-          ? finishedColor
-          : "white";
+            ? finishedColor
+            : "white";
 
         return (
           <div
@@ -104,7 +104,11 @@ export default function ProgressBar({ currentStep = 1 }) {
             <div className="step-txt">
               <span
                 style={{
-                  color: isActive || isFinished ? activeColor : defaultColor,
+                  color: isActive
+                    ? activeColor
+                    : isFinished
+                      ? finishedColor
+                      : defaultColor,
                   fontWeight: isActive ? "700" : "400",
                 }}
               >

@@ -1613,6 +1613,7 @@ footer .terms {
 }
 #filter li {
   cursor: pointer;
+  padding: 0.5rem 1rem;
 }
 #filter .filter2 li.active {
   font-weight: bold;
@@ -2077,6 +2078,108 @@ footer .terms {
   /* 確保仍可滾動 */
 }
 
+/* 表單每列樣式共用 */
+.customer {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
+  align-self: stretch;
+  /* 注意：大多數瀏覽器不支援 <option> 的自訂背景 */
+}
+.customer label {
+  width: 150px;
+  /* noto 16 10% */
+  font-family: "Noto Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  /* 24px */
+  letter-spacing: 1.6px;
+}
+.customer input {
+  width: 100%;
+  display: flex;
+  padding: 12px 24px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--Neutral-medium-gray, #B5B9BE);
+  background: var(--Neutral-light-gray, #F3F7FB);
+}
+.customer input[type=text],
+.customer input[type=email],
+.customer input[type=tel],
+.customer input[type=password],
+.customer input[type=number] {
+  all: unset;
+  width: 100%;
+  padding: 0.75em 1em;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  line-height: 1.5;
+  box-sizing: border-box;
+  background: var(--Neutral-light-gray, #F3F7FB);
+  color: #333;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+.customer input:focus,
+.customer textarea:focus {
+  border-color: rgb(249, 158, 191);
+  outline: none;
+}
+.customer .custom-select {
+  width: 100%;
+  display: flex;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--Neutral-medium-gray, #B5B9BE);
+  background: var(--Neutral-light-gray, #F3F7FB);
+  font-size: 1rem;
+}
+.customer .custom-select option {
+  background: var(--Neutral-light-gray, #F3F7FB);
+  color: #333;
+  padding: 10px;
+}
+.customer .checkbox-area {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.customer .checkbox-area input {
+  width: 24px;
+}
+.customer .store7-11 {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  gap: 16px;
+}
+.customer .store7-11 .store-select-btn {
+  display: flex;
+  padding: 16px 80px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  border: 2px solid var(--bg, #E8E8E8);
+  background: var(--pink-bg, #ECD0DF);
+  /* noto 16 10% */
+  font-family: "Noto Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  /* 24px */
+  letter-spacing: 1.6px;
+}
+.customer .store7-11 p {
+  font-size: 14px;
+  color: #4A4D50;
+}
+
 .checkout {
   display: flex;
   flex-direction: column;
@@ -2313,7 +2416,7 @@ footer .terms {
   padding: 24px;
   flex-direction: column;
   align-items: flex-start;
-  gap: 24px;
+  gap: 1.5rem;
 }
 .checkout .main-area .step-2 .form-area .shipping-form .customer {
   width: 100%;
@@ -2684,18 +2787,81 @@ footer .terms {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
+  overflow-y: none;
+}
+.checkout .main-area .step-4 h2 {
+  /* noto 24 */
+  font-family: "Noto Sans";
+  font-size: 24px;
+  font-style: normal;
+  line-height: 150%;
+  /* 36px */
+  letter-spacing: 4.8px;
 }
 .checkout .main-area .step-4 .container {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  gap: 3.5rem;
 }
 .checkout .main-area .step-4 .container .payment-info {
   flex: 1;
+  gap: 1.5rem;
+}
+.checkout .main-area .step-4 .container .payment-info .title {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: s;
+}
+.checkout .main-area .step-4 .container .payment-info .title h3 {
+  font-size: 24px;
+  font-weight: 400;
+}
+.checkout .main-area .step-4 .container .payment-info .title .copy-btn {
+  display: flex;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 48px;
+  border: 1px solid var(--Neutral-medium-gray, #B5B9BE);
+  background: var(--pink-bg, #ECD0DF);
+  font-size: 14px;
 }
 .checkout .main-area .step-4 .container .remittance-form {
-  flex: 1;
+  flex: 2;
+  border-radius: 8px;
+  border: 1px solid var(--Neutral-medium-gray, #B5B9BE);
+  padding: 1rem 1.5rem;
+  gap: 1.5rem;
+}
+.checkout .main-area .step-4 .container .remittance-form h3 {
+  /* noto 24 */
+  font-family: "Noto Sans";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  /* 36px */
+  letter-spacing: 4.8px;
+  text-align: center;
+}
+.checkout .main-area .step-4 .container .remittance-form form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1.5rem;
+}
+.checkout .main-area .step-4 .container .remittance-form form .submit-btn {
+  display: flex;
+  padding: 12px 80px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  border: 1px solid var(--Neutral-medium-gray, #B5B9BE);
+  background: var(--pink-bg, #ECD0DF);
 }
 
 #progress-indicator {
