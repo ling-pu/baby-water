@@ -28,7 +28,7 @@ export default function Step1Cart({ onNext }) {
     <>
       <main className="checkout">
 
-        <ProgressBar />
+        <ProgressBar currentStep={1}/>
 
         <div className="main-area">
           <div className="step-1">

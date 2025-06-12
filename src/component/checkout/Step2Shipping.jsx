@@ -101,7 +101,7 @@ export default function Step2Shipping({ shippingInfo, setShippingInfo, onBack, o
     <>
       <main className="checkout">
 
-        <ProgressBar />
+        <ProgressBar currentStep={2}/>
 
         <div className="main-area">
 
