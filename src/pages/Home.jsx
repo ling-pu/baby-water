@@ -3,6 +3,13 @@ import babywater from "../assets/icons/logo.svg"
 import bg from "../assets/bg.svg"
 import Card from "../component/Card"
 import { picks, world } from "../data/Data"
+const base = import.meta.env.BASE_URL;
+
+const addBase = (path) => {
+  if (!path) return "";
+  return base + path.replace(/^\/+/, "");
+};
+
 
 export default function Home() {
   return (
@@ -43,7 +50,7 @@ export default function Home() {
             </div>
             {/* btn */}
             <div className="btn-container">
-              <a href="./timesale" className="btn-seemore">see more
+              <a href={addBase("/timesale")} className="btn-seemore">see more
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M9.34148 18.6067L14.6585 11.9829L9.34148 5.39334" strokeWidth="3"
                     strokeLinecap="round" strokeLinejoin="round" />
@@ -75,7 +82,7 @@ export default function Home() {
             </div>
             {/* btn */}
             <div className="btn-container">
-              <a href="./world" className="btn-seemore">shop now
+              <a href={addBase("/world")} className="btn-seemore">shop now
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M9.34148 18.6067L14.6585 11.9829L9.34148 5.39334" strokeWidth="3"
                     strokeLinecap="round" strokeLinejoin="round" />
