@@ -14,7 +14,7 @@ export default function CheckoutPage() {
     const { cartItems } = useCart();
     const [step, setStep] = useState(1);
     const [shippingInfo, setShippingInfo] = useState({
-        name: "", phone: "", address: "", email: ""
+        name: "", phone: "", lineId: "", email: "", shippingtype: "", payMethod: ""
     });
 
     const goNext = () => setStep((prev) => Math.min(prev + 1, 4));

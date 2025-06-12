@@ -24,9 +24,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 24px 104px 48px;
+    margin: 24px 104px;
     gap: 24px;
-    height: calc(100vh - 44px - 97px - 77px - 76px);
+    height: calc(100vh - 44px - 97px - 77px);
 
     .main-area {
         display: flex;
@@ -75,8 +75,8 @@
             align-items: center;
 
             border-radius: 48px;
-            border: 2px solid var(--bg, #E8E8E8);
-            background: var(--pink-bg, #ECD0DF);
+            border: 1.5px solid var(--bg, $color-gray);
+            background: var(--pink-bg, #e8e8e8);
 
             /* noto 16 10% */
             font-family: "Noto Sans";
@@ -325,7 +325,7 @@
                 align-self: stretch;
 
                 label {
-                    width: 100px;
+                    width: 150px;
                     /* noto 16 10% */
                     font-family: "Noto Sans";
                     font-size: 16px;
@@ -362,7 +362,7 @@
                     font-size: 1rem;
                     line-height: 1.5;
                     box-sizing: border-box;
-                    background-color: #fff;
+                    background: var(--Neutral-light-gray, #F3F7FB);
                     color: #333;
                     transition: border 0.3s, box-shadow 0.3s;
                 }
@@ -372,6 +372,75 @@
                     border-color: rgba(249, 158, 191, 1);
                     outline: none;
                 }
+
+                // 自訂下拉選單
+                .custom-select {
+                    width: 100%;
+                    display: flex;
+                    padding: 12px 16px;
+
+                    border-radius: 8px;
+                    border: 1px solid var(--Neutral-medium-gray, #B5B9BE);
+                    background: var(--Neutral-light-gray, #F3F7FB);
+
+                    font-size: 1rem;
+                }
+
+                /* 注意：大多數瀏覽器不支援 <option> 的自訂背景 */
+                .custom-select option {
+                    background: var(--Neutral-light-gray, #F3F7FB);
+                    color: #333;
+                    padding: 10px;
+                }
+
+                // 收件資訊區
+                .checkbox-area {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+
+                    // 勾選框
+                    input {
+                        width: 24px;
+                    }
+                }
+
+                // 門市按鈕+顯示文字的div
+
+                .store7-11 {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    width: 100%;
+                    gap: 16px;
+
+                    // 門市按鈕
+                    .store-select-btn {
+                        display: flex;
+                        padding: 16px 80px;
+                        justify-content: center;
+                        align-items: center;
+
+                        border-radius: 8px;
+                        border: 2px solid var(--bg, #E8E8E8);
+                        background: var(--pink-bg, #ECD0DF);
+
+                        /* noto 16 10% */
+                        font-family: "Noto Sans";
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 150%;
+                        /* 24px */
+                        letter-spacing: 1.6px;
+                    }
+
+                    p {
+                        font-size: 14px;
+                        color: #4A4D50;
+                    }
+                }
+
+
             }
 
             // ERROR
@@ -385,6 +454,29 @@
                 background-color: #f5f5f5;
                 color: #aaa;
                 cursor: not-allowed;
+            }
+
+            // 送出按鈕
+            .submit-btn {
+                width: 100%;
+                display: flex;
+                padding: 16px 80px;
+                justify-content: center;
+                align-items: center;
+
+                border-radius: 8px;
+                border: 1.5px solid var(--bg, #E8E8E8);
+                background: var(--pink-bg, #ECD0DF);
+
+                /* noto 16 10% */
+                font-family: "Noto Sans";
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 150%;
+                /* 24px */
+                letter-spacing: 1.6px;
+
             }
 
 
@@ -415,10 +507,13 @@
                 justify-content: center;
 
                 border-radius: 8px;
-                border: 1px solid var(--Neutral-medium-gray, #B5B9BE);
+                border: 1.5px solid var(--Neutral-medium-gray, #B5B9BE);
                 background: var(--pink-bg, #ECD0DF);
             }
 
         }
     }
 }
+
+/* step 3 */
+.checkout .main-area .step-3 {}
