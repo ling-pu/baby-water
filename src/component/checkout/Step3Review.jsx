@@ -37,7 +37,7 @@ export default function Step3Review({ cartItems, info, onNext, onBack }) {
             {/* 左：顧客與收件資訊 */}
             <div className="review-customer">
               <section className="review-section">
-                <h3>📦 訂購人與送貨資訊</h3>
+                <h3>訂購人與送貨資訊</h3>
                 <p><strong>顧客姓名：</strong>{info.name}</p>
                 <p><strong>電子信箱：</strong>{info.email}</p>
                 <p><strong>Line ID：</strong>{info.lineId}</p>
@@ -55,7 +55,7 @@ export default function Step3Review({ cartItems, info, onNext, onBack }) {
               </section>
 
               <section className="review-section">
-                <h3>📩 收件人資訊</h3>
+                <h3>收件人資訊</h3>
                 <p><strong>收件人姓名：</strong>{info.recipient?.name}</p>
                 <p><strong>收件人電話：</strong>{info.recipient?.phone}</p>
               </section>
@@ -68,8 +68,8 @@ export default function Step3Review({ cartItems, info, onNext, onBack }) {
                   <h3>🛒 全部商品 (<span>{totalQuantity}</span> 件)</h3>
                 </div>
                 <div className="title-r">
-                  <p>小計</p>
-                  <p className="price">NT$ <span>{totalPrice.toLocaleString()}</span></p>
+                  {/* <p>小計</p>
+                  <p className="price">NT$ <span>{totalPrice.toLocaleString()}</span></p> */}
                 </div>
               </section>
 

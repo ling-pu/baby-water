@@ -2195,7 +2195,6 @@ footer .terms {
   flex-direction: column;
   align-items: flex-start;
   gap: 12px;
-  overflow-y: scroll;
 }
 .checkout .btn-area {
   width: 100%;
@@ -2574,6 +2573,7 @@ footer .terms {
 .checkout .main-area .step-3 {
   width: 100%;
   display: flex;
+  gap: 1.5rem;
 }
 .checkout .main-area .step-3 .review-area {
   width: 100%;
@@ -2582,7 +2582,7 @@ footer .terms {
   gap: 48px;
 }
 .checkout .main-area .step-3 .review-area h3 {
-  font-size: 16px;
+  font-size: 24px;
   line-height: 200%;
 }
 .checkout .main-area .step-3 .review-area .review-customer {
@@ -2591,7 +2591,7 @@ footer .terms {
   flex: 1;
   flex-direction: column;
   align-items: flex-start;
-  gap: 24px;
+  gap: 1.5rem;
 }
 .checkout .main-area .step-3 .review-area .review-customer p {
   color: #4A4D50;
@@ -2603,13 +2603,14 @@ footer .terms {
   flex: 1;
   flex-direction: column;
   align-items: flex-start;
-  gap: 24px;
+  gap: 1.5rem;
 }
 .checkout .main-area .step-3 .review-area .review-cart .cart-title {
   display: flex;
   justify-content: space-between;
   align-items: center;
   align-self: stretch;
+  gap: 1.5rem;
 }
 .checkout .main-area .step-3 .review-area .review-cart .cart-title .title-l {
   color: #4A4D50;
@@ -2622,7 +2623,7 @@ footer .terms {
   letter-spacing: 4.8px;
 }
 .checkout .main-area .step-3 .review-area .review-cart .cart-title .title-l h3 {
-  font-size: 16px;
+  font-size: 24px;
   line-height: 200%;
 }
 .checkout .main-area .step-3 .review-area .review-cart .cart-title .title-l span {
@@ -2805,6 +2806,8 @@ footer .terms {
   gap: 3.5rem;
 }
 .checkout .main-area .step-4 .container .payment-info {
+  display: flex;
+  flex-direction: column;
   flex: 1;
   gap: 1.5rem;
 }
@@ -2830,6 +2833,8 @@ footer .terms {
   font-size: 14px;
 }
 .checkout .main-area .step-4 .container .remittance-form {
+  display: flex;
+  flex-direction: column;
   flex: 2;
   border-radius: 8px;
   border: 1px solid var(--Neutral-medium-gray, #B5B9BE);

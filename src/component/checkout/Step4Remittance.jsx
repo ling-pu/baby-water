@@ -94,7 +94,7 @@ export default function Step4Remittance({ orderId = "SA2500001", amount = 4080, 
                     <input
                       type="number"
                       name="amount"
-                      value={Number(formData.amount).toLocaleString()}
+                      value={formData.amount || ''}
                       readOnly
                     />
 

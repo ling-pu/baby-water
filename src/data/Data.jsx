@@ -10,7 +10,7 @@ export const picks = [
       "/images/tops/1/3.JPG",
     ],
     styles: ["白色款", "黑色款", "棕色款"],
-    sizes: ["F", "M"],
+    sizes: ["S", "M"],
     title: "經典舒適T恤",
     price: "520",
     category: "Tops",

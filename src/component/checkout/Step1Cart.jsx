@@ -28,7 +28,7 @@ export default function Step1Cart({ onNext }) {
     <>
       <main className="checkout">
 
-        <ProgressBar currentStep={1}/>
+        <ProgressBar currentStep={1} />
 
         <div className="main-area">
           <div className="step-1">
@@ -56,12 +56,9 @@ export default function Step1Cart({ onNext }) {
                 <div key={index} className="cart-buyItem">
                   <img src={addBase(item.image)} alt={item.title} className="pic-s" />
                   <div className="info">
-                    {/* 產品名稱 */}
                     <p className="title">{item.title}</p>
-                    {/* 其他文字 */}
                     <p className="else">款式：{item.style}</p>
                     <p className="else">尺寸：{item.size}</p>
-                    {/* <p>數量：{item.quantity}</p> */}
                     <div className="item-number">
                       <button onClick={() => decreaseQuantity(index)}>−</button>
                       <div className="number-area">
@@ -69,13 +66,11 @@ export default function Step1Cart({ onNext }) {
                       </div>
                       <button onClick={() => increaseQuantity(index)}>＋</button>
                     </div>
-                    {/* <p>單價：NT$ {item.price.toLocaleString()}</p> */}
-
                   </div>
-                  {/* 金額 */}
                   <p>NT$ <span>{(item.price * item.quantity).toLocaleString()}</span></p>
+
                   {/* 刪除按鈕 */}
-                  <button onClick={() => removeFromCart(index)} aria-label="刪除商品">
+                  <button onClick={() => removeFromCart(item)} aria-label="刪除商品">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                       <g clipPath="url(#clip0_1035_1583)">
                         <path d="M15 8.21476L10 13.2148M10 8.21476L15 13.2148M17.5 4.0481H6.66671L0.833374 10.7148L6.66671 17.3814H17.5C17.9421 17.3814 18.366 17.2058 18.6786 16.8933C18.9911 16.5807 19.1667 16.1568 19.1667 15.7148V5.71476C19.1667 5.27273 18.9911 4.84881 18.6786 4.53625C18.366 4.22369 17.9421 4.0481 17.5 4.0481Z" stroke="#1E1E1E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -89,6 +84,8 @@ export default function Step1Cart({ onNext }) {
                   </button>
                 </div>
               ))}
+
+
             </section>
 
           </div>
