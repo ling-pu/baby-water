@@ -476,10 +476,7 @@
                 line-height: 150%;
                 /* 24px */
                 letter-spacing: 1.6px;
-
             }
-
-
 
 
         }
@@ -516,4 +513,241 @@
 }
 
 /* step 3 */
-.checkout .main-area .step-3 {}
+.checkout .main-area .step-3 {
+    width: 100%;
+    display: flex;
+
+    .review-area {
+        width: 100%;
+        display: flex;
+        justify-content: start;
+        gap: 48px;
+
+        h3 {
+            font-size: 16px;
+            line-height: 200%;
+        }
+
+        //  左
+        .review-customer {
+            width: 100%;
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 24px;
+
+            p {
+                color: $color-gray;
+                font-size: 14px;
+            }
+
+        }
+
+        // 右
+        .review-cart {
+            width: 100%;
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 24px;
+
+            // 購物車標題
+            .cart-title {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                align-self: stretch;
+
+                .title-l {
+                    color: $color-gray;
+
+                    /* noto 24 */
+                    font-family: "Noto Sans";
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 150%;
+                    /* 36px */
+                    letter-spacing: 4.8px;
+
+                    h3 {
+                        font-size: 16px;
+                        line-height: 200%;
+                    }
+
+                    span {
+                        font-family: Allerta;
+
+                    }
+                }
+
+                .title-r {
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: flex-end;
+                    gap: 12px;
+
+                    p {
+                        color: $color-gray;
+
+                        /* noto 16 10% */
+                        font-family: "Noto Sans";
+                        font-size: 14px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 150%;
+                        /* 24px */
+                        letter-spacing: 1.6px;
+                    }
+
+                    .price {
+                        color: $color-gray;
+
+                        /* Allerta 24 */
+                        font-family: Allerta;
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 150%;
+                        /* 36px */
+                    }
+                }
+
+
+            }
+
+            .cart-list {
+                width: 100%;
+                display: flex;
+                // width: 1264px;
+                padding: 0px 12px;
+                flex-direction: column;
+                align-items: flex-start;
+
+                .cart-buyItem {
+                    width: 100%;
+                    display: flex;
+                    padding: 24px;
+                    align-items: center;
+                    gap: 24px;
+                    align-self: stretch;
+                    justify-content: space-between;
+
+                    // 圖片欄
+                    .pic-s {
+                        width: 120px;
+                        border-radius: 8px;
+                    }
+
+                    // 文字欄
+                    .info {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        align-items: flex-start;
+                        flex: 1 0 0;
+                        align-self: stretch;
+                        gap: 0.5rem;
+
+
+                        .title {
+                            width: 100%;
+                            overflow: hidden;
+                            color: $color-gray;
+                            text-overflow: ellipsis;
+
+                            /* noto 10% */
+                            font-family: "Noto Sans";
+                            font-size: 16px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 150%;
+                            /* 21px */
+                            letter-spacing: 1.4px;
+                        }
+
+                        // 除了產品名稱以外文字灰色
+                        .else {
+                            color: $color-gray;
+                            /* noto 10% */
+                            font-family: "Noto Sans";
+                            font-size: 14px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 150%;
+                            /* 21px */
+                            letter-spacing: 1.4px;
+                        }
+
+
+                        // 件數
+                        .item-number {
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+
+                            // - +
+                            >button {
+                                all: unset;
+                                cursor: pointer;
+                                display: flex;
+                                width: 48px;
+                                height: 48px;
+                                justify-content: center;
+                                align-items: center;
+                                aspect-ratio: 1/1;
+                            }
+
+                            // 數字
+                            .number-area {
+                                display: flex;
+                                width: 100px;
+                                padding: 4px;
+                                justify-content: center;
+                                align-items: center;
+
+                                font-size: 14px;
+                                color: $color-gray;
+
+                                border-radius: 24px;
+                                border: 1.5px solid var(--Neutral-medium-gray-2, #4A4D50);
+                            }
+                        }
+                    }
+
+                    // 金額
+                    p {
+
+                        display: flex;
+                        width: 120px;
+
+                        color: $color-gray;
+
+                        /* Allerta 24 */
+                        font-family: Allerta;
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 150%;
+                        /* 36px */
+                    }
+
+
+                    // 刪除按鈕
+                    button {
+                        display: flex;
+                        width: 48px;
+                        height: 48px;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+
+                }
+            }
+        }
+
+    }
+}

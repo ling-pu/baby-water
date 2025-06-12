@@ -301,7 +301,7 @@ export default function Step2Shipping({ shippingInfo, setShippingInfo, onBack, o
             }}
             disabled={!formSubmitted}
           >
-            下一步：明細核對
+            下一步
           </button>
         </div>
 
