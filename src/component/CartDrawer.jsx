@@ -1,6 +1,7 @@
 import { useCart } from "../context/CartContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import X from "../assets/icons/icons/x.png";
+import { toast } from "react-hot-toast";
 import { useEffect, useRef, useState } from "react";
 
 const base = import.meta.env.BASE_URL;
@@ -16,20 +17,6 @@ export default function CartDrawer() {
   const navigate = useNavigate();
   const drawerRef = useRef(null); // 用來偵測點擊是否在 drawer 內
 
-  // 提示訊息
-  const [message, setMessage] = useState("");
-  const handleRemove = (item) => {
-    console.log("刪除前的 cartItems:", cartItems);
-    console.log("準備移除：", item);
-    if (typeof removeFromCart !== "function") {
-      console.warn("removeFromCart 尚未定義");
-      return;
-    }
-    removeFromCart(item);
-    setMessage(`已移除「${item.title}」`);
-    setTimeout(() => setMessage(""), 2000);
-  };
-  
   // 點擊 drawer 外部就關閉
   useEffect(() => {
     if (!isCartOpen) return;
@@ -61,25 +48,20 @@ export default function CartDrawer() {
     if (id) navigate(`/product/${id}`);
   };
 
+  const handleRemove = (item) => {
+    removeFromCart(item);
+  };
+
 
   return (
     <>
-    {/* 加入 ref={drawerRef} 會導致無法按刪除 */}
       {isCartOpen && (
-        <div className="cart-drawer open"  onClick={e => e.stopPropagation()}>
+        <div className="cart-drawer open"  >
           <div className="cart-drawer-panel"
-          // ref={drawerRef}
-          onClick={(e) => e.stopPropagation()}  >
-            
-            <h2>購物車商品</h2>
+            ref={drawerRef}
+            onClick={(e) => e.stopPropagation()}  >
 
-            {/* 已刪除的提示 */}
-            {/* {message && (
-              <div className="cart-message"
-              style={{color:"#7c91af"}}>
-                {message}
-              </div>
-            )} */}
+            <h2>購物車商品</h2>
 
             <div className="showProgress-stoke">
               <div className="showProgress-solid"></div>
@@ -92,53 +74,59 @@ export default function CartDrawer() {
               </div>
 
               {/* 商品列表 */}
-             
-                {Array.isArray(cartItems) && cartItems.length > 0 && cartItems.map((item) => (
-                  <div key={`${item.id}-${item.style}-${item.size}`} className="buyItemCard">
 
-                    <div className="left-col">
-                      <div className="col">
+              {Array.isArray(cartItems) && cartItems.length > 0 && cartItems.map((item) => (
+                <div key={`${item.id}-${item.style}-${item.size}`} className="buyItemCard">
+
+                  <div className="left-col">
+                    <div className="col">
+                      {/* 圖片 */}
+                      <Link to={`/product/${item.id}`}
+                      onMouseDown={(e) => e.stopPropagation()}>
                         <img src={addBase(item.image)} alt={item.title} className="pic-s"
-                          onClick={() => handleClick(item.id)}
+                          // onClick={() => handleClick(item.id)}
                           style={{ cursor: "pointer" }} />
-                      </div>
-                      <div className="info">
-                        <p className="title" onClick={() => handleClick(item.id)}
-                          style={{ cursor: "pointer" }}
-                        >{item.title}</p>
-                        <div>
-                          <p>款式：{item.style}</p>
-                          <p>尺寸：{item.size}</p>
-                          <p>數量：{item.quantity}</p>
-                        </div>
-
-
-                      </div>
+                      </Link>
                     </div>
-
-                    {/* 總金額＆刪除按鈕區 */}
-                    <div className="right-col"> 
-                      <div className="item-price">
-                        <p>NT$ <span>{(item.price * item.quantity).toLocaleString()}</span></p>
-                      </div>
+                    <div className="info">
+                      <p className="title" style={{ cursor: "pointer" }}>
+                        <Link to={`/product/${item.id}`} style={{ textDecoration: 'none', color: 'inherit' }}
+                        onMouseDown={(e) => e.stopPropagation()}>
+                          {item.title}
+                        </Link>
+                      </p>
                       <div>
-                        <button
-                          onClick={(e) => {
-                            e.stopPropagation(); // ✅ 防止觸發父層的跳轉
-                            handleRemove(item);
-                          }}
-                          style={{ cursor: "pointer", border: "none", background: "none" }}
-                        >
-                          <img src={X} alt="移除" style={{ width: "14px" }} />
-                        </button>
+                        <p>款式：{item.style}</p>
+                        <p>尺寸：{item.size}</p>
+                        <p>數量：{item.quantity}</p>
                       </div>
 
+
                     </div>
+                  </div>
 
-
+                  {/* 總金額＆刪除按鈕區 */}
+                  <div className="right-col">
+                    <div className="item-price">
+                      <p>NT$ <span>{(item.price * item.quantity).toLocaleString()}</span></p>
+                    </div>
+                    <div>
+                      <button
+                        aria-label={`移除商品 ${item.title}`}
+                        onMouseDown={(e) => e.stopPropagation()}
+                        onClick={(e) => {
+                          e.stopPropagation(); // ✅ 防止觸發父層的跳轉
+                          handleRemove(item);
+                        }}
+                        style={{ cursor: "pointer", border: "none", background: "none" }}
+                      >
+                        <img src={X} alt="移除" style={{ width: "14px" }} />
+                      </button>
+                    </div>
 
                   </div>
-                ))}
+                </div>
+              ))}
 
 
               {/* 結帳按鈕 */}
