@@ -138,8 +138,8 @@ export default function Header() {
                 </nav>
             </header>
 
-            {/* 購物車抽屜 */}
-            <CartDrawer />
+            {/* 購物車抽屜
+            <CartDrawer /> */}
 
             {/* 搜尋彈窗 */}
             {isSearchOpen && (

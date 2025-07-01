@@ -47,11 +47,12 @@ function App() {
         <CartProvider> {/* 全域提供購物車狀態 */}
           <CategoryProvider>
             <Cursor />
+            <CartDrawer /> {/* 放在 Router 內層，能使用 context */}
             <Announcement />
             <Header />
             <Pages />
             <Footer />
-            <CartDrawer /> {/* 放在 Router 內層，能使用 context */}
+            
           </CategoryProvider>
         </CartProvider>
       </BrowserRouter>

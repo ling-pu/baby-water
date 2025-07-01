@@ -22,7 +22,9 @@
     z-index: 100;
     /* panel 層級高於 overlay */
     width: 400px;
-    height: 100%;
+    // height: 100%;
+    height: 100vh;
+    /* 滿高，讓內容填滿 */
     box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
     position: relative;
 
@@ -36,8 +38,37 @@
     border: 1px solid $color-black;
     background: var(--bg, #E8E8E8);
 
+    @media ($media-820){
+        width: 100vw;
+    }
+
+    .close-drawer-btn {
+        display: none;
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        color: #23222A;
+        cursor: pointer;
+        z-index: 101;
+        
+        @media ($media-820){
+            display: block;
+        }
+
+      }
+
     .content {
         width: 100%;
+        overflow-y: auto;
+        scrollbar-gutter: stable; // ✅ 保留滾動條空間，不會擠壓內容
+        scrollbar-width: thin;
+        scrollbar-width: none; // Firefox 隱藏
+
+        flex-grow: 1;
+        scrollbar-color: transparent;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -45,6 +76,34 @@
 
         border: none;
         padding: 0;
+        padding-right: 4px; // ✅ 給點空間避免內容被擋住
+
+        // 滾動條
+        // Chrome / Safari
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: transparent; // 初始透明
+            border-radius: 6px;
+            border: 2px solid transparent;
+            background-clip: content-box;
+        }
+
+        &:hover::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, 0.2); // 滑鼠靠近時顯示
+        }
+
+        // Firefox 額外處理
+        &:hover {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+        }
 
         .total {
             font-family: Allerta;
@@ -133,6 +192,7 @@
                     font-family: Allerta;
                     font-size: 1rem;
                 }
+
                 button {
                     display: flex;
                     justify-content: flex-end;
