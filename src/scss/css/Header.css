@@ -79,6 +79,7 @@
 @media (max-width:640px) {
   .siteHeader {
     padding: 8px 8px;
+    background-color: #e8e8e8;
   }
 }
 .siteHeader ul {
