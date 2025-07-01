@@ -111,7 +111,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 60vh;
+  height: calc(100vh - 100px);
   padding: 5% 10%;
   padding-left: 10%;
   background-size: cover;
@@ -119,7 +119,7 @@
 }
 @media (max-width:640px) {
   .banner-container {
-    height: 25vh;
+    height: calc(100vh - 100px);
     padding: 2%;
     padding-left: 4%;
     gap: 0;
@@ -160,6 +160,30 @@
   .banner-container .p-banner {
     display: none;
   }
+}
+.banner-container .carousel {
+  position: relative;
+  width: 100vw;
+  height: calc(100vh - 140px);
+  max-width: 60%;
+  overflow: hidden;
+}
+@media (max-width:640px) {
+  .banner-container .carousel {
+    max-width: 100%;
+  }
+}
+.banner-container .carousel .carousel-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.banner-container .carousel .carousel-image.active {
+  opacity: 1;
+  position: relative;
 }
 
 .pick div,

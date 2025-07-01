@@ -4,6 +4,15 @@ import bg from "../assets/bg.svg"
 import Card from "../component/Card"
 import { picks, world } from "../data/Data"
 import { Link } from "react-router-dom"
+import Loading from "../component/Loading";
+import { useEffect, useState } from "react"
+import Carousel from "../component/Carousel"
+import banner1 from "../assets/banner1.JPG";
+import banner2 from "../assets/banner2.JPG";
+import banner3 from "../assets/banner3.JPG";
+import banner4 from "../assets/banner4.JPG";
+
+
 const base = import.meta.env.BASE_URL;
 
 const addBase = (path) => {
@@ -11,8 +20,19 @@ const addBase = (path) => {
   return base + path.replace(/^\/+/, "");
 };
 
+const banners = [banner1, banner2, banner3, banner4];
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  // 模擬延遲載入（如日後改成 API fetch）
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 2500); // 3 秒延遲
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) return <Loading />;
+
   return (
     <>
       <section className="banner-container">
@@ -24,7 +44,7 @@ export default function Home() {
           </div>
         </div>
 
-        <img src={banner} alt="" />
+        <Carousel images={banners}/>
       </section>
       <div className="home">
 

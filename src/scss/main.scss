@@ -113,4 +113,34 @@ body {
 main {
   flex: 1; // 讓 main 撐滿剩下空間，footer 貼底
 }
+// Loading畫面
+.loading-screen {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  inset: 0;
+  background: #e8e8e8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  img {
+    width: 40%;
+  }
 
+  // .spinner {
+  //   width: 48px;
+  //   height: 48px;
+  //   border: 5px solid #ddd;
+  //   border-top-color: #F06086;
+  //   border-radius: 50%;
+  //   animation: spin 1s linear infinite;
+  // }
+}
+
+// @keyframes spin {
+//   to {
+//     transform: rotate(360deg);
+//   }
+// }
