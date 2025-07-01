@@ -55,8 +55,7 @@
 
     @media ($media-640) {
         height: calc(100vh - 100px);
-        padding: 2%;
-        padding-left: 4%;
+        padding: 2% 0;
         gap: 0;
     }
 
@@ -71,6 +70,7 @@
 
             @media ($media-640) {
                 display: none;
+                
             }
 
         }
@@ -85,7 +85,7 @@
         }
 
         // babywater.svg
-        img {
+        .logo_svg {
             display: block; // 讓圖片可以使用 margin auto
             margin: 10% auto 0;
             width: 50%;
@@ -100,6 +100,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
+
+            @media ($media-640) {
+                display: none;
+            }
 
             a {
                 cursor: pointer;

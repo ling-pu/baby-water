@@ -1367,8 +1367,7 @@ footer .terms {
 @media (max-width:640px) {
   .banner-container {
     height: calc(100vh - 100px);
-    padding: 2%;
-    padding-left: 4%;
+    padding: 2% 0;
     gap: 0;
   }
 }
@@ -1394,13 +1393,13 @@ footer .terms {
     font-size: 1rem;
   }
 }
-.banner-container > div img {
+.banner-container > div .logo_svg {
   display: block;
   margin: 10% auto 0;
   width: 50%;
 }
 @media (max-width:640px) {
-  .banner-container > div img {
+  .banner-container > div .logo_svg {
     display: none;
   }
 }
@@ -1408,6 +1407,11 @@ footer .terms {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media (max-width:640px) {
+  .banner-container > div .socialmedia {
+    display: none;
+  }
 }
 .banner-container > div .socialmedia a {
   cursor: pointer;

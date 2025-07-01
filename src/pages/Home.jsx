@@ -49,7 +49,7 @@ export default function Home() {
           {/* <Link to={("/japan")} className="btn-seemore">GO TO SHOP</Link> */}
           {/* </div> */}
 
-          <img src={babywater} alt="" />
+          <img className="logo_svg" src={babywater} alt="" />
           <div className="socialmedia">
 
             <a className="hoverable" href="https://www.instagram.com/babywater.stuff/" target="_blank" rel="noopener noreferrer">
