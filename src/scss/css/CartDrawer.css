@@ -82,6 +82,7 @@
 }
 
 .cart-drawer-panel {
+  background-color: #e8e8e8;
   z-index: 100;
   /* panel 層級高於 overlay */
   width: 400px;

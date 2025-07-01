@@ -71,9 +71,9 @@
   top: 0px;
   width: 100%;
   display: flex;
-  padding: 16px 48px;
-  background-color: #e8e8e8;
-  border-bottom: 1px solid #23222A;
+  padding: 8px 48px;
+  z-index: 98;
+  background-color: transparent;
   /*手機 */
 }
 @media (max-width:640px) {
@@ -138,8 +138,8 @@
   /* icon背景 */
 }
 .siteHeader .icon-nav .icon-btn {
-  width: 48px;
-  height: 48px;
+  width: 1.5rem;
+  height: 1.5rem;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

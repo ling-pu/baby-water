@@ -11,6 +11,9 @@ import banner1 from "../assets/banner1.JPG";
 import banner2 from "../assets/banner2.JPG";
 import banner3 from "../assets/banner3.JPG";
 import banner4 from "../assets/banner4.JPG";
+import Footer from "../component/Footer"
+import lineIcon from '../assets/icons/icons/line.svg';
+import igIcon from '../assets/icons/icons/ig.svg'
 
 
 const base = import.meta.env.BASE_URL;
@@ -36,18 +39,34 @@ export default function Home() {
   return (
     <>
       <section className="banner-container">
+        <Carousel images={banners} />
+        {/* 品牌文字區 */}
         <div>
-          <img src={babywater} alt="" />
+          
           <p className="p-banner">想帶大家認識「值得收藏」的衣櫃成員——質感、經典、耐穿，能陪你走過好幾個季節的存在 ♡ </p>
-          <div className="btn-container">
-            <a href="#timesale" className="btn-seemore">おすすめ ITEM</a>
+          {/* <div className="btn-container"> */}
+          {/* <a href="#timesale" className="btn-seemore">RECOMMEND ITEMS</a> */}
+          {/* <Link to={("/japan")} className="btn-seemore">GO TO SHOP</Link> */}
+          {/* </div> */}
+
+          <img src={babywater} alt="" />
+          <div className="socialmedia">
+
+            <a className="hoverable" href="https://www.instagram.com/babywater.stuff/" target="_blank" rel="noopener noreferrer">
+              <img src={igIcon} alt="Instagram Icon" width={'24px'} />
+            </a>
+            <address>
+              <a className="hoverable" href="https://line.me/R/ti/p/@064nzskq?ts=06201355&oat_content=url">
+                <img src={lineIcon} alt="line icon" />
+              </a>
+            </address>
           </div>
+
         </div>
-
-        <Carousel images={banners}/>
       </section>
-      <div className="home">
 
+      {/* 
+      <div className="home">
 
         <section className="pick" id="timesale">
           <div className="pick-head">
@@ -55,13 +74,11 @@ export default function Home() {
             <h2 className="timesale">Time Sale ~ 05/30</h2>
           </div>
           <div className="content">
-            {/* 1列4欄 */}
             <div className="cardlist">
-              {/* Picks卡片區 */}
               {picks.slice(0, 4).map((picks, index) => (
                 <Card
                   key={picks.id || index}
-                  id={picks.id} // ✅ 傳入 id
+                  id={picks.id} 
                   imgSrc={picks.imgSrc}
                   title={picks.title}
                   price={picks.price}
@@ -69,13 +86,8 @@ export default function Home() {
                 />
               ))}
             </div>
-            {/* btn */}
+
             <div className="btn-container">
-              {/* <a href={addBase("/timesale")} className="btn-seemore">see more
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9.34148 18.6067L14.6585 11.9829L9.34148 5.39334" strokeWidth="3"
-                    strokeLinecap="round" strokeLinejoin="round" />
-                </svg></a> */}
               <Link to={("/timesale")} className="btn-seemore">
                 see more
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -93,22 +105,19 @@ export default function Home() {
             <h2 className="timesale">Time Sale ~ 06/10</h2>
           </div>
           <div className="content">
-            {/* 1列4欄 */}
             <div className="cardlist">
-              {/* World卡片區 */}
               {world.slice(0, 4).map((world, index) => (
                 <Card
                   key={world.id || index}
-                  id={world.id} // ✅ 傳入 id
+                  id={world.id}
                   imgSrc={world.imgSrc}
                   title={world.title}
                   price={world.price}
                   pics={world.pics}
                 />
               ))}
-
             </div>
-            {/* btn */}
+
             <div className="btn-container">
               <Link to={("/world")} className="btn-seemore">shop now
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -117,10 +126,11 @@ export default function Home() {
                 </svg>
               </Link>
             </div>
+            
           </div>
         </section>
 
-      </div>
+      </div> */}
 
     </>
   )

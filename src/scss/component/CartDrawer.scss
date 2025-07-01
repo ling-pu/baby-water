@@ -19,6 +19,7 @@
 
 // 視窗本人
 .cart-drawer-panel {
+    background-color: $bg-color1;
     z-index: 100;
     /* panel 層級高於 overlay */
     width: 400px;
