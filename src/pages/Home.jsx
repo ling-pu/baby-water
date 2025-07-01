@@ -30,7 +30,7 @@ export default function Home() {
 
   // 模擬延遲載入（如日後改成 API fetch）
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 2500); // 3 秒延遲
+    const timer = setTimeout(() => setIsLoading(false), 1500); // 3 秒延遲
     return () => clearTimeout(timer);
   }, []);
 
