@@ -1,12 +1,24 @@
 // src/context/CartContext.jsx
-
-import { createContext, useContext, useState, useCallback } from "react";
+import { toast } from "react-hot-toast";
+import { createContext, useContext, useState, useCallback, useEffect } from "react";
 
 export const CartContext = createContext({});
+const STORAGE_KEY = "my-cart";
 
 export function CartProvider({ children }) {
   const [isCartOpen, setCartOpen] = useState(false);
-  const [cartItems, setCartItems] = useState([]);
+  // ✅ 初始化：從 localStorage 讀取 cartItems
+  const [cartItems, setCartItems] = useState(() => {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    return stored ? JSON.parse(stored) : [];
+  });
+
+  // ✅ 每當 cartItems 改變時，自動寫入 localStorage
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(cartItems));
+  }, [cartItems]);
+
+  // const [cartItems, setCartItems] = useState([]);
 
   const openCart = useCallback(() => setCartOpen(true), []);
   const closeCart = useCallback(() => setCartOpen(false), []);
@@ -26,6 +38,7 @@ export function CartProvider({ children }) {
       }
       return [...prev, item];
     });
+    toast.success(`已加入「${item.title} - ${item.style} - ${item.size}」`);
     setCartOpen(true);
   };
 
@@ -37,9 +50,13 @@ const removeFromCart = (itemToRemove) => {
         item.size === itemToRemove.size)
     )
   );
+  toast.success("已從購物車移除");
 };
 
-const clearCart = () => setCartItems([]);
+const clearCart = () => {
+  setCartItems([]);
+  toast("已清空購物車");
+};
 
 // 增加數量
 const increaseQuantity = (index) => {
