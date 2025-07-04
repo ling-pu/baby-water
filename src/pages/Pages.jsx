@@ -4,11 +4,13 @@ import Japan from "./Japan"
 import World from "./World"
 import Timesale from "./Timesale"
 import User from "./User"
-import CheckoutPage from './CheckoutPage';
+import CheckoutPage from './CheckoutPage'
+import ThankYouPage from "./ThankYouPage"
 import NotFound from "./NotFound"
 // import ProductPage from "./ProductPage"
-import { Suspense, lazy } from "react";
-import Loading from "../component/Loading";
+import { Suspense, lazy } from "react"
+import Loading from "../component/Loading"
+
 const Home = lazy(() => import("./Home"));
 const ProductPage = lazy(() => import("./ProductPage"));
 
@@ -27,6 +29,7 @@ export default function Pages() {
                     <Route path="/product/:id" element={<ProductPage />} />
                     <Route path="/user" element={<User />} />
                     <Route path="/checkout" element={<CheckoutPage />} />
+                    <Route path="/thankyou" element={<ThankYouPage/>}/>
                     <Route path="*" element={<NotFound />} />
                 </Routes>
                 </Suspense>

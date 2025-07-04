@@ -1,3 +1,4 @@
+@use "../variable/" as *;
 /* 全部步驟共用區*/
 
 /* 滾動條 */
@@ -147,7 +148,7 @@
 
 }
 
-
+// 頁面
 .checkout {
     display: flex;
     flex-direction: column;
@@ -155,6 +156,12 @@
     margin: 24px 104px;
     gap: 24px;
     height: calc(100vh - 44px - 97px - 77px);
+
+    @media ($media-820) {
+        margin: 24px;
+        gap: 1.5rem;
+        height: calc(100vh - 34px - 66px - 77px);
+    }
 
     .main-area {
         display: flex;
@@ -164,6 +171,10 @@
         align-items: flex-start;
         gap: 12px;
         // overflow-y: scroll;
+
+        @media ($media-820) {
+            height: 60vh;
+        }
     }
 
 
@@ -192,6 +203,11 @@
             line-height: 150%;
             /* 24px */
             letter-spacing: 1.6px;
+
+            @media ($media-820) {
+                padding: 4% 10%;
+                font-size: 14px;
+            }
         }
 
         // 上一步按鈕
@@ -213,6 +229,11 @@
             line-height: 150%;
             /* 24px */
             letter-spacing: 1.6px;
+
+            @media ($media-820) {
+                padding: 4% 10%;
+                font-size: 14px;
+            }
         }
     }
 
@@ -241,6 +262,11 @@
             /* 36px */
             letter-spacing: 4.8px;
 
+            //全部商品標題
+            @media ($media-820) {
+                font-size: 16px;
+            }
+
             span {
                 font-family: Allerta;
 
@@ -264,6 +290,11 @@
                 line-height: 150%;
                 /* 24px */
                 letter-spacing: 1.6px;
+
+                // 總金額
+                @media ($media-820) {
+                    font-size: 10px;
+                }
             }
 
             .price {
@@ -275,7 +306,13 @@
                 font-style: normal;
                 font-weight: 400;
                 line-height: 150%;
+
                 /* 36px */
+
+                //全部商品標題
+                @media ($media-820) {
+                    font-size: 16px;
+                }
             }
         }
 
@@ -298,11 +335,20 @@
             gap: 24px;
             align-self: stretch;
             justify-content: space-between;
+        
+            @media ($media-820) {
+                flex-direction: column;
+                justify-content: center;
+                gap: 1.5rem;
+            }
 
             // 圖片欄
             .pic-s {
                 width: 120px;
                 border-radius: 8px;
+                @media ($media-820) {
+                    width: 100%;
+                }
             }
 
             // 文字欄
@@ -316,6 +362,10 @@
                 align-self: stretch;
                 gap: 0.5rem;
 
+                @media ($media-820) {
+                    justify-content: center;
+                    padding: 0 10%;
+                }
 
                 .title {
                     width: 100%;
@@ -331,6 +381,9 @@
                     line-height: 150%;
                     /* 21px */
                     letter-spacing: 1.4px;
+                    @media ($media-820) {
+                        font-size: 16px;
+                    }
                 }
 
                 // 除了產品名稱以外文字灰色
@@ -344,6 +397,9 @@
                     line-height: 150%;
                     /* 21px */
                     letter-spacing: 1.4px;
+                    @media ($media-820) {
+                        font-size: 10px;
+                    }
                 }
 
 
@@ -352,6 +408,9 @@
                     display: flex;
                     align-items: center;
                     gap: 8px;
+                    @media ($media-820) {
+                        gap: 0;
+                    }
 
                     // - +
                     >button {
@@ -374,6 +433,10 @@
                         align-items: center;
 
                         font-size: 14px;
+                        @media ($media-820) {
+                            font-size: 10px;
+                            width: 64px;
+                        }
 
                         border-radius: 24px;
                         border: 1.5px solid var(--Neutral-medium-gray-2, #4A4D50);
@@ -383,7 +446,6 @@
 
             // 金額
             p {
-
                 display: flex;
                 width: 120px;
 
@@ -396,6 +458,10 @@
                 font-weight: 400;
                 line-height: 150%;
                 /* 36px */
+
+                @media ($media-820) {
+                    font-size: 16px;
+                }
             }
 
 
@@ -422,6 +488,11 @@
         width: 100%;
         display: flex;
         justify-content: start;
+        
+        @media ($media-820) {
+            flex-direction: column;
+            justify-content: center;
+        }
 
         h2 {
 
@@ -433,6 +504,10 @@
             line-height: 150%;
             /* 36px */
             letter-spacing: 4.8px;
+
+            @media ($media-820) {
+                font-size: 16px;
+            }
         }
 
         .shipping-form {
@@ -461,6 +536,10 @@
                     line-height: 150%;
                     /* 24px */
                     letter-spacing: 1.6px;
+
+                    @media ($media-820) {
+                        font-size: 12px;
+                    }
                 }
 
                 input {
@@ -492,6 +571,9 @@
                     background: var(--Neutral-light-gray, #F3F7FB);
                     color: #333;
                     transition: border 0.3s, box-shadow 0.3s;
+                    @media ($media-820) {
+                        font-size: 12px;
+                    }
                 }
 
                 input:focus,
@@ -559,6 +641,9 @@
                         line-height: 150%;
                         /* 24px */
                         letter-spacing: 1.6px;
+                        @media ($media-820) {
+                            font-size: 12px;
+                        }
                     }
 
                     p {
@@ -603,6 +688,9 @@
                 line-height: 150%;
                 /* 24px */
                 letter-spacing: 1.6px;
+                @media ($media-820) {
+                    font-size: 16px;
+                }
             }
 
 
@@ -621,6 +709,9 @@
 
             p {
                 width: 100%;
+                @media ($media-820) {
+                    font-size: 12px;
+                }
             }
 
             button {
@@ -633,6 +724,10 @@
                 border-radius: 8px;
                 border: 1.5px solid var(--Neutral-medium-gray, #B5B9BE);
                 background: var(--pink-bg, #ECD0DF);
+
+                @media ($media-820) {
+                    font-size: 16px;
+                }
             }
 
         }
@@ -1021,4 +1116,20 @@
 
 
 
+}
+
+// ThankYouPage
+.thank-you-page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    img {
+        display: block;
+        width: 60%;
+        margin: 0 auto;
+    }
 }

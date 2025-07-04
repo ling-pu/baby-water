@@ -1,5 +1,7 @@
 import { useState } from "react";
 import ProgressBar from "./ProgressBar";
+import { useNavigate } from "react-router-dom";
+import { useCart } from "../../context/CartContext";
 const base = import.meta.env.BASE_URL;
 
 const addBase = (path) => {
@@ -43,6 +45,19 @@ export default function Step4Remittance({ orderId = "SA2500001", amount = 4080, 
     setCopySuccess("已複製帳號！");
     setTimeout(() => setCopySuccess(""), 2000);
   };
+
+  const navigate = useNavigate();
+
+  const { clearCart } = useCart();
+
+  const handlePaymentComplete = () => {
+    // 這裡寫完成匯款後的邏輯（例如呼叫API確認付款）
+    // 確認成功後跳轉感謝頁
+    clearCart();
+    navigate("/thankyou");
+  };
+
+
 
   return (
     <>
@@ -141,7 +156,7 @@ export default function Step4Remittance({ orderId = "SA2500001", amount = 4080, 
 
                   </div>
 
-                  <button type="submit" className="submit-btn">完成匯款</button>
+                  <button type="submit" className="submit-btn" onClick={handlePaymentComplete}>完成匯款</button>
                 </form>
               </section>
 

@@ -1,8 +1,17 @@
+@use "../variable/" as *;
+
 #progress-indicator {
     display: flex;
     width: 100%;
     justify-content: center;
     align-items: flex-start;
+
+    @media ($media-820) {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+
 
     // 每個步驟區（1~4）
     >div {
@@ -19,11 +28,30 @@
             align-items: center;
             gap: 0.25px;
 
+            .left-line,
+            .right-line {
+                width: 50px;
+                height: 3px;
+
+                @media ($media-820){
+                    width: 24px;
+                }
+            }
+
+            .circle {
+                width: 40px;
+                height: 40px;
+                @media ($media-820){
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+
         }
 
         .step-txt {
             // 結帳文字流程說明區
-            
+
             display: flex;
             color: var(--black, #23222A);
             text-align: center;
@@ -36,6 +64,10 @@
             line-height: 150%;
             /* 21px */
             letter-spacing: 1.4px;
+
+            @media ($media-820){
+                font-size: 10px;
+            }
         }
     }
 

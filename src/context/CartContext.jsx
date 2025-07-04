@@ -55,7 +55,7 @@ const removeFromCart = (itemToRemove) => {
 
 const clearCart = () => {
   setCartItems([]);
-  toast("已清空購物車");
+  toast("已訂購完成");
 };
 
 // 增加數量

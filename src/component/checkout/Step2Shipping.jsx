@@ -267,7 +267,7 @@ export default function Step2Shipping({ shippingInfo, setShippingInfo, onBack, o
                   form="shippingForm"
                   className={`submit-btn ${formSubmitted ? 'submitted' : ''}`}
                 >
-                  {formSubmitted ? "資料已送出" : "感謝您的填寫，點我送出訂單資料"}
+                  {formSubmitted ? "資料已送出" : "送出資料"}
                 </button>
                 {formSubmitted && <p className="success-message">✔️ 已確認收件資訊，請點選下一步</p>}
 
@@ -299,7 +299,7 @@ export default function Step2Shipping({ shippingInfo, setShippingInfo, onBack, o
                 alert("請先填寫並送出表單，我們才能為您進行下一步喔！");
               }
             }}
-            disabled={!formSubmitted}
+            // disabled={!formSubmitted}
           >
             下一步
           </button>
