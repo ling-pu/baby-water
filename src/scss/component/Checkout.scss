@@ -29,6 +29,10 @@
     gap: 48px;
     align-self: stretch;
 
+    @media ($media-820) {
+        gap: 24px;
+    }
+
     label {
         width: 150px;
         /* noto 16 10% */
@@ -39,6 +43,9 @@
         line-height: 150%;
         /* 24px */
         letter-spacing: 1.6px;
+        @media ($media-820) {
+            font-size: 12px;
+        }
     }
 
     input {
@@ -51,6 +58,10 @@
         border-radius: 8px;
         border: 1px solid var(--Neutral-medium-gray, #B5B9BE);
         background: var(--Neutral-light-gray, #F3F7FB);
+
+        @media ($media-820) {
+            font-size: 12px;
+        }
     }
 
     // input輸入樣式
@@ -70,6 +81,9 @@
         background: var(--Neutral-light-gray, #F3F7FB);
         color: #333;
         transition: border 0.3s, box-shadow 0.3s;
+        @media ($media-820) {
+            font-size: 12px;
+        }
     }
 
     input:focus,
@@ -89,6 +103,9 @@
         background: var(--Neutral-light-gray, #F3F7FB);
 
         font-size: 1rem;
+        @media ($media-820) {
+            font-size: 12px;
+        }
     }
 
     /* 注意：大多數瀏覽器不支援 <option> 的自訂背景 */
@@ -137,11 +154,17 @@
             line-height: 150%;
             /* 24px */
             letter-spacing: 1.6px;
+            @media ($media-820) {
+                font-size: 12px;
+            }
         }
 
         p {
             font-size: 14px;
             color: #4A4D50;
+            @media ($media-820) {
+                font-size: 10px;
+            }
         }
     }
 
@@ -199,7 +222,7 @@
             font-family: "Noto Sans";
             font-size: 16px;
             font-style: normal;
-            font-weight: 400;
+            font-weight: 500;
             line-height: 150%;
             /* 24px */
             letter-spacing: 1.6px;
@@ -225,7 +248,7 @@
             font-family: "Noto Sans";
             font-size: 16px;
             font-style: normal;
-            font-weight: 400;
+            font-weight: 500;
             line-height: 150%;
             /* 24px */
             letter-spacing: 1.6px;
@@ -488,19 +511,18 @@
         width: 100%;
         display: flex;
         justify-content: start;
-        
+
         @media ($media-820) {
             flex-direction: column;
             justify-content: center;
         }
 
         h2 {
-
             /* noto 24 */
             font-family: "Noto Sans";
             font-size: 24px;
             font-style: normal;
-            font-weight: 400;
+            font-weight: 700;
             line-height: 150%;
             /* 36px */
             letter-spacing: 4.8px;
@@ -510,14 +532,33 @@
             }
         }
 
+        h3 {
+            font-weight: 700;
+            line-height: 150%;
+            /* 36px */
+            letter-spacing: 3.8px;
+
+            @media ($media-820) {
+                font-size: 14px;
+            }
+        }
+
         .shipping-form {
             width: 100%;
             display: flex;
             flex: 2;
+            order: 1; // 預設在前面
             padding: 24px;
             flex-direction: column;
             align-items: flex-start;
             gap: 1.5rem;
+
+            @media ($media-820) {
+                order: 2;
+                padding: 24px 2%;
+              }
+
+            
 
             .customer {
                 width: 100%;
@@ -525,6 +566,10 @@
                 align-items: flex-start;
                 gap: 48px;
                 align-self: stretch;
+
+                @media ($media-820) {
+                    gap: 0;
+                  }
 
                 label {
                     width: 150px;
@@ -593,6 +638,10 @@
                     background: var(--Neutral-light-gray, #F3F7FB);
 
                     font-size: 1rem;
+
+                    @media ($media-820) {
+                        font-size: 12px;
+                    }
                 }
 
                 /* 注意：大多數瀏覽器不支援 <option> 的自訂背景 */
@@ -637,18 +686,23 @@
                         font-family: "Noto Sans";
                         font-size: 16px;
                         font-style: normal;
-                        font-weight: 400;
+                        font-weight: 700;
                         line-height: 150%;
                         /* 24px */
                         letter-spacing: 1.6px;
+
                         @media ($media-820) {
-                            font-size: 12px;
+                            font-size: 14px;
+                            padding: 2% 10%;
                         }
                     }
 
                     p {
                         font-size: 14px;
                         color: #4A4D50;
+                        @media ($media-820) {
+                            font-size: 12px;
+                        }
                     }
                 }
 
@@ -684,10 +738,11 @@
                 font-family: "Noto Sans";
                 font-size: 16px;
                 font-style: normal;
-                font-weight: 400;
+                font-weight: 700;
                 line-height: 150%;
                 /* 24px */
                 letter-spacing: 1.6px;
+
                 @media ($media-820) {
                     font-size: 16px;
                 }
@@ -700,12 +755,19 @@
             width: 100%;
             display: flex;
             flex: 1;
+            order: 2; // 預設在後面
             flex-direction: column;
             align-items: flex-start;
             gap: 24px;
             flex-shrink: 0;
             min-width: 240px;
             padding-top: 24px;
+
+            @media ($media-820) {
+                order: 1; // 手機版往上放
+                padding: 0 24px;
+                gap: 0.5rem;
+              }
 
             p {
                 width: 100%;
@@ -718,12 +780,13 @@
                 width: 100%;
                 margin: 0;
                 display: flex;
-                padding: 12px 80px;
+                padding: 16px 80px;
                 justify-content: center;
 
                 border-radius: 8px;
                 border: 1.5px solid var(--Neutral-medium-gray, #B5B9BE);
-                background: var(--pink-bg, #ECD0DF);
+                background: $color-blue;
+                color: #e8e8e8;
 
                 @media ($media-820) {
                     font-size: 16px;
@@ -740,15 +803,27 @@
     display: flex;
     gap: 1.5rem;
 
+    @media ($media-820) {
+        gap: 1rem;
+    }
+
     .review-area {
         width: 100%;
         display: flex;
         justify-content: start;
         gap: 48px;
+        @media ($media-820) {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
 
         h3 {
             font-size: 24px;
+            font-weight: 700;
             line-height: 200%;
+            @media ($media-820) {
+                font-size: 16px;
+            }
         }
 
         //  左
@@ -763,6 +838,9 @@
             p {
                 color: $color-gray;
                 font-size: 14px;
+                @media ($media-820) {
+                    font-size: 10px;
+                }
             }
 
         }
@@ -776,6 +854,7 @@
             align-items: flex-start;
             gap: 1.5rem;
 
+
             // 購物車標題
             .cart-title {
                 display: flex;
@@ -783,6 +862,10 @@
                 align-items: center;
                 align-self: stretch;
                 gap: 1.5rem;
+
+                @media ($media-820) {
+                    gap: 1rem;
+                }
 
                 .title-l {
                     color: $color-gray;
@@ -797,11 +880,18 @@
 
                     h3 {
                         font-size: 24px;
+                        font-weight: 700;
                         line-height: 200%;
+                        @media ($media-820) {
+                            font-size: 16px;
+                        }
                     }
 
                     span {
                         font-family: Allerta;
+                        @media ($media-820) {
+                            font-size: 10px;
+                        }
 
                     }
                 }
@@ -823,6 +913,10 @@
                         line-height: 150%;
                         /* 24px */
                         letter-spacing: 1.6px;
+
+                        @media ($media-820) {
+                            font-size: 10px;
+                        }
                     }
 
                     .price {
@@ -835,6 +929,9 @@
                         font-weight: 400;
                         line-height: 150%;
                         /* 36px */
+                        @media ($media-820) {
+                            font-size: 16px;
+                        }
                     }
                 }
 
@@ -848,6 +945,9 @@
                 padding: 0px 12px;
                 flex-direction: column;
                 align-items: flex-start;
+                @media ($media-820) {
+                    gap: 24px;
+                }
 
                 .cart-buyItem {
                     width: 100%;
@@ -858,10 +958,20 @@
                     align-self: stretch;
                     justify-content: space-between;
 
+                    @media ($media-820) {
+                        width: 80vw;
+                        gap: 16px;
+                        padding: 0;
+                    }
+                    
+
                     // 圖片欄
                     .pic-s {
                         width: 120px;
                         border-radius: 8px;
+                        @media ($media-820) {
+                            width: 96px;
+                        }
                     }
 
                     // 文字欄
@@ -874,6 +984,9 @@
                         flex: 1 0 0;
                         align-self: stretch;
                         gap: 0.5rem;
+                        @media ($media-820) {
+                            gap: 0.25rem;
+                        }
 
 
                         .title {
@@ -890,6 +1003,10 @@
                             line-height: 150%;
                             /* 21px */
                             letter-spacing: 1.4px;
+
+                            @media ($media-820) {
+                                font-size: 12px;
+                            }
                         }
 
                         // 除了產品名稱以外文字灰色
@@ -903,6 +1020,9 @@
                             line-height: 150%;
                             /* 21px */
                             letter-spacing: 1.4px;
+                            @media ($media-820) {
+                                font-size: 10px;
+                            }
                         }
 
 
@@ -911,6 +1031,9 @@
                             display: flex;
                             align-items: center;
                             gap: 8px;
+                            @media ($media-820) {
+                                gap: 0.25rem;
+                            }
 
                             // - +
                             >button {
@@ -937,6 +1060,11 @@
 
                                 border-radius: 24px;
                                 border: 1.5px solid var(--Neutral-medium-gray-2, #4A4D50);
+
+                                @media ($media-820) {
+                                    font-size: 10px;
+                                    width: 64px;
+                                }
                             }
                         }
                     }
@@ -956,6 +1084,10 @@
                         font-weight: 400;
                         line-height: 150%;
                         /* 36px */
+
+                        @media ($media-820) {
+                            font-size: 14px;
+                        }
                     }
 
 
@@ -991,6 +1123,10 @@
                     line-height: 150%;
                     /* 36px */
 
+                    @media ($media-820) {
+                        font-size: 16px;
+                    }
+
                     // 運費
                     .free-note,
                     .note {
@@ -1024,17 +1160,31 @@
         /* noto 24 */
         font-family: "Noto Sans";
         font-size: 24px;
+        font-weight: 700;
         font-style: normal;
         // font-weight: 600;
         line-height: 150%;
         /* 36px */
         letter-spacing: 4.8px;
+        @media ($media-820) {
+            font-size: 16px;
+        }
+    }
+
+    p {
+        @media ($media-820) {
+            font-size: 14px;
+        }
     }
 
     .container {
         width: 100%;
         display: flex;
         gap: 3.5rem;
+        @media ($media-820) {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
 
         // 左 帳戶資訊 右 匯款表單
         .payment-info {
@@ -1043,17 +1193,24 @@
             flex: 1;
             gap: 1.5rem;
 
+            @media ($media-820) {
+                gap: 2px;
+            }
+
             // 標題區 帳戶及點我複製按鈕
             .title {
                 display: flex;
                 flex-direction: row;
                 width: 100%;
                 justify-content: space-between;
-                align-items: s;
 
                 h3 {
                     font-size: 24px;
-                    font-weight: 400;
+                    font-weight: 700;
+
+                    @media ($media-820) {
+                        font-size: 16px;
+                    }
                 }
 
                 .copy-btn {
@@ -1065,6 +1222,12 @@
                     border: 1px solid var(--Neutral-medium-gray, #B5B9BE);
                     background: var(--pink-bg, #ECD0DF);
                     font-size: 14px;
+                    font-weight: 700;
+
+                    @media ($media-820) {
+                        font-size: 10px;
+                        padding: 2% 10%;
+                    }
                 }
             }
         }
@@ -1084,12 +1247,15 @@
                 font-family: "Noto Sans";
                 font-size: 24px;
                 font-style: normal;
-                font-weight: 400;
+                font-weight: 700;
                 line-height: 150%;
                 /* 36px */
                 letter-spacing: 4.8px;
 
                 text-align: center;
+                @media ($media-820) {
+                    font-size: 16px;
+                }
             }
 
             form {
@@ -1107,6 +1273,7 @@
                     border-radius: 8px;
                     border: 1px solid var(--Neutral-medium-gray, #B5B9BE);
                     background: var(--pink-bg, #ECD0DF);
+                    font-weight: 700;
                 }
             }
         }
@@ -1126,6 +1293,10 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
+
+    @media ($media-820) {
+        height: 60vh;
+    }
 
     img {
         display: block;

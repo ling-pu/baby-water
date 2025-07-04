@@ -2236,6 +2236,11 @@ footer .terms {
   align-self: stretch;
   /* 注意：大多數瀏覽器不支援 <option> 的自訂背景 */
 }
+@media (max-width:820px) {
+  .customer {
+    gap: 24px;
+  }
+}
 .customer label {
   width: 150px;
   /* noto 16 10% */
@@ -2247,6 +2252,11 @@ footer .terms {
   /* 24px */
   letter-spacing: 1.6px;
 }
+@media (max-width:820px) {
+  .customer label {
+    font-size: 12px;
+  }
+}
 .customer input {
   width: 100%;
   display: flex;
@@ -2256,6 +2266,11 @@ footer .terms {
   border-radius: 8px;
   border: 1px solid var(--Neutral-medium-gray, #B5B9BE);
   background: var(--Neutral-light-gray, #F3F7FB);
+}
+@media (max-width:820px) {
+  .customer input {
+    font-size: 12px;
+  }
 }
 .customer input[type=text],
 .customer input[type=email],
@@ -2274,6 +2289,15 @@ footer .terms {
   color: #333;
   transition: border 0.3s, box-shadow 0.3s;
 }
+@media (max-width:820px) {
+  .customer input[type=text],
+  .customer input[type=email],
+  .customer input[type=tel],
+  .customer input[type=password],
+  .customer input[type=number] {
+    font-size: 12px;
+  }
+}
 .customer input:focus,
 .customer textarea:focus {
   border-color: rgb(249, 158, 191);
@@ -2287,6 +2311,11 @@ footer .terms {
   border: 1px solid var(--Neutral-medium-gray, #B5B9BE);
   background: var(--Neutral-light-gray, #F3F7FB);
   font-size: 1rem;
+}
+@media (max-width:820px) {
+  .customer .custom-select {
+    font-size: 12px;
+  }
 }
 .customer .custom-select option {
   background: var(--Neutral-light-gray, #F3F7FB);
@@ -2319,14 +2348,24 @@ footer .terms {
   font-family: "Noto Sans";
   font-size: 16px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 150%;
   /* 24px */
   letter-spacing: 1.6px;
 }
+@media (max-width:820px) {
+  .customer .store7-11 .store-select-btn {
+    font-size: 12px;
+  }
+}
 .customer .store7-11 p {
   font-size: 14px;
   color: #4A4D50;
+}
+@media (max-width:820px) {
+  .customer .store7-11 p {
+    font-size: 10px;
+  }
 }
 
 .checkout {
@@ -2375,7 +2414,7 @@ footer .terms {
   font-family: "Noto Sans";
   font-size: 16px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 150%;
   /* 24px */
   letter-spacing: 1.6px;
@@ -2398,7 +2437,7 @@ footer .terms {
   font-family: "Noto Sans";
   font-size: 16px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 150%;
   /* 24px */
   letter-spacing: 1.6px;
@@ -2641,7 +2680,7 @@ footer .terms {
   font-family: "Noto Sans";
   font-size: 24px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 150%;
   /* 36px */
   letter-spacing: 4.8px;
@@ -2651,14 +2690,32 @@ footer .terms {
     font-size: 16px;
   }
 }
+.checkout .main-area .step-2 .form-area h3 {
+  font-weight: 700;
+  line-height: 150%;
+  /* 36px */
+  letter-spacing: 3.8px;
+}
+@media (max-width:820px) {
+  .checkout .main-area .step-2 .form-area h3 {
+    font-size: 14px;
+  }
+}
 .checkout .main-area .step-2 .form-area .shipping-form {
   width: 100%;
   display: flex;
   flex: 2;
+  order: 1;
   padding: 24px;
   flex-direction: column;
   align-items: flex-start;
   gap: 1.5rem;
+}
+@media (max-width:820px) {
+  .checkout .main-area .step-2 .form-area .shipping-form {
+    order: 2;
+    padding: 24px 2%;
+  }
 }
 .checkout .main-area .step-2 .form-area .shipping-form .customer {
   width: 100%;
@@ -2667,6 +2724,11 @@ footer .terms {
   gap: 48px;
   align-self: stretch;
   /* 注意：大多數瀏覽器不支援 <option> 的自訂背景 */
+}
+@media (max-width:820px) {
+  .checkout .main-area .step-2 .form-area .shipping-form .customer {
+    gap: 0;
+  }
 }
 .checkout .main-area .step-2 .form-area .shipping-form .customer label {
   width: 150px;
@@ -2734,6 +2796,11 @@ footer .terms {
   background: var(--Neutral-light-gray, #F3F7FB);
   font-size: 1rem;
 }
+@media (max-width:820px) {
+  .checkout .main-area .step-2 .form-area .shipping-form .customer .custom-select {
+    font-size: 12px;
+  }
+}
 .checkout .main-area .step-2 .form-area .shipping-form .customer .custom-select option {
   background: var(--Neutral-light-gray, #F3F7FB);
   color: #333;
@@ -2765,19 +2832,25 @@ footer .terms {
   font-family: "Noto Sans";
   font-size: 16px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 150%;
   /* 24px */
   letter-spacing: 1.6px;
 }
 @media (max-width:820px) {
   .checkout .main-area .step-2 .form-area .shipping-form .customer .store7-11 .store-select-btn {
-    font-size: 12px;
+    font-size: 14px;
+    padding: 2% 10%;
   }
 }
 .checkout .main-area .step-2 .form-area .shipping-form .customer .store7-11 p {
   font-size: 14px;
   color: #4A4D50;
+}
+@media (max-width:820px) {
+  .checkout .main-area .step-2 .form-area .shipping-form .customer .store7-11 p {
+    font-size: 12px;
+  }
 }
 .checkout .main-area .step-2 .form-area .shipping-form input.error {
   border-color: #e74c3c;
@@ -2801,7 +2874,7 @@ footer .terms {
   font-family: "Noto Sans";
   font-size: 16px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 150%;
   /* 24px */
   letter-spacing: 1.6px;
@@ -2815,12 +2888,20 @@ footer .terms {
   width: 100%;
   display: flex;
   flex: 1;
+  order: 2;
   flex-direction: column;
   align-items: flex-start;
   gap: 24px;
   flex-shrink: 0;
   min-width: 240px;
   padding-top: 24px;
+}
+@media (max-width:820px) {
+  .checkout .main-area .step-2 .form-area .member-area {
+    order: 1;
+    padding: 0 24px;
+    gap: 0.5rem;
+  }
 }
 .checkout .main-area .step-2 .form-area .member-area p {
   width: 100%;
@@ -2834,11 +2915,12 @@ footer .terms {
   width: 100%;
   margin: 0;
   display: flex;
-  padding: 12px 80px;
+  padding: 16px 80px;
   justify-content: center;
   border-radius: 8px;
   border: 1.5px solid var(--Neutral-medium-gray, #B5B9BE);
-  background: var(--pink-bg, #ECD0DF);
+  background: #7c91af;
+  color: #e8e8e8;
 }
 @media (max-width:820px) {
   .checkout .main-area .step-2 .form-area .member-area button {
@@ -2852,15 +2934,32 @@ footer .terms {
   display: flex;
   gap: 1.5rem;
 }
+@media (max-width:820px) {
+  .checkout .main-area .step-3 {
+    gap: 1rem;
+  }
+}
 .checkout .main-area .step-3 .review-area {
   width: 100%;
   display: flex;
   justify-content: start;
   gap: 48px;
 }
+@media (max-width:820px) {
+  .checkout .main-area .step-3 .review-area {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
 .checkout .main-area .step-3 .review-area h3 {
   font-size: 24px;
+  font-weight: 700;
   line-height: 200%;
+}
+@media (max-width:820px) {
+  .checkout .main-area .step-3 .review-area h3 {
+    font-size: 16px;
+  }
 }
 .checkout .main-area .step-3 .review-area .review-customer {
   width: 100%;
@@ -2873,6 +2972,11 @@ footer .terms {
 .checkout .main-area .step-3 .review-area .review-customer p {
   color: #4A4D50;
   font-size: 14px;
+}
+@media (max-width:820px) {
+  .checkout .main-area .step-3 .review-area .review-customer p {
+    font-size: 10px;
+  }
 }
 .checkout .main-area .step-3 .review-area .review-cart {
   width: 100%;
@@ -2889,6 +2993,11 @@ footer .terms {
   align-self: stretch;
   gap: 1.5rem;
 }
+@media (max-width:820px) {
+  .checkout .main-area .step-3 .review-area .review-cart .cart-title {
+    gap: 1rem;
+  }
+}
 .checkout .main-area .step-3 .review-area .review-cart .cart-title .title-l {
   color: #4A4D50;
   /* noto 24 */
@@ -2901,10 +3010,21 @@ footer .terms {
 }
 .checkout .main-area .step-3 .review-area .review-cart .cart-title .title-l h3 {
   font-size: 24px;
+  font-weight: 700;
   line-height: 200%;
+}
+@media (max-width:820px) {
+  .checkout .main-area .step-3 .review-area .review-cart .cart-title .title-l h3 {
+    font-size: 16px;
+  }
 }
 .checkout .main-area .step-3 .review-area .review-cart .cart-title .title-l span {
   font-family: Allerta;
+}
+@media (max-width:820px) {
+  .checkout .main-area .step-3 .review-area .review-cart .cart-title .title-l span {
+    font-size: 10px;
+  }
 }
 .checkout .main-area .step-3 .review-area .review-cart .cart-title .title-r {
   display: flex;
@@ -2923,6 +3043,11 @@ footer .terms {
   /* 24px */
   letter-spacing: 1.6px;
 }
+@media (max-width:820px) {
+  .checkout .main-area .step-3 .review-area .review-cart .cart-title .title-r p {
+    font-size: 10px;
+  }
+}
 .checkout .main-area .step-3 .review-area .review-cart .cart-title .title-r .price {
   color: #4A4D50;
   /* Allerta 24 */
@@ -2933,12 +3058,22 @@ footer .terms {
   line-height: 150%;
   /* 36px */
 }
+@media (max-width:820px) {
+  .checkout .main-area .step-3 .review-area .review-cart .cart-title .title-r .price {
+    font-size: 16px;
+  }
+}
 .checkout .main-area .step-3 .review-area .review-cart .cart-list {
   width: 100%;
   display: flex;
   padding: 0px 12px;
   flex-direction: column;
   align-items: flex-start;
+}
+@media (max-width:820px) {
+  .checkout .main-area .step-3 .review-area .review-cart .cart-list {
+    gap: 24px;
+  }
 }
 .checkout .main-area .step-3 .review-area .review-cart .cart-list .cart-buyItem {
   width: 100%;
@@ -2949,9 +3084,21 @@ footer .terms {
   align-self: stretch;
   justify-content: space-between;
 }
+@media (max-width:820px) {
+  .checkout .main-area .step-3 .review-area .review-cart .cart-list .cart-buyItem {
+    width: 80vw;
+    gap: 16px;
+    padding: 0;
+  }
+}
 .checkout .main-area .step-3 .review-area .review-cart .cart-list .cart-buyItem .pic-s {
   width: 120px;
   border-radius: 8px;
+}
+@media (max-width:820px) {
+  .checkout .main-area .step-3 .review-area .review-cart .cart-list .cart-buyItem .pic-s {
+    width: 96px;
+  }
 }
 .checkout .main-area .step-3 .review-area .review-cart .cart-list .cart-buyItem .info {
   width: 100%;
@@ -2962,6 +3109,11 @@ footer .terms {
   flex: 1 0 0;
   align-self: stretch;
   gap: 0.5rem;
+}
+@media (max-width:820px) {
+  .checkout .main-area .step-3 .review-area .review-cart .cart-list .cart-buyItem .info {
+    gap: 0.25rem;
+  }
 }
 .checkout .main-area .step-3 .review-area .review-cart .cart-list .cart-buyItem .info .title {
   width: 100%;
@@ -2977,6 +3129,11 @@ footer .terms {
   /* 21px */
   letter-spacing: 1.4px;
 }
+@media (max-width:820px) {
+  .checkout .main-area .step-3 .review-area .review-cart .cart-list .cart-buyItem .info .title {
+    font-size: 12px;
+  }
+}
 .checkout .main-area .step-3 .review-area .review-cart .cart-list .cart-buyItem .info .else {
   color: #4A4D50;
   /* noto 10% */
@@ -2988,10 +3145,20 @@ footer .terms {
   /* 21px */
   letter-spacing: 1.4px;
 }
+@media (max-width:820px) {
+  .checkout .main-area .step-3 .review-area .review-cart .cart-list .cart-buyItem .info .else {
+    font-size: 10px;
+  }
+}
 .checkout .main-area .step-3 .review-area .review-cart .cart-list .cart-buyItem .info .item-number {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+@media (max-width:820px) {
+  .checkout .main-area .step-3 .review-area .review-cart .cart-list .cart-buyItem .info .item-number {
+    gap: 0.25rem;
+  }
 }
 .checkout .main-area .step-3 .review-area .review-cart .cart-list .cart-buyItem .info .item-number > button {
   all: unset;
@@ -3014,6 +3181,12 @@ footer .terms {
   border-radius: 24px;
   border: 1.5px solid var(--Neutral-medium-gray-2, #4A4D50);
 }
+@media (max-width:820px) {
+  .checkout .main-area .step-3 .review-area .review-cart .cart-list .cart-buyItem .info .item-number .number-area {
+    font-size: 10px;
+    width: 64px;
+  }
+}
 .checkout .main-area .step-3 .review-area .review-cart .cart-list .cart-buyItem p {
   display: flex;
   width: 120px;
@@ -3025,6 +3198,11 @@ footer .terms {
   font-weight: 400;
   line-height: 150%;
   /* 36px */
+}
+@media (max-width:820px) {
+  .checkout .main-area .step-3 .review-area .review-cart .cart-list .cart-buyItem p {
+    font-size: 14px;
+  }
 }
 .checkout .main-area .step-3 .review-area .review-cart .cart-list .cart-buyItem button {
   display: flex;
@@ -3050,6 +3228,11 @@ footer .terms {
   line-height: 150%;
   /* 36px */
 }
+@media (max-width:820px) {
+  .checkout .main-area .step-3 .review-area .review-cart .cart-summary p {
+    font-size: 16px;
+  }
+}
 .checkout .main-area .step-3 .review-area .review-cart .cart-summary p .free-note,
 .checkout .main-area .step-3 .review-area .review-cart .cart-summary p .note {
   color: #F06086;
@@ -3072,15 +3255,32 @@ footer .terms {
   /* noto 24 */
   font-family: "Noto Sans";
   font-size: 24px;
+  font-weight: 700;
   font-style: normal;
   line-height: 150%;
   /* 36px */
   letter-spacing: 4.8px;
 }
+@media (max-width:820px) {
+  .checkout .main-area .step-4 h2 {
+    font-size: 16px;
+  }
+}
+@media (max-width:820px) {
+  .checkout .main-area .step-4 p {
+    font-size: 14px;
+  }
+}
 .checkout .main-area .step-4 .container {
   width: 100%;
   display: flex;
   gap: 3.5rem;
+}
+@media (max-width:820px) {
+  .checkout .main-area .step-4 .container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
 }
 .checkout .main-area .step-4 .container .payment-info {
   display: flex;
@@ -3088,16 +3288,25 @@ footer .terms {
   flex: 1;
   gap: 1.5rem;
 }
+@media (max-width:820px) {
+  .checkout .main-area .step-4 .container .payment-info {
+    gap: 2px;
+  }
+}
 .checkout .main-area .step-4 .container .payment-info .title {
   display: flex;
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
-  align-items: s;
 }
 .checkout .main-area .step-4 .container .payment-info .title h3 {
   font-size: 24px;
-  font-weight: 400;
+  font-weight: 700;
+}
+@media (max-width:820px) {
+  .checkout .main-area .step-4 .container .payment-info .title h3 {
+    font-size: 16px;
+  }
 }
 .checkout .main-area .step-4 .container .payment-info .title .copy-btn {
   display: flex;
@@ -3108,6 +3317,13 @@ footer .terms {
   border: 1px solid var(--Neutral-medium-gray, #B5B9BE);
   background: var(--pink-bg, #ECD0DF);
   font-size: 14px;
+  font-weight: 700;
+}
+@media (max-width:820px) {
+  .checkout .main-area .step-4 .container .payment-info .title .copy-btn {
+    font-size: 10px;
+    padding: 2% 10%;
+  }
 }
 .checkout .main-area .step-4 .container .remittance-form {
   display: flex;
@@ -3123,11 +3339,16 @@ footer .terms {
   font-family: "Noto Sans";
   font-size: 24px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 150%;
   /* 36px */
   letter-spacing: 4.8px;
   text-align: center;
+}
+@media (max-width:820px) {
+  .checkout .main-area .step-4 .container .remittance-form h3 {
+    font-size: 16px;
+  }
 }
 .checkout .main-area .step-4 .container .remittance-form form {
   width: 100%;
@@ -3144,6 +3365,7 @@ footer .terms {
   border-radius: 8px;
   border: 1px solid var(--Neutral-medium-gray, #B5B9BE);
   background: var(--pink-bg, #ECD0DF);
+  font-weight: 700;
 }
 
 .thank-you-page {
@@ -3153,6 +3375,11 @@ footer .terms {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+}
+@media (max-width:820px) {
+  .thank-you-page {
+    height: 60vh;
+  }
 }
 .thank-you-page img {
   display: block;
